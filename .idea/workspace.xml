@@ -4,46 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aac1041-d263-4f16-80e5-75b04a890cba" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/666.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FMM.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/ui_class.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/ui_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yuanzl77.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YueChan.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cqitv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/Readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/Todo.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/duplicate_removel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/fetch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/match.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/name_dict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/rename.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/response_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/save_as.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function/template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/junyu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kimwang1978.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meoxin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingwen07.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rihou.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssili126.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test666.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vbskycn.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weidongdong.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xhztv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yangg1989.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhoujie.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/去重测试.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/喵TV.txt" afterDir="false" />
+    <list default="true" id="5aac1041-d263-4f16-80e5-75b04a890cba" name="更改" comment="新同步">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,32 +34,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.ch_name_fetch.executor": "Debug",
-    "Python.dup_removel.executor": "Debug",
-    "Python.excutive.executor": "Run",
-    "Python.fetch.executor": "Run",
-    "Python.main.executor": "Debug",
-    "Python.match.executor": "Run",
-    "Python.needed_channels.executor": "Debug",
-    "Python.popup.executor": "Run",
-    "Python.rename.executor": "Debug",
-    "Python.response_test.executor": "Run",
-    "Python.save.executor": "Run",
-    "Python.save_as.executor": "Run",
-    "Python.single_url_fetch.executor": "Run",
-    "Python.single_url_resp.executor": "Run",
-    "Python.ui_class.executor": "Run",
-    "Python.ui_main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/uos/个人文档/Python项目/直播源汇聚PLUS",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.ch_name_fetch.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.dup_removel.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.excutive.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fetch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.match.executor&quot;: &quot;Run&quot;,
+    &quot;Python.needed_channels.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rename.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.response_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save_as.executor&quot;: &quot;Run&quot;,
+    &quot;Python.single_url_fetch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.single_url_resp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui_main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/uos/个人文档/Python项目/直播源汇聚PLUS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/function" />
@@ -284,12 +246,23 @@
       <option name="presentableId" value="Default" />
       <updated>1732087068083</updated>
     </task>
+    <task id="LOCAL-00001" summary="新同步">
+      <option name="closed" value="true" />
+      <created>1735206778985</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735206778985</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="新同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="新同步" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
