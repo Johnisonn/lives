@@ -1,0 +1,53 @@
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-从【/home/uos/Desktop/1.txt】获取频道8个(类内同名已去重)，获取url地址8个(未去重)！
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-1 综合-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-1-HQ/G_CCTV-1-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-2 财经-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-2-HQ/G_CCTV-2-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-3 综艺-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-3-HQ/G_CCTV-3-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-4 中文国际-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-4-HQ/G_CCTV-4-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-5 体育-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-5-HQ/G_CCTV-5-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-6 电影-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-6-HQ/G_CCTV-6-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-7 国防军事-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-7-HQ/G_CCTV-7-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-8 电视剧-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-8-HQ/G_CCTV-8-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-从【/home/uos/Desktop/2.txt】获取频道9个(类内同名已去重)，获取url地址9个(未去重)！
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-1 综合-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-1-HQ/G_CCTV-1-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-2 财经-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-2-HQ/G_CCTV-2-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-3 综艺-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-3-HQ/G_CCTV-3-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-4 中文国际-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-4-HQ/G_CCTV-4-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-5 体育-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-5-HQ/G_CCTV-5-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-6 电影-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-6-HQ/G_CCTV-6-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-7 国防军事-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-7-HQ/G_CCTV-7-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-8 电视剧-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-8-HQ/G_CCTV-8-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-9 纪录-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-9-HQ/G_CCTV-9-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-10 科教-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-10-HQ/G_CCTV-10-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-11 戏曲-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-11-HQ/G_CCTV-11-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-12 社会与法-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-12-HQ/G_CCTV-12-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-13 新闻-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-13-HQ/G_CCTV-13-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-14 少儿-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-14-HQ/G_CCTV-14-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-15 音乐-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-15-HQ/G_CCTV-15-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-16 奥林匹克-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-16-HQ/G_CCTV-16-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-17 农业农村-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-17-HQ/G_CCTV-17-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-从【/home/uos/Desktop/3.txt】获取频道0个(类内同名已去重)，获取url地址3个(未去重)！
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-1 综合-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-1-HQ/G_CCTV-1-HQ.m3u8', '333']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-2 财经-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-2-HQ/G_CCTV-2-HQ.m3u8', '333333']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-3 综艺-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-3-HQ/G_CCTV-3-HQ.m3u8', 'h353434']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-4 中文国际-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-4-HQ/G_CCTV-4-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-5 体育-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-5-HQ/G_CCTV-5-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-6 电影-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-6-HQ/G_CCTV-6-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-7 国防军事-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-7-HQ/G_CCTV-7-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-8 电视剧-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-8-HQ/G_CCTV-8-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-9 纪录-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-9-HQ/G_CCTV-9-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-10 科教-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-10-HQ/G_CCTV-10-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-11 戏曲-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-11-HQ/G_CCTV-11-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-12 社会与法-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-12-HQ/G_CCTV-12-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-13 新闻-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-13-HQ/G_CCTV-13-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-14 少儿-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-14-HQ/G_CCTV-14-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-15 音乐-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-15-HQ/G_CCTV-15-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-16 奥林匹克-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-16-HQ/G_CCTV-16-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-无分类-CCTV-17 农业农村-['http://gdctcc-livod.tx-cdn.gitv.tv/gitv_live/G_CCTV-17-HQ/G_CCTV-17-HQ.m3u8']
+2024-12_26 16:08:23 PM-INFO-__main__-------------------------------------------------------------
+2024-12_26 16:08:23 PM-INFO-__main__-共从3个地址中获取频道17个，获取url地址20个！
