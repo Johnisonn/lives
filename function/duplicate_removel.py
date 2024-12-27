@@ -30,10 +30,11 @@ def remove_dump_urls(chs_dict):
     return chs_dict
 
 def remove_dump_name(names_dict):
+# 对不同分类内重名频道名称去重
     names_set = set()
     to_remove = []
     logger.info('-'*60)
-    logger.info('开始对频道名去重...')
+    logger.info('-'*25 + f'开始对所有分类中同名频道名称去重' + '-'*25)
     for cate, names in names_dict.items():
         for name in names:
             if name not in names_set:
@@ -49,10 +50,10 @@ def remove_dump_name(names_dict):
         logger.info(f'分类【{cate}】中【{name}】名称重复已去重')
         if len(names_dict[cate]) < 1:
             del names_dict[cate]
-            logger.info(f'------------分类【{cate}】重复已删除')
+            logger.info('-'*25 + f'分类【{cate}】重复已删除' + '-'*25)
             dump_cates_num += 1
     logger.info('-'*60)
-    logger.info(f'共去除重复频道名{dump_names_num}个')
-    logger.info(f'去除空分类{dump_cates_num}个')
-    logger.info(f'去重后共剩余频道名称{len(names_set)}个！')
+    logger.info(f'共去除重复频道名 {dump_names_num} 个')
+    logger.info(f'去除空分类 {dump_cates_num} 个')
+    logger.info(f'去重后共剩余频道名称 {len(names_set)} 个！')
     return names_dict
