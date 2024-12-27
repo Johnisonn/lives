@@ -143,7 +143,8 @@ def fetch_chs(source_urls_lst):
 
 source_urls_lst = ['/home/uos/Desktop/1.txt',
                    '/home/uos/Desktop/2.txt',
-                   '/home/uos/Desktop/3.txt'
+                   '/home/uos/Desktop/3.txt',
+                   '/home/uos/Desktop/00.txt',
 
 
 ]
