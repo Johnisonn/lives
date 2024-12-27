@@ -147,6 +147,7 @@ source_urls_lst = ['/home/uos/Desktop/1.txt',
                    '/home/uos/Desktop/00.txt',
                    'sdkfjlweoifj'
                    '125487'
+                   '这是汇聚'
 
 
 ]
