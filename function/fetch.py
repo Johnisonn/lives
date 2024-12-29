@@ -28,7 +28,7 @@ def needed_chs():
     return need_chs_dict
 
 def fetch_chs_name(source_urls_lst):
-# 提取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
+# 获取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
     chs_dict = fetch_chs(source_urls_lst)
     names_dict = OrderedDict()
     name_num = 0
@@ -41,7 +41,7 @@ def fetch_chs_name(source_urls_lst):
                 name_num += 1
 
     logger.info('-'*60)
-    logger.info(f'共提取频道名称 {name_num} 个(含不同分类内同名频道)！')
+    logger.info(f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
     names_dict = remove_dump_name(names_dict) #对所有分类内频道名称去重
 
     return names_dict
@@ -132,37 +132,38 @@ def fetch_chs(source_urls_lst):
         logger.info('-' * 60)
         logger.info(f'从<{source_url}>获取频道 {ch_num} 个(类内同名已去重)，获取url地址 {url_num} 个(未去重)！')
 
-    logger.info('-'*25 + f'获取频道列表' + '-'*25)
-    for k, v in chs_dict.items():
-        for n, u in v.items():
-            logger.info(f'{k}-{n}-{u}')
+    # logger.info('-'*25 + f'获取到的频道列表' + '-'*25)
+    # for k, v in chs_dict.items():
+    #     for n, u in v.items():
+    #         logger.info(f'{k}-{n}-{u}')
     logger.info('-' * 60)
     logger.info(f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个！')
     return chs_dict
 
 
-source_urls_lst = ['/home/uos/Desktop/live/0.txt',
-                   # '/home/uos/Desktop/live/666.txt',
-                   # '/home/uos/Desktop/live/cqitv.txt',
-                   #  '/home/uos/Desktop/live/junyu.txt',
-                   #  '/home/uos/Desktop/live/kimwang1978.txt',
-                   #  '/home/uos/Desktop/live/kv.txt',
-                   #  '/home/uos/Desktop/live/qingwen07.txt',
-                   # '/home/uos/Desktop/live/rihou.nzk',
-                   # '/home/uos/Desktop/live/ssili126.txt',
-                   #  '/home/uos/Desktop/live/vbskycn.txt',
-                   #  '/home/uos/Desktop/live/weidongdong.txt',
-                   #  '/home/uos/Desktop/live/xhztv.txt',
-                   #  '/home/uos/Desktop/live/zhoujie.txt',
-                   #  '/home/uos/Desktop/live/喵TV.txt',
-                   #  '/home/uos/Desktop/live/guovin.m3u',
-                   #  '/home/uos/Desktop/live/meoxin.m3u',
-                   #  '/home/uos/Desktop/live/yangg1989.m3u',
-                   #  '/home/uos/Desktop/live/yuanzl77.m3u',
-                   #  '/home/uos/Desktop/live/YueChan_IPTV.m3u',
-                   #  '/home/uos/Desktop/live/范明明.m3u',
+if __name__ == '__main__':
+    source_urls_lst = [
+                        '/home/uos/Desktop/live/0.txt',
+                       '/home/uos/Desktop/live/666.txt',
+                       '/home/uos/Desktop/live/cqitv.txt',
+                        '/home/uos/Desktop/live/junyu.txt',
+                        '/home/uos/Desktop/live/kimwang1978.txt',
+                        '/home/uos/Desktop/live/kv.txt',
+                        '/home/uos/Desktop/live/qingwen07.txt',
+                       '/home/uos/Desktop/live/rihou.nzk',
+                       '/home/uos/Desktop/live/ssili126.txt',
+                        '/home/uos/Desktop/live/vbskycn.txt',
+                        '/home/uos/Desktop/live/weidongdong.txt',
+                        '/home/uos/Desktop/live/xhztv.txt',
+                        '/home/uos/Desktop/live/zhoujie.txt',
+                        '/home/uos/Desktop/live/喵TV.txt',
+                        '/home/uos/Desktop/live/guovin.m3u',
+                        '/home/uos/Desktop/live/meoxin.m3u',
+                        '/home/uos/Desktop/live/yangg1989.m3u',
+                        '/home/uos/Desktop/live/yuanzl77.m3u',
+                        '/home/uos/Desktop/live/YueChan_IPTV.m3u',
+                        '/home/uos/Desktop/live/范明明.m3u',
 
-]
-
-fetch_chs_name(source_urls_lst)
+    ]
+    fetch_chs_name(source_urls_lst)
 

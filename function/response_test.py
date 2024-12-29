@@ -26,7 +26,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
     # 线程池操作函数，传入元组（url, cate, name），返回元组（url, cate, name, resp_time）
         try:
             s_time = time.time()
-            resp = urllib.request.urlopen(url_tuple[0],timeout=2)
+            resp = urllib.request.urlopen(url_tuple[0],timeout=5)
             e_time = time.time()
             resp_time = round((e_time - s_time)*1000, 2) # 单位为毫秒，保留2位小数
         except Exception:
@@ -37,7 +37,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
     logger.info('多线程响应检测开始！')
     start_time = time.time()
     core_count = multiprocessing.cpu_count() # 获取CPU核心数
-    logger.info(f'core_count:{core_count}')
+    logger.info(f'core_count: -{core_count}')
     excutor = concurrent.futures.ThreadPoolExecutor(max_workers=2*core_count+10) # 按照CPU核心数创建线程池
     future = [excutor.submit(add_resp_time, url_tuple) for url_tuple in urls_tuple_lst] # 将所有元组提交到线程池执行
 
@@ -48,7 +48,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
             new_urls_tuple.append(f.result())
             t_bar.update(1) # 更新进度条
     end_time = time.time()
-    logger.info(f'响应检测完成，总耗时{round((end_time-start_time)/60, 2)}分钟！')
+    logger.info(f'响应检测完成，总耗时 {round((end_time-start_time)/60, 2)} 分钟！')
 
     #  按照传入的频道字典顺序，重新构建值为元组(url,resp_time)的新字典
     total = len(new_urls_tuple)

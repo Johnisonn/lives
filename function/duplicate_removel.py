@@ -16,6 +16,8 @@ def remove_dump_urls(chs_dict):
                     to_remove.append((cate,name,url)) #对重复的条目进行记录
     dump_urls_num = len(to_remove) #统计重复地址数量
     dump_chs_num = 0 # 统计重复频道名称数量
+    logger.info('-' * 60)
+    logger.info('开始对urls地址去重...')
     for cate, name, url in to_remove:
         chs_dict[cate][name].remove(url)
         logger.info('-'*60)
@@ -34,7 +36,7 @@ def remove_dump_name(names_dict):
     names_set = set()
     to_remove = []
     logger.info('-'*60)
-    logger.info('-'*25 + f'开始对所有分类中同名频道名称去重' + '-'*25)
+    logger.info(f'开始对所有分类中同名频道名称去重...')
     for cate, names in names_dict.items():
         for name in names:
             if name not in names_set:
