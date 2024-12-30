@@ -3,9 +3,9 @@
 is_match_template = True # 是否匹配模板给定频道
 is_response_test = True  # 是否对直播地址测试响应时间
 is_dump_remove = True # 是否对采集到的地址进行去重
-response_time = 1000000  # 设置筛选直播源url的响应时间，单位毫秒
+response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
 v6_or_v4 = 6  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
-is_match_local_chs = 1 # 是否对字典中的地方频道进行匹配
+is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 
 mirror_url = [
     'https://ghproxy.cn/',

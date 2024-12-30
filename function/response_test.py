@@ -30,7 +30,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
             e_time = time.time()
             resp_time = round((e_time - s_time)*1000, 2) # 单位为毫秒，保留2位小数
         except Exception:
-            resp_time = 100000
+            resp_time = 10000
         return (url_tuple[0],url_tuple[1],url_tuple[2], resp_time)
 
     logger.info('-'*60)
