@@ -61,13 +61,14 @@ def fetch_chs(source_urls_lst):
             except requests.exceptions.RequestException as e:
                 logger.info('-' * 60)
                 logger.error(f"{source_url}请求失败，错误信息: {str(e)}")
+                continue
         else:  # 本地直播源文件
             with open(source_url, 'r') as file:
                 lines = file.readlines()
+        ch_num = 0
+        url_num = 0
         source_type = 'm3u' if any('#EXTINF' in line for line in lines[:4]) else 'txt'  # 判定直播源类型（txt或者m3u）
         if source_type == 'txt':
-            ch_num = 0
-            url_num = 0
             for line in lines:  # 对txt类型的直播源读入
                 if '#genre#' in line:
                     line = line.strip()
