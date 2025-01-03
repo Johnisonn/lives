@@ -3,7 +3,7 @@ import re
 import time
 import urllib.request #这里使用urllib模块代替requests模块，有些直播源用requests模块get请求会无反应，且不抛出异常（浏览器可返回状态200）
 from collections import OrderedDict
-from function.config import v6_or_v4
+from config import v6_or_v4
 from tqdm import tqdm
 import multiprocessing
 import concurrent.futures
