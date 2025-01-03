@@ -1,9 +1,9 @@
 ## 对给定的频道字典进行保存
 
 from datetime import datetime
-from function.config import head_info
-from function.rename import tvg_name_regular
-from function.response_test import is_v6
+from config import head_info
+from rename import tvg_name_regular
+from response_test import is_v6
 import logging
 
 logging.basicConfig(
