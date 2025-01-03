@@ -1,10 +1,10 @@
 ## 对给定的直播源和模板中所需频道进行匹配，筛选出所需频道
 
 from collections import OrderedDict
-from function.config import is_match_local_chs
-from function.fetch import needed_chs
+from config import is_match_local_chs
+from fetch import needed_chs
 import logging
-from function.name_dict import local_lst
+from name_dict import local_lst
 
 logging.basicConfig(level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p', format='%(asctime)s-%(levelname)s-%(name)s-%(message)s', handlers=[logging.FileHandler(filename='../project.log', mode='a'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
