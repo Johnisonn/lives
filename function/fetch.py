@@ -3,8 +3,8 @@
 import re
 from collections import OrderedDict
 import requests
-from function.duplicate_removel import remove_dump_name
-from function.rename import ch_name_regular, cate_name_regular
+from duplicate_removel import remove_dump_name
+from rename import ch_name_regular, cate_name_regular
 import logging
 
 logging.basicConfig(level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p', format='%(asctime)s-%(levelname)s-%(name)s-%(message)s', handlers=[logging.FileHandler(filename='../project.log', mode='w'), logging.StreamHandler()])
