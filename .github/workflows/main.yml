@@ -23,7 +23,7 @@ jobs:
         pip install requests tqdm
 
     - name: Run Python script
-      run: python main.py
+      run: python funcion/main.py
 
     - name: Commit and push if changed
       run: |
