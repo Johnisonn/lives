@@ -1,7 +1,7 @@
 ## 对不同源地址中的频道名称进行规范统一，主要针对央视、及卫视名称进行规范，后续可针对性对地方频道进行规范
 
 import re
-from function import name_dict
+import name_dict
 
 
 def ch_name_regular(name):
