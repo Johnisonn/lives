@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 def needed_chs():
 # 从模板文件中读入所需要频道分类和频道名称
     need_chs_dict = OrderedDict()
-    with open('template.txt', 'r', encoding='utf-8') as f:
+    with open('function/template.txt', 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if '#genre#' in line:
