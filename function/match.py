@@ -65,9 +65,9 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                         else:
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
                             local_urls_num += n
-    logger.info('-' * 60)
-    logger.info(f'共采集地方频道 {local_chs_num} 个，采集url直播地址 {local_urls_num} 个！')
-    logger.info('-'*60)
-    logger.info(f'共匹配到模板给定频道(含查询到的地方频道) {chs_num + local_chs_num} 个，采集url直播地址 {urls_num + local_urls_num} 个！')
+        logger.info('-' * 60)
+        logger.info(f'共采集地方频道 {local_chs_num} 个，采集url直播地址 {local_urls_num} 个！')
+        logger.info('-'*60)
+        logger.info(f'共匹配到模板给定频道(含查询到的地方频道) {chs_num + local_chs_num} 个，采集url直播地址 {urls_num + local_urls_num} 个！')
     return matched_chs_dict
 
