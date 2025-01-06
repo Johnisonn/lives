@@ -1,0 +1,32 @@
+2025-01_06 16:10:00 PM-INFO-fetch-------------------------------------------------------------
+2025-01_06 16:10:00 PM-INFO-fetch-从<https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u>获取频道 636 个(类内同名已去重)，获取url地址 2172 个(未去重)！
+2025-01_06 16:10:00 PM-INFO-fetch-------------------------------------------------------------
+2025-01_06 16:10:00 PM-INFO-fetch-共从 1 个源地址中获取频道 636 个，获取url地址 2172 个！
+2025-01_06 16:10:00 PM-INFO-fetch-------------------------------------------------------------
+2025-01_06 16:10:00 PM-INFO-fetch-共获取频道名称 636 个(不同分类间同名频道未去重)！
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-------------------------------------------------------------
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-开始对所有分类中同名频道名称去重...
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【☘️广东频道】中【广东卫视】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【☘️广东频道】中【深圳卫视】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【☘️天津频道】中【天津卫视】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【☘️四川频道】中【万源新闻综合】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【☘️新疆频道】中【新疆卫视】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🎬电影频道】中【东森电影】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🎬电影频道】中【东森超视】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【CCTV-5 体育】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【CCTV-5+ 体育赛事】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【广东体育】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【纬来体育】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【广州竞赛】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【山东体育】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【安徽综艺体育】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🏀体育频道】中【CCTV-风云足球】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🪁动画频道】中【动漫秀场】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🪁动画频道】中【优漫卡通】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🪁动画频道】中【浙江少儿】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-分类【🎵音乐频道】中【CCTV-15 音乐】名称重复已去重
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-------------------------------------------------------------
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-共去除重复频道名 19 个
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-去除空分类 0 个
+2025-01_06 16:10:00 PM-INFO-duplicate_removel-去重后共剩余频道名称 617 个！
+2025-01_06 16:10:00 PM-INFO-save_as-获取到的频道名称已保存在目录:【/home/runner/work/lives/lives/all_names.txt】文件中！
