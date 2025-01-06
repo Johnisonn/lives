@@ -4,9 +4,16 @@ from collections import OrderedDict
 from config import is_match_local_chs
 from fetch import needed_chs
 import logging
+import os
 from name_dict import local_lst
 
-logging.basicConfig(level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p', format='%(asctime)s-%(levelname)s-%(name)s-%(message)s', handlers=[logging.FileHandler(filename='../project.log', mode='a'), logging.StreamHandler()])
+current_path = os.path.dirname(os.path.abspath(__file__))
+parent_path = os.path.abspath(os.path.join(current_path, '..'))
+
+logging.basicConfig(
+    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
+    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
+    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='a'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 def match_chs(chs_dict): # 将获取到的直播源字典传参

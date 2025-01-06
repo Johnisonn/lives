@@ -1,20 +1,27 @@
 # 获取直播地址或频道名称
 
 import re
+import os
 from collections import OrderedDict
 import requests
 from duplicate_removel import remove_dump_name
-from rename import ch_name_regular, cate_name_regular
+from rename import ch_name_regular
 import logging
 
-logging.basicConfig(level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p', format='%(asctime)s-%(levelname)s-%(name)s-%(message)s', handlers=[logging.FileHandler(filename='project.log', mode='w'), logging.StreamHandler()])
+current_path = os.path.dirname(os.path.abspath(__file__))
+parent_path = os.path.abspath(os.path.join(current_path, '..'))
+
+logging.basicConfig(
+    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
+    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
+    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='w'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 
 def needed_chs():
 # 从模板文件中读入所需要频道分类和频道名称
     need_chs_dict = OrderedDict()
-    with open('../function/template.txt', 'r', encoding='utf-8') as f:
+    with open('template.txt', 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if '#genre#' in line:

@@ -1,7 +1,14 @@
 ## 对urls地址或频道名称进行去重
 import logging
+import os
 
-logging.basicConfig(level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p', format='%(asctime)s-%(levelname)s-%(name)s-%(message)s', handlers=[logging.FileHandler(filename='../project.log', mode='a'), logging.StreamHandler()])
+current_path = os.path.dirname(os.path.abspath(__file__))
+parent_path = os.path.abspath(os.path.join(current_path, '..'))
+
+logging.basicConfig(
+    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
+    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
+    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='a'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 def remove_dump_urls(chs_dict):
