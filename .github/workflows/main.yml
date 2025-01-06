@@ -37,7 +37,7 @@ jobs:
         git add all_names.txt
         git commit -m "Auto-update"
         git push
-        fi
+
 
     env:
       TZ: Asia/Shanghai
