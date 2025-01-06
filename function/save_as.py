@@ -10,7 +10,7 @@ logging.basicConfig(
     level=logging.INFO,
     datefmt='%Y-%m-%d %H:%M:%S %p',
     format='%(asctime)s-%(name)s-%(levelname)s-%(massage)s',
-    handlers=[logging.FileHandler(filename='../project.log', mode='a'), logging.StreamHandler()]
+    handlers=[logging.FileHandler(filename='project.log', mode='a'), logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
 
@@ -107,8 +107,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', ip_filter=None):
     logger.info(f'频道及url地址已保存在目录：【{path_name}】下，共保存频道{len(all_chs)}个、url地址{urls_num}个！')
 
 def save_names_as_txt(names_dict, file_name='names'):
-    path = '../'
-    with open(path + str(file_name) + '.txt', 'w') as f:
+    with open(str(file_name) + '.txt', 'w') as f:
         for w_cate, w_names in names_dict.items():
             f.write(f'{w_cate},#genre#\n')
             for w_name in w_names:
