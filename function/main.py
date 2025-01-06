@@ -6,7 +6,7 @@ from response_test import test_resp_multi_thread
 from save_as import save_chs_as_txt, save_chs_as_m3u, save_names_as_txt
 
 if __name__ == '__main__':
-    chs = fetch_chs(['/home/uos/Desktop/live/guovin.m3u'])
+    chs = fetch_chs(['https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u'])
     if is_dump_remove:
         chs = remove_dump_urls(chs)
     if is_match_template:
