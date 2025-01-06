@@ -45,7 +45,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
     start_time = time.time()
     core_count = multiprocessing.cpu_count() # 获取CPU核心数
     logger.info(f'core_count: -{core_count}')
-    excutor = concurrent.futures.ThreadPoolExecutor(max_workers=2*core_count+10) # 按照CPU核心数创建线程池
+    excutor = concurrent.futures.ThreadPoolExecutor(max_workers=5*core_count+20) # 按照CPU核心数创建线程池,默认为2倍速核心+10
     future = [excutor.submit(add_resp_time, url_tuple) for url_tuple in urls_tuple_lst] # 将所有元组提交到线程池执行
 
     total_task = len(future)
