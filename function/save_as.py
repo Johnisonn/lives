@@ -58,9 +58,10 @@ def save_chs_as_txt(chs_dict, file_name='live', ip_filter=None):
                             f.write(f'{w_name},{w_url}\n')
                             all_chs.add(w_name)
                             urls_num += 1
-    logger.info('-'*60)
-    logger.info(f'频道及url地址已保存在目录:【{path_name}】文件中，共保存频道{len(all_chs)}个、url地址{urls_num}个！')
-
+    logger.info('='*60)
+    logger.info(f'频道及url地址已保存在目录:【{path_name}】文件中！')
+    logger.info(f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个！')
+    logger.info('=' * 60)
 def save_chs_as_m3u(chs_dict, file_name='live', ip_filter=None):
     all_cate = set()
     all_chs = set()
@@ -105,8 +106,10 @@ def save_chs_as_m3u(chs_dict, file_name='live', ip_filter=None):
                             all_chs.add(w_name)
                             f.write(f'{w_url}\n')
                             urls_num += 1
-    logger.info('-'*60)
-    logger.info(f'频道及url地址已保存在目录:【{path_name}】文件中，共保存频道{len(all_chs)}个、url地址{urls_num}个！')
+    logger.info('=' * 85)
+    logger.info(f'频道及url地址已保存在目录:【{path_name}】文件中！')
+    logger.info(f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个！')
+    logger.info('=' * 85)
 
 def save_names_as_txt(names_dict, file_name='chs_names'):
     path_name = f'{parent_path}/{str(file_name)}.txt'

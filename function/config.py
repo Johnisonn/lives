@@ -1,11 +1,11 @@
 ##配置文件
 
-is_match_template = True # 是否匹配模板给定频道
-is_response_test = False  # 是否对直播地址测试响应时间
-is_dump_remove = True # 是否对采集到的地址进行去重
+is_match_template = 1 # 是否匹配模板给定频道
+is_response_test = 0  # 是否对直播地址测试响应时间
+is_dump_remove = 1 # 是否对采集到的地址进行去重
 response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
 v6_or_v4 = 6  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
-is_match_local_chs = 1 # 是否对字典中的地方频道进行匹配
+is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 
 mirror_url = [
     'https://ghproxy.cn/',
@@ -15,8 +15,53 @@ mirror_url = [
     'https://ghgo.xyz',
 
 ]
-#直播源地址列表
+
+source_urls_TEST = [
+                       #  '/home/uos/Desktop/live/0.txt',
+                       # '/home/uos/Desktop/live/666.txt',
+                       # '/home/uos/Desktop/live/cqitv.txt',
+                       #  '/home/uos/Desktop/live/junyu.txt',
+                       #  '/home/uos/Desktop/live/kimwang1978.txt',
+                       #  '/home/uos/Desktop/live/kv.txt',
+                       #  '/home/uos/Desktop/live/qingwen07.txt',
+                       # '/home/uos/Desktop/live/rihou.nzk',
+#                        '/home/uos/Desktop/live/ssili126.txt',
+#                         '/home/uos/Desktop/live/vbskycn.txt',
+#                         '/home/uos/Desktop/live/weidongdong.txt',
+#                         '/home/uos/Desktop/live/xhztv.txt',
+#                         '/home/uos/Desktop/live/zhoujie.txt',
+#                         '/home/uos/Desktop/live/喵TV.txt',
+#                         '/home/uos/Desktop/live/guovin.m3u',
+#                         '/home/uos/Desktop/live/meoxin.m3u',
+#                         '/home/uos/Desktop/live/yangg1989.m3u',
+#                         '/home/uos/Desktop/live/yuanzl77.m3u',
+#                         '/home/uos/Desktop/live/YueChan_IPTV.m3u',
+#                         '/home/uos/Desktop/live/范明明.m3u',
+]
+
 source_urls = [
+    'https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt',
+
+    'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
+    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+    'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
+    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
+    'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
+    'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
+    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
+    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
+    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
+    "http://rihou.cc:567/gggg.nzk",  # 日后线路
+    "http://meowtv.top/zb", # 喵TV
+    "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
+    "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
+
+
+]
+
+
+#直播源地址列表
+selected_source_urls = [
     "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
 
 
@@ -24,14 +69,14 @@ source_urls = [
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u',
 
 
-    "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u", #guovin 每日更新
-    # "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+    # "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u", #guovin 每日更新
+    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
 
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt',
 
-    "https://cdn.jsdelivr.net/gh/YueChan/live@main/IPTV.m3u", #可用
-    # 'https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u',
+    # "https://cdn.jsdelivr.net/gh/YueChan/live@main/IPTV.m3u", #可用
+    'https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u',
     # 'https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u',
     # 'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
 
@@ -51,8 +96,7 @@ source_urls = [
 
     'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
     'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
-    'https://raw.githubusercontent.com/joevess/IPTV/main/iptv.m3u8',
-    'https://raw.githubusercontent.com/joevess/IPTV/main/home.m3u8',
+
 
     'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
     'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',

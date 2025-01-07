@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 def needed_chs():
 # 从模板文件中读入所需要频道分类和频道名称
     need_chs_dict = OrderedDict()
-    with open('function/template.txt', 'r', encoding='utf-8') as f:
+    with open('function/template.txt', 'r', encoding='utf-8') as f: #这里的文件路径，github action工作环境与本地不一样，根据情况修改
         for line in f:
             line = line.strip()
             if '#genre#' in line:
@@ -59,6 +59,7 @@ def fetch_chs(source_urls_lst):
     header = {'User-Agent': 'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36'}
     total_ch_num = 0
     total_url_num = 0
+    logger.info('=' * 90)
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
             if 'github' in source_url:
@@ -69,7 +70,6 @@ def fetch_chs(source_urls_lst):
                 resp.encoding = 'utf-8'
                 lines = resp.text.split('\n')
             except requests.exceptions.RequestException as e:
-                logger.info('-' * 60)
                 logger.error(f"{source_url}请求失败，错误信息: {str(e)}")
                 continue
         else:  # 本地直播源文件
@@ -141,14 +141,13 @@ def fetch_chs(source_urls_lst):
                         url_num += 1
             total_ch_num += ch_num
             total_url_num += url_num
-        logger.info('-' * 60)
         logger.info(f'从<{source_url}>获取频道 {ch_num} 个(类内同名已去重)，获取url地址 {url_num} 个(未去重)！')
 
-    # logger.info('-'*25 + f'获取到的频道列表' + '-'*25)
+    # logger.info('-'*25 + f'获取到的频道列表' + '-'*25) # 以处内容为保存获取到的频道列表名单到日志
     # for k, v in chs_dict.items():
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
-    logger.info('-' * 60)
+    logger.info('-' * 90)
     logger.info(f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个！')
     return chs_dict
 

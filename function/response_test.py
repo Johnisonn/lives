@@ -100,6 +100,43 @@ def sorted_by_response(urls_tuple_lst):
     new_urls_tuple_lst = ipv6 + ipv4 if v6_or_v4 == 6 else ipv4 + ipv6
     return new_urls_tuple_lst
 
+def sorted_by_iptype(chs_dict):
+    sorted_chs_dict = OrderedDict()
+    v6_count = 0
+    v4_count = 0
+    logger.info('=' * 85)
+    logger.info('开始按照地址类型排序...')
+    for cate, vls in chs_dict.items():
+        sorted_chs_dict[cate] = OrderedDict()
+        for name, urls in vls.items():
+            sorted_chs_dict[cate][name] = []
+            urls_v6 = []
+            urls_v4 = []
+            idx_v6 = 1
+            idx_v4 = 1
+            for url in urls:
+                if is_v6(url):
+                    url = f'{url}$v6线路{idx_v6}'
+                    idx_v6 += 1
+                    urls_v6.append(url)
+                    v6_count += 1
+                else:
+                    url = f'{url}$v4线路{idx_v4}'
+                    idx_v4 += 1
+                    urls_v4.append(url)
+                    v4_count += 1
+            if v6_or_v4 == 6:
+                sorted_chs_dict[cate][name].extend(urls_v6)
+                sorted_chs_dict[cate][name].extend(urls_v4)
+            else:
+                sorted_chs_dict[cate][name].extend(urls_v4)
+                sorted_chs_dict[cate][name].extend(urls_v6)
+    logger.info('-' * 85)
+    logger.info(f'已按照 IPV{v6_or_v4} 地址优先完成排序！')
+    logger.info(f'共有 {v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个！')
+    return sorted_chs_dict
+
+
 
 
 ##  以下两个函数为单线程测试，已弃用

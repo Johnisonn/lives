@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 def remove_dump_urls(chs_dict):
     urls_set = set()
     to_remove = []
+    logger.info('=' * 80)
     for cate, vls in chs_dict.items():
         for name, urls in vls.items():
             for url in urls:
@@ -23,7 +24,6 @@ def remove_dump_urls(chs_dict):
                     to_remove.append((cate,name,url)) #对重复的条目进行记录
     dump_urls_num = len(to_remove) #统计重复地址数量
     dump_chs_num = 0 # 统计重复频道名称数量
-    logger.info('-' * 60)
     logger.info('开始对urls地址去重...')
     for cate, name, url in to_remove:
         chs_dict[cate][name].remove(url)
@@ -34,8 +34,12 @@ def remove_dump_urls(chs_dict):
             # logger.info('-'*60)
             # logger.info(f'【{cate}】分类中【{name}】频道名重复已删除')
             dump_chs_num += 1
-    logger.info('-'*60)
-    logger.info(f'共去除重复频道{dump_chs_num}个，去除重复url地址{dump_urls_num}个！')
+    ch_count = 0
+    for cate, vls in chs_dict.items():
+        ch_count += len(vls.keys())
+    logger.info('-' * 80)
+    logger.info(f'共去除重复频道 {dump_chs_num} 个，去除重复url地址 {dump_urls_num} 个！')
+    logger.info(f'去重后剩余频道 {ch_count} 个，剩余url地址 {len(urls_set)} 个！')
     return chs_dict
 
 def remove_dump_name(names_dict):
