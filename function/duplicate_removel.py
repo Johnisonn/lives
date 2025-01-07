@@ -27,12 +27,12 @@ def remove_dump_urls(chs_dict):
     logger.info('开始对urls地址去重...')
     for cate, name, url in to_remove:
         chs_dict[cate][name].remove(url)
-        logger.info('-'*60)
-        logger.info(f'【{cate}】分类中【{name}】url成功去重1个')
+        # logger.info('-'*60)
+        # logger.info(f'【{cate}】分类中【{name}】url成功去重1个')
         if len(chs_dict[cate][name]) < 1:
             del chs_dict[cate][name]
-            logger.info('-'*60)
-            logger.info(f'【{cate}】分类中【{name}】频道名重复已删除')
+            # logger.info('-'*60)
+            # logger.info(f'【{cate}】分类中【{name}】频道名重复已删除')
             dump_chs_num += 1
     logger.info('-'*60)
     logger.info(f'共去除重复频道{dump_chs_num}个，去除重复url地址{dump_urls_num}个！')

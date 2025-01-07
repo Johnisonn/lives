@@ -120,17 +120,18 @@ def fetch_chs(source_urls_lst):
         else:  # 对m3u类型的直播源读入
             for line in lines:
                 if '#EXTINF' in line:
-                    match = re.search(r'group-title="(.*?)",(.*)', line)
-                    cate = match.group(1).strip()
-                    name = match.group(2).strip()
-                    name = ch_name_regular(name)
-                    if cate not in chs_dict:
-                        chs_dict[cate] = OrderedDict()
-                        chs_dict[cate][name] = []
-                        ch_num += 1
-                    elif name not in chs_dict[cate]:
-                        chs_dict[cate][name] = []
-                        ch_num += 1
+                    match = re.search(r'group-title=(.*),(.*)', line)
+                    if match:
+                        cate = match.group(1).strip()
+                        name = match.group(2).strip()
+                        name = ch_name_regular(name)
+                        if cate not in chs_dict:
+                            chs_dict[cate] = OrderedDict()
+                            chs_dict[cate][name] = []
+                            ch_num += 1
+                        elif name not in chs_dict[cate]:
+                            chs_dict[cate][name] = []
+                            ch_num += 1
                 elif line.strip() and not line.startswith('#'):
                     url = line.strip()
                     if '$' in url:
