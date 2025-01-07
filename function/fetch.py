@@ -5,6 +5,7 @@ import os
 from collections import OrderedDict
 import requests
 from duplicate_removel import remove_dump_name
+from config import mirror_url
 from rename import ch_name_regular
 import logging
 
@@ -60,6 +61,8 @@ def fetch_chs(source_urls_lst):
     total_url_num = 0
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
+            if 'github' in source_url:
+                source_url = mirror_url[3] + source_url
             try:
                 resp = requests.get(source_url, headers=header, timeout=4)
                 resp.raise_for_status()

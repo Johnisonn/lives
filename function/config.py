@@ -17,7 +17,7 @@ mirror_url = [
 ]
 #直播源地址列表
 source_urls = [
-    "https://github.moeyy.xyz/https://github.com/Johnisonn/tvbox/raw/main/Garter/BOBOlive.txt",
+    "https://github.moeyy.xyz/https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
 
     # "https://live.fanmingming.cn/tv/m3u/ipv6.m3u",  # 范明明
     "https://github.site/fanmingming/live/raw/main/tv/m3u/ipv6.m3u",
