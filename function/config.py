@@ -16,31 +16,9 @@ mirror_url = [
 
 ]
 
-source_urls_TEST = [
-                       #  '/home/uos/Desktop/live/0.txt',
-                       # '/home/uos/Desktop/live/666.txt',
-                       # '/home/uos/Desktop/live/cqitv.txt',
-                       #  '/home/uos/Desktop/live/junyu.txt',
-                       #  '/home/uos/Desktop/live/kimwang1978.txt',
-                       #  '/home/uos/Desktop/live/kv.txt',
-                       #  '/home/uos/Desktop/live/qingwen07.txt',
-                       # '/home/uos/Desktop/live/rihou.nzk',
-#                        '/home/uos/Desktop/live/ssili126.txt',
-#                         '/home/uos/Desktop/live/vbskycn.txt',
-#                         '/home/uos/Desktop/live/weidongdong.txt',
-#                         '/home/uos/Desktop/live/xhztv.txt',
-#                         '/home/uos/Desktop/live/zhoujie.txt',
-#                         '/home/uos/Desktop/live/喵TV.txt',
-#                         '/home/uos/Desktop/live/guovin.m3u',
-#                         '/home/uos/Desktop/live/meoxin.m3u',
-#                         '/home/uos/Desktop/live/yangg1989.m3u',
-#                         '/home/uos/Desktop/live/yuanzl77.m3u',
-#                         '/home/uos/Desktop/live/YueChan_IPTV.m3u',
-#                         '/home/uos/Desktop/live/范明明.m3u',
-]
 
 source_urls = [
-    'https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt',
+
 
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
@@ -56,6 +34,7 @@ source_urls = [
     "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
     "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
 
+    'https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt',
 
 ]
 

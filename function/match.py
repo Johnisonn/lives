@@ -2,28 +2,23 @@
 
 from collections import OrderedDict
 from config import is_match_local_chs
-from fetch import needed_chs
-import logging
-import os
+from fetch import readin_required_chs
 from name_dict import local_lst
-
-current_path = os.path.dirname(os.path.abspath(__file__))
-parent_path = os.path.abspath(os.path.join(current_path, '..'))
-
-logging.basicConfig(
-    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
-    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
-    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='a'), logging.StreamHandler()])
+import logging
 logger = logging.getLogger(__name__)
 
+
 def match_chs(chs_dict): # 将获取到的直播源字典传参
-    n_chs_dict = needed_chs() # 从模板导入所需频道
+    r_chs_dict = readin_required_chs() # 导入所需频道
     matched_chs_dict = OrderedDict()
-    chs_num = 0
-    urls_num = 0
-    logger.info('=' * 90)
-    logger.info('开始匹配模板频道...')
-    for cate_n, names_n in n_chs_dict.items():
+    chs_count = 0
+    urls_count = 0
+
+    logger.info(' ')
+    logger.info('-' * 43 + '开始匹配模板频道' + '-' * 43)
+    logger.info(' ')
+
+    for cate_n, names_n in r_chs_dict.items():
         if cate_n not in matched_chs_dict:
             matched_chs_dict[cate_n] = OrderedDict()
         for name_n in names_n:
@@ -34,18 +29,17 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                         if name_n not in matched_chs_dict[cate_n]:
                             matched_chs_dict[cate_n][name_n] = []
                             # logger.info(f'已匹配到【{name_n}】')
-                            chs_num += 1
+                            chs_count += 1
                             matched_chs_dict[cate_n][name_n].extend(urls_f)
-                            urls_num += n
+                            urls_count += n
                         else:
                             matched_chs_dict[cate_n][name_n].extend(urls_f)
-                            urls_num += n
-    local_chs_num = 0
-    local_urls_num = 0
-    if is_match_local_chs:  # 获取指定的地方台
+                            urls_count += n
+    local_chs_count = 0
+    local_urls_count = 0
+    if is_match_local_chs:  # 获取地方台
         new_cate = '★地方频道★'
-        logger.info('-' * 90)
-        logger.info('开始查询地方频道...')
+        logger.info('>' * 15 + '开始查询地方频道' + '<' * 15)
         for cate_f, vls_f in chs_dict.items():
             for name_f, urls_f in vls_f.items():
                 n = len(urls_f)
@@ -58,14 +52,13 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                             matched_chs_dict[new_cate][local_name] = []
                             # logger.info('-' * 60)
                             logger.info(f'查询到【{local_name}】-已归集到【地方频道】！')
-                            local_chs_num += 1
+                            local_chs_count += 1
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
-                            local_urls_num += n
+                            local_urls_count += n
                         else:
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
-                            local_urls_num += n
-    logger.info('-' * 90)
-    logger.info(f'匹配到地方频道 {local_chs_num} 个、url直播地址 {local_urls_num} 个！')
-    logger.info(f'共匹配到模板给定频道(含匹配的地方频道) {chs_num + local_chs_num} 个、url直播地址 {urls_num + local_urls_num} 个！')
+                            local_urls_count += n
+    logger.info('>' * 33 + f'匹配到地方频道 {local_chs_count} 个、url直播地址 {local_urls_count} 个' + '<' * 33)
+    logger.info('>' * 20 + f'共匹配到模板给定频道(含匹配的地方频道) {chs_count + local_chs_count} 个、url直播地址 {urls_count + local_urls_count} 个' + '<' * 20)
     return matched_chs_dict
 

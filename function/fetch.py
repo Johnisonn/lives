@@ -2,38 +2,42 @@
 
 import re
 import os
-from collections import OrderedDict
 import requests
+import logging
+from collections import OrderedDict
 from duplicate_removel import remove_dump_name
 from config import mirror_url
 from rename import ch_name_regular
-import logging
+
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 parent_path = os.path.abspath(os.path.join(current_path, '..'))
-
-logging.basicConfig(
-    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
-    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
-    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='w'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 
-def needed_chs():
+def readin_required_chs():
 # 从模板文件中读入所需要频道分类和频道名称
-    need_chs_dict = OrderedDict()
-    with open('function/template.txt', 'r', encoding='utf-8') as f: #这里的文件路径，github action工作环境与本地不一样，根据情况修改
+    required_chs_dict = OrderedDict()
+
+    logger.info(' ')
+    logger.info('-' * 43 + '开始读入模板信息' + '-' * 43)
+    logger.info(' ')
+
+    with open(f'{current_path}/template.txt', 'r', encoding='utf-8') as f:
+        chs_count = 0
         for line in f:
             line = line.strip()
             if '#genre#' in line:
                 ch_cate = line.split(',')[0]
-                if ch_cate not in need_chs_dict:
-                    need_chs_dict[ch_cate] = []
+                if ch_cate not in required_chs_dict:
+                    required_chs_dict[ch_cate] = []
             elif line:
                 line = line.split(',')[0]
-                if line not in need_chs_dict[ch_cate]:
-                    need_chs_dict[ch_cate].append(line)
-    return need_chs_dict
+                if line not in required_chs_dict[ch_cate]:
+                    required_chs_dict[ch_cate].append(line)
+                    chs_count += 1
+    logger.info('>' * 34 + f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个' + '<' * 34)
+    return required_chs_dict
 
 def fetch_chs_name(source_urls_lst):
 # 获取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
@@ -59,7 +63,10 @@ def fetch_chs(source_urls_lst):
     header = {'User-Agent': 'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36'}
     total_ch_num = 0
     total_url_num = 0
-    logger.info('=' * 90)
+
+    logger.info('-' * 43 + '开始获取频道资源' + '-' *43)
+    logger.info(' ')
+
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
             if 'github' in source_url:
@@ -142,13 +149,12 @@ def fetch_chs(source_urls_lst):
             total_ch_num += ch_num
             total_url_num += url_num
         logger.info(f'从<{source_url}>获取频道 {ch_num} 个(类内同名已去重)，获取url地址 {url_num} 个(未去重)！')
-
-    # logger.info('-'*25 + f'获取到的频道列表' + '-'*25) # 以处内容为保存获取到的频道列表名单到日志
+    # 以处内容为保存获取到的频道列表名单到日志
+    # logger.info('-'*25 + f'获取到的频道列表' + '-'*25)
     # for k, v in chs_dict.items():
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
-    logger.info('-' * 90)
-    logger.info(f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个！')
+    logger.info('>' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个' + '<' * 25)
     return chs_dict
 
 
@@ -176,5 +182,5 @@ if __name__ == '__main__':
                         '/home/uos/Desktop/live/范明明.m3u',
 
     ]
-    fetch_chs_name(source_urls_lst)
+    # fetch_chs_name(source_urls_lst)
 

@@ -1,22 +1,14 @@
 ## 响应检测，为匹配后的urls地址列表加入响应时间并排序
-import re
-import time
-import urllib.request #这里使用urllib模块代替requests模块，有些直播源用requests模块get请求会无反应，且不抛出异常（浏览器可返回状态200）
+
 from collections import OrderedDict
 from config import v6_or_v4
 from tqdm import tqdm
+import re
+import time
+import urllib.request #这里使用urllib模块代替requests模块，有些直播源用requests模块get请求会无反应，且不抛出异常（浏览器可返回状态200）
 import multiprocessing
 import concurrent.futures
 import logging
-import os
-
-current_path = os.path.dirname(os.path.abspath(__file__))
-parent_path = os.path.abspath(os.path.join(current_path, '..'))
-
-logging.basicConfig(
-    level=logging.INFO, datefmt='%Y-%m_%d %H:%M:%S %p',
-    format='%(asctime)s-%(levelname)s-%(name)s-%(message)s',
-    handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='a'), logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 
@@ -33,15 +25,18 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
     # 线程池操作函数，传入元组（url, cate, name），返回元组（url, cate, name, resp_time）
         try:
             s_time = time.time()
-            resp = urllib.request.urlopen(url_tuple[0],timeout=5)
+            resp = urllib.request.urlopen(url_tuple[0], timeout=5)
             e_time = time.time()
             resp_time = round((e_time - s_time)*1000, 2) # 单位为毫秒，保留2位小数
         except Exception:
             resp_time = 10000
         return (url_tuple[0],url_tuple[1],url_tuple[2], resp_time)
 
-    logger.info('-'*60)
-    logger.info('多线程响应检测开始！')
+    logger.info(' ')
+    logger.info('-' * 43 + '多线程响应检测开始' + '-' * 43)
+    logger.info(' ')
+
+
     start_time = time.time()
     core_count = multiprocessing.cpu_count() # 获取CPU核心数
     logger.info(f'core_count: -{core_count}')
@@ -104,8 +99,11 @@ def sorted_by_iptype(chs_dict):
     sorted_chs_dict = OrderedDict()
     v6_count = 0
     v4_count = 0
-    logger.info('=' * 85)
-    logger.info('开始按照地址类型排序...')
+
+    logger.info(' ')
+    logger.info('-' * 42 + '开始按地址类型排序' + '-' * 42)
+    logger.info(' ')
+
     for cate, vls in chs_dict.items():
         sorted_chs_dict[cate] = OrderedDict()
         for name, urls in vls.items():
@@ -116,12 +114,12 @@ def sorted_by_iptype(chs_dict):
             idx_v4 = 1
             for url in urls:
                 if is_v6(url):
-                    url = f'{url}$v6线路{idx_v6}'
+                    url = f'{url}$线路{idx_v6}[v6]'
                     idx_v6 += 1
                     urls_v6.append(url)
                     v6_count += 1
                 else:
-                    url = f'{url}$v4线路{idx_v4}'
+                    url = f'{url}$线路{idx_v4}[v4]'
                     idx_v4 += 1
                     urls_v4.append(url)
                     v4_count += 1
@@ -131,15 +129,14 @@ def sorted_by_iptype(chs_dict):
             else:
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
-    logger.info('-' * 85)
-    logger.info(f'已按照 IPV{v6_or_v4} 地址优先完成排序！')
-    logger.info(f'共有 {v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个！')
+    logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
+    logger.info('>' * 20 + f'共有 {v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个' + '<' * 20)
     return sorted_chs_dict
 
 
 
 
-##  以下两个函数为单线程测试，已弃用
+##  以下两个函数为单线程检测，已弃用
 def test_resp(url):
 # 对单个url地址测试响应时间，返回带响应时间的url元组(url,t),因加入线程池写法，此函数弃用
     try:
