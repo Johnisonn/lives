@@ -113,7 +113,10 @@ def fetch_chs(source_urls_lst):
                             url_num += n
                         continue
                     if '$' in url:
-                        url = url.split('$')[0]
+                        if '$RSV' in url:
+                            pass
+                        else:
+                            url = url.split('$')[0]
                     if name not in chs_dict[cate]:
                         chs_dict[cate][name] = []
                         ch_num += 1

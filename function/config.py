@@ -20,21 +20,21 @@ mirror_url = [
 source_urls = [
 
 
-    'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
-    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
-    'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
-    'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
-    'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
-    "http://rihou.cc:567/gggg.nzk",  # 日后线路
-    "http://meowtv.top/zb", # 喵TV
+    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
+    # "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+    # 'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
+    # "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
+    # 'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
+    # 'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
+    # "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
+    # 'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
+    # 'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
+    # "http://rihou.cc:567/gggg.nzk",  # 日后线路
+    # "http://meowtv.top/zb", # 喵TV
     "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
-    "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
-
-    'https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt',
+    # "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
+    #
+    'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 ]
 
