@@ -33,7 +33,8 @@ source_urls = [
     "http://meowtv.top/zb", # 喵TV
     "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
     "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
-
+    'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
+    'http://211.101.234.24:866/aishang.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 ]
@@ -43,6 +44,8 @@ source_urls = [
 selected_source_urls = [
     "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
 
+    'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
+    'http://211.101.234.24:866/aishang.txt', # 爱尚直播，同 http://211.101.234.24:866/qiyu.php?url=a
 
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u',
@@ -123,6 +126,15 @@ selected_source_urls = [
 
 # 对网段地址设置黑名单，待开发...
 black_list = []
+
+white_list = [
+    'cdn5.1678520.xyz',
+    'php.666230.xyz',
+    'rihou.cc:555',
+
+
+
+]
 
 epg_urls = [
     "https://live.fanmingming.com/e.xml",

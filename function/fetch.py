@@ -113,7 +113,7 @@ def fetch_chs(source_urls_lst):
                             url_num += n
                         continue
                     if '$' in url:
-                        if '$RSV' in url:
+                        if '$RSV' in url: # 对保留频道进行后续处理
                             pass
                         else:
                             url = url.split('$')[0]

@@ -32,5 +32,5 @@ if __name__ == '__main__':
 
 ##  ---------获取各源中的频道名称-------------
 
-    # chs_names = fetch_chs_name(['https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u'])
+    # chs_names = fetch_chs_name(['/home/uos/Desktop/rsv.txt'])
     # save_names_as_txt(chs_names,'all_names')

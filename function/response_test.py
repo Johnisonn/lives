@@ -1,8 +1,6 @@
 ## 响应检测，为匹配后的urls地址列表加入响应时间并排序
 
 from collections import OrderedDict
-from os.path import split
-
 from config import v6_or_v4
 from tqdm import tqdm
 import re
