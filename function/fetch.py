@@ -70,7 +70,7 @@ def fetch_chs(source_urls_lst):
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
             if 'github' in source_url:
-                source_url = mirror_url[3] + source_url
+                source_url = mirror_url[1] + source_url
             try:
                 resp = requests.get(source_url, headers=header, timeout=4)
                 resp.raise_for_status()

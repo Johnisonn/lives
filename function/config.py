@@ -19,8 +19,6 @@ mirror_url = [
 
 source_urls = [
 
-    'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
-
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
@@ -36,6 +34,8 @@ source_urls = [
     "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
     'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
     'http://211.101.234.24:866/aishang.txt',
+
+    'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 
 ]
