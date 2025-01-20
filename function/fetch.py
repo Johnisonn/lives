@@ -6,7 +6,7 @@ import requests
 import logging
 from collections import OrderedDict
 from duplicate_removel import remove_dump_name
-from config import mirror_url
+from config import mirror
 from rename import ch_name_regular
 
 
@@ -70,7 +70,7 @@ def fetch_chs(source_urls_lst):
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
             if 'github' in source_url:
-                source_url = mirror_url[1] + source_url
+                source_url = mirror + source_url
             try:
                 resp = requests.get(source_url, headers=header, timeout=4)
                 resp.raise_for_status()
@@ -113,10 +113,7 @@ def fetch_chs(source_urls_lst):
                             url_num += n
                         continue
                     if '$' in url:
-                        if '$RSV' in url: # 对保留频道进行后续处理
-                            pass
-                        else:
-                            url = url.split('$')[0]
+                        url = url.split('$')[0]
                     if name not in chs_dict[cate]:
                         chs_dict[cate][name] = []
                         ch_num += 1

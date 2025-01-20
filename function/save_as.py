@@ -1,7 +1,7 @@
 ## 对给定的频道字典进行保存
 
 from datetime import datetime
-from config import head_info
+from config import head_info, mirror
 from rename import tvg_name_regular
 from response_test import is_v6
 import logging
@@ -77,7 +77,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
         path_name = f'{parent_path}/{str(file_name)}{v}.m3u'
         with open(path_name, 'w', encoding='utf-8') as f:
             f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n') #此处可加入多个EPG地址
-            f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="https://live.fanmingming.com/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
+            f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
             f.write(f'{head_info['url']}\n')
             for w_cate, w_vls in chs_dict.items():
                 if w_cate not in all_cate:
@@ -86,7 +86,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
                     tvg_name = tvg_name_regular(w_name) if 'CETV' in w_name or 'CCTV' in w_name else w_name
                     for w_url in w_urls:
                         if is_v6(w_url) if iptype_filter == 6 else not is_v6(w_url):
-                            f.write(f'''#EXTINF:-1 tvg-id="{tvg_name}" tvg-name="{tvg_name}" tvg-logo="https://live.fanmingming.com/tv/{tvg_name}.png" group-title="{w_cate}",{w_name}\n''')
+                            f.write(f'''#EXTINF:-1 tvg-id="{tvg_name}" tvg-name="{tvg_name}" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/{tvg_name}.png" group-title="{w_cate}",{w_name}\n''')
                             all_chs.add(w_name)
                             f.write(f'{w_url}\n')
                             urls_num += 1
@@ -94,7 +94,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
         path_name = f'{parent_path}/{str(file_name)}.m3u'
         with open(path_name, 'w', encoding='utf-8') as f:
             f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n') #此处可加入多个EPG地址
-            f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="https://live.fanmingming.com/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
+            f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
             f.write(f'{head_info['url']}\n')
             for w_cate, w_vls in chs_dict.items():
                 if w_cate not in all_cate:
@@ -102,7 +102,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
                 for w_name, w_urls in w_vls.items():
                     tvg_name = tvg_name_regular(w_name) if 'CETV' in w_name or 'CCTV' in w_name else w_name
                     for w_url in w_urls:
-                        f.write(f'''#EXTINF:-1 tvg-id="{tvg_name}" tvg-name="{tvg_name}" tvg-logo="https://live.fanmingming.com/tv/{tvg_name}.png" group-title="{w_cate}",{w_name}\n''')
+                        f.write(f'''#EXTINF:-1 tvg-id="{tvg_name}" tvg-name="{tvg_name}" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/{tvg_name}.png" group-title="{w_cate}",{w_name}\n''')
                         all_chs.add(w_name)
                         f.write(f'{w_url}\n')
                         urls_num += 1

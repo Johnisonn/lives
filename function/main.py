@@ -15,7 +15,8 @@ logging.basicConfig(
     format='%(asctime)s ==> |  %(message)s',
     handlers=[logging.FileHandler(filename=f'{parent_path}/project.log', mode='w'), logging.StreamHandler()])
 
-if __name__ == '__main__':
+
+def main():
     chs = fetch_chs(source_urls)
     if is_dump_remove:
         chs = remove_dump_urls(chs)
@@ -27,6 +28,10 @@ if __name__ == '__main__':
         chs = sorted_by_iptype(chs)
     save_chs_as_txt(chs,)
     save_chs_as_m3u(chs)
+
+
+if __name__ == '__main__':
+    main()
 
 
 

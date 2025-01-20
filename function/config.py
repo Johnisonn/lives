@@ -7,15 +7,34 @@ response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
 v6_or_v4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 
-mirror_url = [
+mirror_url_lst = [
     'https://ghproxy.cn/',
     'https://ghproxy.cc/',
     'https://hub.gitmirror.com/',
     'https://github.moeyy.xyz/',
-    'https://ghgo.xyz',
+    'https://ghgo.xyz/',
 
 ]
+mirror = mirror_url_lst[1]
 
+white_lst = [
+    'cdn5.1678520.xyz',
+    'rihou.cc',
+    'z.b.bkpcp.top',
+    'freetv.top/migu/',
+    '146.235.213.45',
+    '106.53.99.30',
+    '220.170.241.204',
+    '222.169.85.8',
+    '221.233.192.152',
+    '60.11.200.120',
+    '61.173.144.157',
+    'tvpull.careryun.com',
+    '221.2.148.205',
+    'nn.7x9d.cn',
+
+
+]
 
 source_urls = [
 
@@ -26,19 +45,23 @@ source_urls = [
     'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
     'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
     "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
     "http://rihou.cc:567/gggg.nzk",  # 日后线路
     "http://meowtv.top/zb", # 喵TV
     "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
     "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
     'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
     'http://211.101.234.24:866/aishang.txt',
+    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
+    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
+    'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
+    'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
+
 
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 
 ]
+
 
 
 #直播源地址列表
@@ -130,14 +153,7 @@ selected_source_urls = [
 # 对网段地址设置黑名单，待开发...
 black_list = []
 
-white_list = [
-    'cdn5.1678520.xyz',
-    'php.666230.xyz',
-    'rihou.cc:555',
 
-
-
-]
 
 epg_urls = [
     "https://live.fanmingming.com/e.xml",

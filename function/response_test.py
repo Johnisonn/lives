@@ -1,7 +1,7 @@
 ## 响应检测，为匹配后的urls地址列表加入响应时间并排序
 
 from collections import OrderedDict
-from config import v6_or_v4
+from config import v6_or_v4, white_lst
 from tqdm import tqdm
 import re
 import time
@@ -9,6 +9,9 @@ import urllib.request #这里使用urllib模块代替requests模块，有些直�
 import multiprocessing
 import concurrent.futures
 import logging
+
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -97,6 +100,7 @@ def sorted_by_response(urls_tuple_lst):
 
 def sorted_by_iptype(chs_dict):
     sorted_chs_dict = OrderedDict()
+    white_count = 0
     v6_count = 0
     v4_count = 0
 
@@ -108,49 +112,39 @@ def sorted_by_iptype(chs_dict):
         sorted_chs_dict[cate] = OrderedDict()
         for name, urls in vls.items():
             sorted_chs_dict[cate][name] = []
+            white_lst_urls = []
             urls_v6 = []
             urls_v4 = []
-            reserve_v6 = []
-            reserve_v4 = []
+            idx_wt = 1
             idx_v6 = 1
             idx_v4 = 1
-            rsv_v6 = 1
-            rsv_v4 = 1
             for url in urls:
+                for ip in white_lst:
+                    if ip in url:
+                        url = f'{url}$L{idx_wt}[W]'
+                        idx_wt += 1
+                        white_lst_urls.append(url)
+                        white_count += 1
+                        break
                 if is_v6(url):
-                    if '$RSV' in url:
-                        url = f'{url}-{rsv_v6}[v6]'
-                        reserve_v6.append(url)
-                        rsv_v6 += 1
-                        v6_count += 1
-                    else:
-                        url = f'{url}$线路{idx_v6}[v6]'
-                        idx_v6 += 1
-                        urls_v6.append(url)
-                        v6_count += 1
+                    url = f'{url}$L{idx_v6}[v6]'
+                    idx_v6 += 1
+                    urls_v6.append(url)
+                    v6_count += 1
                 else:
-                    if '$RSV' in url:
-                        url = f'{url}-{rsv_v4}[v4]'
-                        reserve_v4.append(url)
-                        rsv_v4 += 1
-                        v4_count += 1
-                    else:
-                        url = f'{url}$线路{idx_v4}[v4]'
-                        idx_v4 += 1
-                        urls_v4.append(url)
-                        v4_count += 1
+                    url = f'{url}$L{idx_v4}[v4]'
+                    idx_v4 += 1
+                    urls_v4.append(url)
+                    v4_count += 1
+            sorted_chs_dict[cate][name].extend(white_lst_urls)
             if v6_or_v4 == 6:
-                sorted_chs_dict[cate][name].extend(reserve_v6)
-                sorted_chs_dict[cate][name].extend(reserve_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
                 sorted_chs_dict[cate][name].extend(urls_v4)
             else:
-                sorted_chs_dict[cate][name].extend(reserve_v4)
-                sorted_chs_dict[cate][name].extend(reserve_v6)
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
     logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
-    logger.info('>' * 20 + f'共有 {v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个' + '<' * 20)
+    logger.info('>' * 15 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、保留地址 {white_count} 个' + '<' * 15)
     return sorted_chs_dict
 
 
