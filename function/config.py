@@ -4,7 +4,7 @@ is_match_template = 1 # 是否匹配模板给定频道
 is_response_test = 0  # 是否对直播地址测试响应时间
 is_dump_remove = 1 # 是否对采集到的地址进行去重
 response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
-v6_or_v4 = 6  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
+v6_or_v4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 
 mirror_url = [
@@ -44,6 +44,8 @@ source_urls = [
 #直播源地址列表
 selected_source_urls = [
     "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
+
+    'https://iptv.b2og.com/txt/fmml_ipv6.txt',
 
     'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
     'http://211.101.234.24:866/aishang.txt', # 爱尚直播，同 http://211.101.234.24:866/qiyu.php?url=a
