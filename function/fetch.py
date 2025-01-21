@@ -6,7 +6,7 @@ import requests
 import logging
 from collections import OrderedDict
 from duplicate_removel import remove_dump_name
-from config import mirror
+from config import mirror_url_lst
 from rename import ch_name_regular
 
 
@@ -67,10 +67,17 @@ def fetch_chs(source_urls_lst):
     logger.info('-' * 43 + '开始获取频道资源' + '-' *43)
     logger.info(' ')
 
+    for proxy in mirror_url_lst:
+        u = f'{proxy}https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u'
+        r = requests.get(u, headers=header, timeout=4)
+        if 200 <= r.status_code < 300:
+            break
+
+
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源地址
             if 'github' in source_url:
-                source_url = mirror + source_url
+                source_url = proxy + source_url
             try:
                 resp = requests.get(source_url, headers=header, timeout=4)
                 resp.raise_for_status()

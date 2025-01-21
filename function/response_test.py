@@ -10,8 +10,6 @@ import multiprocessing
 import concurrent.futures
 import logging
 
-
-
 logger = logging.getLogger(__name__)
 
 
@@ -86,7 +84,7 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
 
 def is_v6(url):
 # 判别IPV6地址
-    return re.search(r'\[[0-9a-zA-Z:]+\]',url) is not None
+    return re.search(r'\[[0-9a-fA-F:]+\]',url) is not None
 
 def sorted_by_response(urls_tuple_lst):
 #对传入的（url,t）列表按照响应时间进行排序，并按设定值确定IPV6/IPV4优先序
@@ -121,21 +119,22 @@ def sorted_by_iptype(chs_dict):
             for url in urls:
                 for ip in white_lst:
                     if ip in url:
-                        url = f'{url}$L_{idx_wt}_[W]'
+                        url = f'{url}$L_{idx_wt}_[★]'
                         idx_wt += 1
                         white_lst_urls.append(url)
                         white_count += 1
                         break
-                if is_v6(url):
-                    url = f'{url}$L_{idx_v6}_[v6]'
-                    idx_v6 += 1
-                    urls_v6.append(url)
-                    v6_count += 1
                 else:
-                    url = f'{url}$L_{idx_v4}_[v4]'
-                    idx_v4 += 1
-                    urls_v4.append(url)
-                    v4_count += 1
+                    if is_v6(url):
+                        url = f'{url}$L_{idx_v6}_[v6]'
+                        idx_v6 += 1
+                        urls_v6.append(url)
+                        v6_count += 1
+                    else:
+                        url = f'{url}$L_{idx_v4}_[v4]'
+                        idx_v4 += 1
+                        urls_v4.append(url)
+                        v4_count += 1
             sorted_chs_dict[cate][name].extend(white_lst_urls)
             if v6_or_v4 == 6:
                 sorted_chs_dict[cate][name].extend(urls_v6)
@@ -180,5 +179,4 @@ def test_resp_single_thread(chs_dict, resp_threshold=None):
     t2 = time.time()
     print(f'响应检测完成，总耗时{round((t2 - t1) / 60, 2)}分钟，阈值为{resp_threshold}ms！')
     return chs_t_dict
-
 

@@ -10,9 +10,13 @@ is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 mirror_url_lst = [
     'https://ghproxy.cn/',
     'https://ghproxy.cc/',
-    'https://hub.gitmirror.com/',
+    # 'https://hub.gitmirror.com/',
     'https://github.moeyy.xyz/',
     'https://ghgo.xyz/',
+    'https://ghfast.top/',
+    'https://gh.ddlc.top/',
+    'https://ghproxy.net/',
+    'https://gh.api.99988866.xyz/',
 
 ]
 mirror = mirror_url_lst[1]
@@ -21,6 +25,9 @@ white_lst = [
     'cdn5.1678520.xyz',
     'rihou.cc',
     'z.b.bkpcp.top',
+    '123.182.60.29',
+    '36.32.174.67',
+    '111.61.236.247',
     'freetv.top/migu/',
     '146.235.213.45',
     '106.53.99.30',
