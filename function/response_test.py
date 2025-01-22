@@ -143,7 +143,7 @@ def sorted_by_iptype(chs_dict):
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
     logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
-    logger.info('>' * 15 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、保留地址 {white_count} 个' + '<' * 15)
+    logger.info('>' * 13 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、保留地址 {white_count} 个' + '<' * 13)
     return sorted_chs_dict
 
 

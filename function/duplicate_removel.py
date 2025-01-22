@@ -8,7 +8,7 @@ def remove_dump_urls(chs_dict):
     to_remove = []
 
     logger.info(' ')
-    logger.info('-' * 43 + '开始对url地址去重' + '-' * 43)
+    logger.info('-' * 42 + '开始对url地址去重' + '-' * 42)
     logger.info(' ')
 
     for cate, vls in chs_dict.items():
@@ -33,8 +33,8 @@ def remove_dump_urls(chs_dict):
     ch_count = 0
     for cate, vls in chs_dict.items():
         ch_count += len(vls.keys())
-    logger.info('>' * 29 + f'共去除重复频道 {dump_chs_count} 个，去除重复url地址 {dump_urls_count} 个' + '<' * 29)
-    logger.info('>' * 30 + f'去重后剩余频道 {ch_count} 个，剩余url地址 {len(urls_set)} 个' + '<' * 30)
+    logger.info('>' * 27 + f'共去除重复频道 {dump_chs_count} 个，去除重复url地址 {dump_urls_count} 个' + '<' * 27)
+    logger.info('>' * 29 + f'去重后剩余频道 {ch_count} 个，剩余url地址 {len(urls_set)} 个' + '<' * 29)
     return chs_dict
 
 def remove_dump_name(names_dict):
