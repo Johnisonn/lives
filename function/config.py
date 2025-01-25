@@ -22,29 +22,52 @@ mirror_url_lst = [
 mirror = mirror_url_lst[1]
 
 white_lst = [
+
+    'otttv.bj.chinamobile.com',
+    'z.b.bkpcp.top',
+    'terrykang.xyz',
+    '61.173.144.157',
+    '222.169.85.8',
+    '113.57.111.4',
+    '220.170.241.204',
+    'tvpull.careryun.com',
+    '58.19.38.162'
+    '106.53.99.30',
+    '150.158.112.123', #migu
+    '202.100.46.58',
+    '1.itv.nctv.top',
+    '183.66.15.146',
+    '112.123.206.32',
+    '116.9.204.242',
+    '219.145.93.74',
+    '111.9.163.109',
+    '218.3.138.25',
+    '183.66.15.146',
+    '119.32.12.32',
+    '2000.run',
+    'qqkkk.fun',
+    'dsm.huarunguoji.top',
+    '124.128.73.58',
+    '220.173.254.6',
+    '113.65.162.226',
+
+
+
     'cdn5.1678520.xyz',
-    'freetv.top/migu/',
+    # 'freetv.top/migu/',
     'nn.7x9d.cn',
     'rihou.cc',
-    'z.b.bkpcp.top',
-    'otttv.bj.chinamobile.com',
-    'tvpull.careryun.com',
     '3501776.xyz',
     '36.32.174.67',
     '60.11.200.120',
-    '61.173.144.157',
-    '106.53.99.30',
     '111.61.236.247',
-    '113.57.111.4',
     '123.182.60.29',
     '146.235.213.45',
     '148.135.93.213',
     '175.10.230.91',
-    '220.170.241.204',
-    '221.2.148.205',
+    # '221.2.148.205',
     '221.233.192.152',
-    '222.169.85.8',
-    '223.241.247.214',
+    '223.241.247.214', #不太稳定
 
 
 ]
@@ -52,6 +75,7 @@ white_lst = [
 source_urls = [
 
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
+    'https://live.kilvn.com/iptv.m3u',
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多

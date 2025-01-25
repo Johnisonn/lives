@@ -119,19 +119,19 @@ def sorted_by_iptype(chs_dict):
             for url in urls:
                 for ip in white_lst:
                     if ip in url:
-                        url = f'{url}$L_{idx_wt}_[★]'
+                        url = f'{url}$A_{idx_wt}_[★]'
                         idx_wt += 1
                         white_lst_urls.append(url)
                         white_count += 1
                         break
                 else:
                     if is_v6(url):
-                        url = f'{url}$L_{idx_v6}_[v6]'
+                        url = f'{url}$C_{idx_v6}_[v6]'
                         idx_v6 += 1
                         urls_v6.append(url)
                         v6_count += 1
                     else:
-                        url = f'{url}$L_{idx_v4}_[v4]'
+                        url = f'{url}$B_{idx_v4}_[v4]'
                         idx_v4 += 1
                         urls_v4.append(url)
                         v4_count += 1
