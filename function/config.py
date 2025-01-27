@@ -23,6 +23,7 @@ mirror = mirror_url_lst[1]
 
 white_lst = [
 
+    'cqshushu.u'
     'otttv.bj.chinamobile.com',
     'z.b.bkpcp.top',
     'terrykang.xyz',
