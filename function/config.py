@@ -74,6 +74,7 @@ white_lst = [
 
 source_urls = [
 
+    'http://cqitv.fh4u.org/iptv/jiangsu.txt',
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
     'https://live.kilvn.com/iptv.m3u',
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
