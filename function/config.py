@@ -25,12 +25,12 @@ white_lst = [
 
     '148.135.93.213', # 咪咕源
     'z.b.bkpcp.top', # 咪咕源
-    'dsm.huarunguoji.top',
-    '116.9.204.242',
-    'terrykang.xyz',
+  #  'dsm.huarunguoji.top',
+  #  '116.9.204.242',
+   # 'terrykang.xyz',
     'tvpull.careryun.com',
     'freetv.top/migu/',
-    '150.158.112.123', #migu
+  #  '150.158.112.123', #migu
 
 '''
 #    'otttv.bj.chinamobile.com',
