@@ -191,7 +191,7 @@ source_urls = [
     # "https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/douyuyqk.m3u", #斗鱼视频
     # "http://175.178.251.183:6689/aktvlive.txt", #可用，港澳外台
     # "https://raw.githubusercontent.com/cymz6/AutoIPTV-Hotel/main/lives.txt", #已弃，空分类
-    # "https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt", #仅一组
+    "https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt", #仅一组
 
 
 
