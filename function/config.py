@@ -81,7 +81,7 @@ white_lst = [
 
 ]
 
-source_urls = [
+source_urls_0 = [
 
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
@@ -112,7 +112,7 @@ source_urls = [
 
 
 #直播源地址列表
-selected_source_urls = [
+source_urls = [
     "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
 
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',
