@@ -32,6 +32,7 @@ white_lst = [
     'freetv.top/migu/',
   #  '150.158.112.123', #migu
      '110.53.52.63',
+     'ottrrs.hl.chinamobile',
 
 '''
 #    'otttv.bj.chinamobile.com',
@@ -86,6 +87,7 @@ source_urls_0 = [
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
    # 'https://live.kilvn.com/iptv.m3u',
+    'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
