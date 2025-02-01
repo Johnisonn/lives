@@ -31,6 +31,7 @@ white_lst = [
     'tvpull.careryun.com',
     'freetv.top/migu/',
   #  '150.158.112.123', #migu
+     '110.53.52.63',
 
 '''
 #    'otttv.bj.chinamobile.com',
