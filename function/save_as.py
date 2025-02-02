@@ -82,7 +82,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
         '''
         path_name = f'{parent_path}/{str(file_name)}.m3u'
         with open(path_name, 'w', encoding='utf-8') as f:
-            f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n') #此处可加入多个EPG地址
+            f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.cn/e.xml","http://epg.51zmt.top:8000/e.xml"\n') #此处可加入多个EPG地址
             f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
             f.write(f'{head_info['url']}\n')
             for w_cate, w_vls in chs_dict.items():
@@ -99,7 +99,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
     else:
         path_name = f'{parent_path}/{str(file_name)}.m3u'
         with open(path_name, 'w', encoding='utf-8') as f:
-            f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n') #此处可加入多个EPG地址
+            f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.cn/e.xml","http://epg.51zmt.top:8000/e.xml"\n') #此处可加入多个EPG地址
             f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')
             f.write(f'{head_info['url']}\n')
             for w_cate, w_vls in chs_dict.items():

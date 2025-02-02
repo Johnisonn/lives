@@ -19,56 +19,24 @@ mirror_url_lst = [
     'https://gh.api.99988866.xyz/',
 
 ]
-mirror = mirror_url_lst[1]
 
 white_lst = [
 
     '148.135.93.213', # 咪咕源
     'z.b.bkpcp.top', # 咪咕源
-    'tvpull.careryun.com',
+    '202.168.187.208', # 咪咕源
     'freetv.top/migu/',
+    'tvpull.careryun.com',
     '110.53.52.63',
-    'ottrrs.hl.chinamobile',
+    '183.255.10.90',
+    '123.182.60.29',
+    '58.17.48.228',
+    'gf.you123.fun',
+    '219.156.17.199', # 郑州联通
+    '123.129.70.178', # 山东联通
 
 '''
-    'otttv.bj.chinamobile.com',
-    'dsm.huarunguoji.top',
-    '116.9.204.242',
-    'terrykang.xyz',
-    '150.158.112.123', #migu
-    '61.173.144.157',
-    '222.169.85.8',
-    '113.57.111.4',
-    '220.170.241.204',
-    '58.19.38.162'
-    '106.53.99.30',
-    '202.100.46.58',
-    '1.itv.nctv.top',
-    '183.66.15.146',
-    '112.123.206.32',
-    '219.145.93.74',
-    '111.9.163.109',
-    '218.3.138.25',
-    '183.66.15.146',
-    '119.32.12.32',
-    '2000.run',
-    'qqkkk.fun',
-    '124.128.73.58',
-    '220.173.254.6',
-    '113.65.162.226',
-    'cdn5.1678520.xyz',
-    'nn.7x9d.cn',
-    'rihou.cc',
-    '3501776.xyz',
-    '36.32.174.67',
-    '60.11.200.120',
-    '111.61.236.247',
-    '123.182.60.29',
-    '146.235.213.45',
-    '175.10.230.91',
-    '221.2.148.205',
-    '221.233.192.152',
-    '223.241.247.214', #不太稳定
+   
 '''
 
 ]
@@ -110,6 +78,8 @@ source_urls = [
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',
 
+    'https://gitee.com/zhang-station1/genius-film-and-television/raw/master/3658',
+    'http://8.138.7.223/live.txt',
     'http://cqitv.fh4u.org/iptv/jiangsu.txt',
     'https://live.kilvn.com/iptv.m3u',
 
@@ -170,7 +140,7 @@ source_urls = [
     'https://live.zbds.top/tv/iptv6.m3u',
     'http://175.178.251.183:6689/live.m3u',
     "http://meowtv.top/zb", # 喵TV
-    "https://live.zhoujie218.top/tv/iptv6.txt", #可用
+    # "https://live.zhoujie218.top/tv/iptv6.txt", #可用
     "https://live.zhoujie218.top/tv/iptv4.txt", #可用
     "https://tv.youdu.fan:666/live/", #可用，V4酒店源
     "http://home.jundie.top:81/Cat/tv/live.txt",  # 可用，俊佬线路
@@ -199,7 +169,7 @@ black_list = []
 
 
 epg_urls = [
-    "https://live.fanmingming.com/e.xml",
+    "https://live.fanmingming.cn/e.xml",
     "http://epg.51zmt.top:8000/e.xml",
     "http://epg.aptvapp.com/xml",
     "https://epg.pw/xmltv/epg_CN.xml",

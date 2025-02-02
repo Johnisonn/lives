@@ -117,10 +117,8 @@ def sorted_by_iptype(chs_dict):
             idx_v6 = 1
             idx_v4 = 1
             for url in urls:
-                for ip in white_lst:
+                for ip in white_lst: # 筛选出包含白名单的urls
                     if ip in url:
-                        # url = f'{url}$A_{idx_wt}_[★]'
-                        # idx_wt += 1
                         white_lst_urls.append(url)
                         white_count += 1
                         break
@@ -137,15 +135,12 @@ def sorted_by_iptype(chs_dict):
                         v4_count += 1
 
 #  对白名单urls按照白名单排序
-            white_dict = {}
-            for ip in white_lst:
-                white_dict[ip] = []
-
+            white_dict = {ip:[] for ip in white_lst} # 将白名单中的IP作为键、空列表[]作为值，写入字典，用于存放包含白名单的urls
+            # 遍历筛选出的urls，放入字典中对应的白名单下
             for url in white_lst_urls:
                 for ip in white_lst:
                     if ip in url:
                         white_dict[ip].append(url)
-
             sorted_urls = []
             for v in white_dict.values():
                 sorted_urls.extend(v)
@@ -165,7 +160,7 @@ def sorted_by_iptype(chs_dict):
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
     logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
-    logger.info('>' * 13 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、保留地址 {white_count} 个' + '<' * 13)
+    logger.info('>' * 12 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '<' * 12)
     return sorted_chs_dict
 
 
