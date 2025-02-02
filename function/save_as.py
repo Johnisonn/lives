@@ -23,11 +23,14 @@ def save_chs_as_txt(chs_dict, file_name='live', iptype_filter=None):
     logger.info(' ')
 
     if iptype_filter in (4,6):
+        '''此段内容为文件名添加后缀
         if iptype_filter == 4:
             v = '-v4'
         elif iptype_filter == 6:
             v = '-v6'
         path_name = f'{parent_path}/{str(file_name)}{v}.txt'
+        '''
+        path_name = f'{parent_path}/{str(file_name)}.txt'
         with open(path_name, 'w', encoding='utf-8') as f:
             f.write(f'{head_info['cate']},#genre#\n')
             f.write(f'{current_time},{head_info['url']}\n')
@@ -70,11 +73,14 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
     logger.info(' ')
 
     if iptype_filter in (4,6):
+        '''
         if iptype_filter == 4:
             v = '-v4'
         elif iptype_filter == 6:
             v = '-v6'
         path_name = f'{parent_path}/{str(file_name)}{v}.m3u'
+        '''
+        path_name = f'{parent_path}/{str(file_name)}.m3u'
         with open(path_name, 'w', encoding='utf-8') as f:
             f.write(f'#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n') #此处可加入多个EPG地址
             f.write(f'''#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="{mirror}https://raw.githubusercontent.com/fanmingming/live/main/tv/之江纪录.png" group-title="{head_info['cate']}",{current_time}\n''')

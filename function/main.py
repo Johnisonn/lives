@@ -26,8 +26,8 @@ def main():
         chs = test_resp_multi_thread(chs, response_time)
     else:
         chs = sorted_by_iptype(chs)
-    save_chs_as_txt(chs,)
-    save_chs_as_m3u(chs)
+    save_chs_as_txt(chs,iptype_filter=4)
+    save_chs_as_m3u(chs,iptype_filter=4)
 
 
 if __name__ == '__main__':

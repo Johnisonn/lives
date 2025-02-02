@@ -25,26 +25,23 @@ white_lst = [
 
     '148.135.93.213', # 咪咕源
     'z.b.bkpcp.top', # 咪咕源
-  #  'dsm.huarunguoji.top',
-  #  '116.9.204.242',
-   # 'terrykang.xyz',
     'tvpull.careryun.com',
     'freetv.top/migu/',
-  #  '150.158.112.123', #migu
-     '110.53.52.63',
-     'ottrrs.hl.chinamobile',
+    '110.53.52.63',
+    'ottrrs.hl.chinamobile',
 
 '''
-#    'otttv.bj.chinamobile.com',
-    
+    'otttv.bj.chinamobile.com',
+    'dsm.huarunguoji.top',
+    '116.9.204.242',
+    'terrykang.xyz',
+    '150.158.112.123', #migu
     '61.173.144.157',
     '222.169.85.8',
     '113.57.111.4',
     '220.170.241.204',
-    
     '58.19.38.162'
     '106.53.99.30',
-    
     '202.100.46.58',
     '1.itv.nctv.top',
     '183.66.15.146',
@@ -56,7 +53,6 @@ white_lst = [
     '119.32.12.32',
     '2000.run',
     'qqkkk.fun',
-    
     '124.128.73.58',
     '220.173.254.6',
     '113.65.162.226',

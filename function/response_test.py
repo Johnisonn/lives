@@ -119,8 +119,8 @@ def sorted_by_iptype(chs_dict):
             for url in urls:
                 for ip in white_lst:
                     if ip in url:
-                        url = f'{url}$A_{idx_wt}_[★]'
-                        idx_wt += 1
+                        # url = f'{url}$A_{idx_wt}_[★]'
+                        # idx_wt += 1
                         white_lst_urls.append(url)
                         white_count += 1
                         break
@@ -135,7 +135,29 @@ def sorted_by_iptype(chs_dict):
                         idx_v4 += 1
                         urls_v4.append(url)
                         v4_count += 1
-            sorted_chs_dict[cate][name].extend(white_lst_urls)
+
+#  对白名单urls按照白名单排序
+            white_dict = {}
+            for ip in white_lst:
+                white_dict[ip] = []
+
+            for url in white_lst_urls:
+                for ip in white_lst:
+                    if ip in url:
+                        white_dict[ip].append(url)
+
+            sorted_urls = []
+            for v in white_dict.values():
+                sorted_urls.extend(v)
+            new_sorted_urls = []
+            for v in sorted_urls:
+                v = f'{v}$A_{idx_wt}_[★]'
+                new_sorted_urls.append(v)
+                idx_wt += 1
+
+##################################################
+
+            sorted_chs_dict[cate][name].extend(new_sorted_urls)
             if v6_or_v4 == 6:
                 sorted_chs_dict[cate][name].extend(urls_v6)
                 sorted_chs_dict[cate][name].extend(urls_v4)
