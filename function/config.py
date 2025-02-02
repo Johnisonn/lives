@@ -19,7 +19,7 @@ mirror_url_lst = [
     'https://gh.api.99988866.xyz/',
 
 ]
-
+mirror = mirror_url_lst[0]
 white_lst = [
 
     '148.135.93.213', # 咪咕源
