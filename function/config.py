@@ -56,11 +56,7 @@ white_lst = [
     '124.128.73.58',
     '220.173.254.6',
     '113.65.162.226',
-
-
-
     'cdn5.1678520.xyz',
-    
     'nn.7x9d.cn',
     'rihou.cc',
     '3501776.xyz',
@@ -69,7 +65,6 @@ white_lst = [
     '111.61.236.247',
     '123.182.60.29',
     '146.235.213.45',
-
     '175.10.230.91',
     '221.2.148.205',
     '221.233.192.152',
@@ -111,9 +106,12 @@ source_urls_0 = [
 
 #直播源地址列表
 source_urls = [
-    "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
-
+    # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
+    'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',
+
+    'http://cqitv.fh4u.org/iptv/jiangsu.txt',
+    'https://live.kilvn.com/iptv.m3u',
 
     'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
     'http://211.101.234.24:866/aishang.txt', # 爱尚直播，同 http://211.101.234.24:866/qiyu.php?url=a
@@ -140,27 +138,27 @@ source_urls = [
     'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
 
 
-    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
-    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
+    # 'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
+    # 'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
 
     'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
     "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt", #每日更新，条目较多
 
 
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
-    'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
+    # 'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
+    # 'https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u',
 
 
     'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
     'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
     'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u',
-    'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u',
+    # 'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u',
 
     'https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u',
-    'https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u',
+    # 'https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u',
 
     'https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u',
-    'https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u',
+    # 'https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u',
     'https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt',
     'https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u',
     "https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
