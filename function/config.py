@@ -8,10 +8,10 @@ v6_or_v4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 
 mirror_url_lst = [
+    'https://github.moeyy.xyz/',
     'https://ghproxy.cn/',
     'https://ghproxy.cc/',
     # 'https://hub.gitmirror.com/',
-    'https://github.moeyy.xyz/',
     'https://ghgo.xyz/',
     'https://ghfast.top/',
     'https://gh.ddlc.top/',
@@ -25,7 +25,7 @@ white_lst = [
     '148.135.93.213', # 咪咕源
     'z.b.bkpcp.top', # 咪咕源
     '202.168.187.208', # 咪咕源
-    'freetv.top/migu/',
+    # 'freetv.top/migu/',
     'tvpull.careryun.com',
     '110.53.52.63',
     '183.255.10.90',
@@ -34,6 +34,7 @@ white_lst = [
     'gf.you123.fun',
     '219.156.17.199', # 郑州联通
     '123.129.70.178', # 山东联通
+    'nmmp.asia',
 
 '''
    
@@ -86,12 +87,14 @@ source_urls = [
     'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
     'http://211.101.234.24:866/aishang.txt', # 爱尚直播，同 http://211.101.234.24:866/qiyu.php?url=a
 
-    'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
-    'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u',
+    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
+    'https://cdn.jsdelivr.net/gh/fanmingming/live@main/tv/m3u/ipv6.m3u',
+    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u',
+    'https://cdn.jsdelivr.net/gh/fanmingming/live@main/tv/m3u/itv.m3u',
 
 
-    # "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u", #guovin 每日更新
-    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+    "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u", #guovin 每日更新
+    # "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
 
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt',
@@ -157,7 +160,7 @@ source_urls = [
     # "https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/douyuyqk.m3u", #斗鱼视频
     # "http://175.178.251.183:6689/aktvlive.txt", #可用，港澳外台
     # "https://raw.githubusercontent.com/cymz6/AutoIPTV-Hotel/main/lives.txt", #已弃，空分类
-    "https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt", #仅一组
+    # "https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt", #仅一组
 
 
 
