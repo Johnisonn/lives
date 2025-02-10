@@ -40,6 +40,12 @@ def filter_stable_live_sources(live_sources):
     sys.stdout.write("\n")
     return stable_domains
 
+
+
+
+
+
+
 resp = requests.get('https://github.moeyy.xyz/https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt')
 resp.encoding = 'utf-8'
 lines = resp.text.split('\n')
