@@ -1,9 +1,13 @@
-from config import response_time, is_response_test, source_urls, is_dump_remove, is_match_template
+import asyncio
+from config import source_urls, is_dump_remove, is_match_template, white_lst, is_stability_test, \
+    source_urls_0
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
+from filter import filter_by_iptype, filter_by_names
+from stability_check import process_urls
 from match import match_chs
-from response_test import test_resp_multi_thread, sorted_by_iptype
-from save_as import save_chs_as_txt, save_chs_as_m3u, save_names_as_txt
+from sort import test_resp_multi_thread, sorted_by_iptype
+from save_as import save_chs_as_txt, save_chs_as_m3u
 import logging
 import os
 
@@ -17,17 +21,22 @@ logging.basicConfig(
 
 
 def main():
+    # chs = fetch_chs(['/home/uos/Desktop/live/test.txt'])
     chs = fetch_chs(source_urls)
     if is_dump_remove:
         chs = remove_dump_urls(chs)
+    chs = filter_by_iptype(chs,4)
     if is_match_template:
         chs = match_chs(chs)
-    if is_response_test:
-        chs = test_resp_multi_thread(chs, response_time)
+    if is_stability_test:
+        test_urls = filter_by_names(chs,['CCTV-1 综合','北京卫视'])
+        white_list = asyncio.run(process_urls(test_urls))
     else:
-        chs = sorted_by_iptype(chs)
-    save_chs_as_txt(chs,iptype_filter=4)
-    save_chs_as_m3u(chs,iptype_filter=4)
+        white_list = white_lst
+    chs = sorted_by_iptype(chs, white_list)
+    save_chs_as_txt(chs)
+    save_chs_as_m3u(chs)
+
 
 
 if __name__ == '__main__':

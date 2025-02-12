@@ -3,7 +3,7 @@
 from datetime import datetime
 from config import head_info, epg_urls, mirror_url_lst
 from rename import tvg_name_regular
-from response_test import is_v6
+from sort import is_v6
 import logging
 import os
 

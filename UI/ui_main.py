@@ -3,7 +3,7 @@ from function.config import source_urls
 from function.duplicate_removel import remove_dump_urls
 from function.fetch import fetch_multi_urls_chs, fetch_chs_name
 from function.match import match_chs
-from function.response_test import test_resp_multi_thread
+from function.sort import test_resp_multi_thread
 from function.save_as import save_chs_as_txt, save_names_as_txt
 
 cfg = ConfigUi()

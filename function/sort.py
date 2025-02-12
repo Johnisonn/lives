@@ -1,7 +1,7 @@
 ## 响应检测，为匹配后的urls地址列表加入响应时间并排序
 
 from collections import OrderedDict
-from config import v6_or_v4, white_lst
+from config import v6_or_v4
 from tqdm import tqdm
 import re
 import time
@@ -96,7 +96,7 @@ def sorted_by_response(urls_tuple_lst):
     new_urls_tuple_lst = ipv6 + ipv4 if v6_or_v4 == 6 else ipv4 + ipv6
     return new_urls_tuple_lst
 
-def sorted_by_iptype(chs_dict):
+def sorted_by_iptype(chs_dict, white_lst):
     sorted_chs_dict = OrderedDict()
     white_count = 0
     v6_count = 0
@@ -164,36 +164,4 @@ def sorted_by_iptype(chs_dict):
     return sorted_chs_dict
 
 
-
-
-##  以下两个函数为单线程检测，已弃用
-def test_resp(url):
-# 对单个url地址测试响应时间，返回带响应时间的url元组(url,t),因加入线程池写法，此函数弃用
-    try:
-        start_time = time.time()
-        resp = urllib.request.urlopen(url, timeout=2)
-        end_time = time.time()
-        t = round((end_time - start_time)*1000, 2) #记录响应时间，单位为毫秒
-    except Exception: # 对请求失败的url将响应时间置为100000
-        t = 100000
-    url_tuple = (url, t)
-    return url_tuple
-
-def test_resp_single_thread(chs_dict, resp_threshold=None):
-# 对传入的频道字典按照响应时间排序，并按传入阈值进行筛选，此函数为单线程方法，已弃用
-    chs_t_dict = OrderedDict()
-    t1 = time.time()
-    for cate, vls in chs_dict.items():
-        chs_t_dict[cate] = OrderedDict()
-        for name, urls in vls.items():
-            urls = [test_resp(url) for url in tqdm(urls, desc=f'【{name}】响应检测中', position=0)]
-            urls = sorted_by_response(urls)
-            if resp_threshold:
-                urls = [url_t for url_t in urls if url_t[1] < resp_threshold] # 筛选响应时间小于给定阈值的url
-            urls = [f'{url[0]}${url[1]}ms' for url in urls]
-            chs_t_dict[cate][name] = []
-            chs_t_dict[cate][name].extend(urls)
-    t2 = time.time()
-    print(f'响应检测完成，总耗时{round((t2 - t1) / 60, 2)}分钟，阈值为{resp_threshold}ms！')
-    return chs_t_dict
 
