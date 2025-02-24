@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '00 11 * * *'
+    - cron: '30 10 * * *'
 
 
 jobs:
@@ -25,7 +25,14 @@ jobs:
       run: |
         pip install requests tqdm aiohttp
 
+    - name: Extract config value
+      id: extract_var
+      run: |
+        IS_STABLE=$(grep 'is_stability_test' ./function/config.py | awk -F= '{print $2}' | tr -d ' ')
+        echo "is_stability_test=${IS_STABLE}" >> $GITHUB_OUTPUT
+
     - name: Install FFmpeg
+      if: ${{ steps.extract_var.outputs.is_stability_test == '1' }}
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
