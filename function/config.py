@@ -49,26 +49,26 @@ source_urls_0 = [
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
    # 'https://live.kilvn.com/iptv.m3u',
-    'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
-    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
-    'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
-    'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
-    'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
-    "http://rihou.cc:567/gggg.nzk",  # 日后线路
-    "http://meowtv.top/zb", # 喵TV
-    "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
-    "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
-    'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
-    'http://211.101.234.24:866/aishang.txt',
-    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
-    'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
-    'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
-    'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
+   #  'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
+   #  "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+   #  'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
+   #  "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
+   #  'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
+   #  'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
+   #  "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
+   #  "http://rihou.cc:567/gggg.nzk",  # 日后线路
+   #  "http://meowtv.top/zb", # 喵TV
+   #  "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
+   #  "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
+   #  'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
+   #  'http://211.101.234.24:866/aishang.txt',
+   #  'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
+   #  'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
+   #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
+   #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
 
-
-    'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
+    'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt'
+    # 'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 
 ]

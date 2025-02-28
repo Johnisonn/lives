@@ -1,39 +1,17 @@
 
 from collections import OrderedDict
 from typing import Union, List
-import ipaddress
-from urllib.parse import urlparse
+import re
 import copy
 
 
 # 判定IP地址版本
 def get_ip_version(url):
-    def extract_ip(s):
-        parsed = urlparse(s)
-        if parsed.hostname:
-            host = parsed.hostname
-            if host.startswith('[') and host.endswith(']'):
-                host = host[1:-1]
-            return host
-        if s.startswith('[') and ']:' in s:
-            return s.split(']:')[0][1:]
-        if '://' not in s:
-            if s.count(':') > 1 and '[' not in s and ']' not in s:
-                parts = s.split(':')
-                possible_ip = ':'.join(parts[:-1]) if len(parts) > 1 else s
-                return possible_ip
-            elif ':' in s and s.count(':') < 2:
-                return s.split(':')[0]
-        return s
+    if re.search(r'\[[0-9a-fA-F:]+\]',url) is not None:
+        return 6
+    else:
+        return 4
 
-    ip_str = extract_ip(url)
-    if not ip_str:
-        return None
-    try:
-        ip = ipaddress.ip_address(ip_str)
-        return ip.version
-    except ValueError:
-        return None
 
 # 筛选给定类型的IP地址（v4或v6）
 def filter_by_iptype(chs_dict, ip_version=None):

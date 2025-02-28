@@ -21,7 +21,7 @@ logging.basicConfig(
 
 
 def main():
-    # chs = fetch_chs(['/home/uos/Desktop/live/test.txt'])
+    # chs = fetch_chs(['/home/uos/Desktop/000.txt'])
     chs = fetch_chs(source_urls)
     if is_dump_remove:
         chs = remove_dump_urls(chs)
