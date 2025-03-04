@@ -12,7 +12,6 @@ def get_ip_version(url):
     else:
         return 4
 
-
 # 筛选给定类型的IP地址（v4或v6）
 def filter_by_iptype(chs_dict, ip_version=None):
     if ip_version not in (4, 6, None):
