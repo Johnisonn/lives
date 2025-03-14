@@ -24,8 +24,13 @@ mirror = mirror_url_lst[0]
 white_lst = [
 
     '148.135.93.213', # 咪咕源
-    'rthktv33-live.akamaized.net',
-    'z.b.bkpcp.top',
+    'rthktv33-live.akamaized.net',  # 5386kbps
+    'cdn5.163189.xyz',  # 4216kbps
+    'goo.bkpcp.top',  # 3569kbps
+    'z.b.bkpcp.top',  # 3544kbps
+    'tv.20191209.xyz',  # 3498kbps
+
+
     '1.180.2.93',
     '1.24.39.180',
     '119.32.12.17',
@@ -44,15 +49,13 @@ white_lst = [
     '42.48.105.224',
     '76.5432123.xyz',
     '8.138.7.223',
-    'cdn5.163189.xyz',
     'drive.mxmy.net',
-    'goo.bkpcp.top',
     'home.wwang.pw',
     'php.jdshipin.com',
     'piccpndali.v.myalicdn.com',
     'qjrhc.jydjd.top',
     'ttkx.cc',
-    'tv.20191209.xyz',
+
 
 
 ]
