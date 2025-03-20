@@ -117,8 +117,8 @@ def sorted_by_iptype(chs_dict, white_lst):
             idx_v6 = 1
             idx_v4 = 1
             for url in urls:
-                for ip in white_lst: # 筛选出包含白名单的urls
-                    if ip in url:
+                for domain in white_lst: # 筛选出包含白名单的urls
+                    if domain in url:
                         white_lst_urls.append(url)
                         white_count += 1
                         break
@@ -135,7 +135,7 @@ def sorted_by_iptype(chs_dict, white_lst):
                         v4_count += 1
 
 #  对白名单urls按照白名单排序
-            white_dict = {ip:[] for ip in white_lst} # 将白名单中的IP作为键、空列表[]作为值，写入字典，用于存放包含白名单的urls
+            white_dict = {domain:[] for domain in white_lst} # 将白名单中的domain作为键、空列表[]作为值，写入字典，用于存放包含白名单的urls
             # 遍历筛选出的urls，放入字典中对应的白名单下
             for url in white_lst_urls:
                 for ip in white_lst:

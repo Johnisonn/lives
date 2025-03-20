@@ -1,10 +1,9 @@
-import asyncio
-from config import source_urls, is_dump_remove, is_match_template, white_lst, is_stability_test, \
+from config import source_urls, is_dump_remove, is_match_template, white_lst_manual, is_stability_test, \
     source_urls_0
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
 from filter import filter_by_iptype, filter_by_names
-from stability_check import process_urls
+from stability_check import generate_whitelist
 from match import match_chs
 from sort import test_resp_multi_thread, sorted_by_iptype
 from save_as import save_chs_as_txt, save_chs_as_m3u
@@ -29,10 +28,11 @@ def main():
     if is_match_template:
         chs = match_chs(chs)
     if is_stability_test:
-        test_urls = filter_by_names(chs,['CCTV-1 综合','北京卫视'])
-        white_list = asyncio.run(process_urls(test_urls))
+        test_urls = filter_by_names(chs,['CCTV-1 综合','河北卫视'])
+        white_list = generate_whitelist(sources=test_urls, workers=os.cpu_count() * 2, output_file='white_lst.py')
+
     else:
-        white_list = white_lst
+        white_list = white_lst_manual
     chs = sorted_by_iptype(chs, white_list)
     save_chs_as_txt(chs)
     save_chs_as_m3u(chs)
