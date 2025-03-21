@@ -23,12 +23,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests tqdm aiohttp
+        pip install requests tqdm
 
     - name: Extract config value
       id: extract_var
       run: |
-        IS_STABLE=$(grep 'is_stability_test' ./function/config.py | awk -F= '{print $2}' | tr -d ' ')
+        IS_STABLE=$(grep 'is_stability_test' ./function/config.py | awk -F= '{print $2}' | awk -F# '{print $1}' | tr -d ' ')
         echo "is_stability_test=${IS_STABLE}" >> $GITHUB_OUTPUT
 
     - name: Install FFmpeg
@@ -36,6 +36,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
+
+    - name: Verify FFmpeg installation
+      if: ${{ fromJson(steps.extract_var.outputs.is_stability_test) == 1 }}
+      run: |
+        ffmpeg -version || (echo "❌ FFmpeg 安装失败，请检查日志"; exit 1)
+        echo "✅ FFmpeg 已成功安装"
 
     - name: Run Python script
       run: python function/main.py
