@@ -29,31 +29,17 @@ white_lst_manual = [
     'z.b.bkpcp.top',  # 3544kbps
     'tv.20191209.xyz',  # 3498kbps
 
+    '218.93.208.172',  # 288.75fps
+    'www.freetv.top',  # 284.50fps
+    'api.olelive.com',  # 212.50fps
+    'jwplay.hebyun.com.cn',  # 122.50fps
+    'php.jdshipin.com',  # 106.70fps
+    'tvbox6.icu',  # 82.00fps
+    'ttkx.cc',  # 79.00fps
+    'tv.pull.hebtv.com',  # 56.50fps
+    '125.82.171.210',  # 46.00fps
 
-    '1.180.2.93',
-    '1.24.39.180',
-    '119.32.12.17',
-    '119.32.12.32',
-    '120.234.5.29',
-    '120.76.248.139',
-    '122.227.173.42',
-    '124.93.18.238',
-    '125.82.168.238',
-    '125.82.171.210',
-    '148.135.34.95',
-    '180.158.201.25',
-    '182.91.124.60',
-    '218.93.208.172',
-    '222.169.85.8',
-    '42.48.105.224',
-    '76.5432123.xyz',
-    '8.138.7.223',
-    'drive.mxmy.net',
-    'home.wwang.pw',
-    'php.jdshipin.com',
-    'piccpndali.v.myalicdn.com',
-    'qjrhc.jydjd.top',
-    'ttkx.cc',
+
 
 
 
