@@ -12,7 +12,7 @@ parent_path = os.path.abspath(os.path.join(current_path, '..')) # 获取上级�
 
 logger = logging.getLogger(__name__)
 
-def save_chs_as_txt(chs_dict, file_name='live', iptype_filter=None):
+def save_chs_as_txt(chs_dict, file_name='live', ip_version_filter=None):
     all_cate = set()
     all_chs = set()
     urls_num = 0
@@ -22,7 +22,7 @@ def save_chs_as_txt(chs_dict, file_name='live', iptype_filter=None):
     logger.info('-' * 42 + '开始保存文件(.txt)' + '-' * 42)
     logger.info(' ')
 
-    if iptype_filter in (4,6):
+    if ip_version_filter in (4,6):
         '''此段内容为文件名添加后缀
         if iptype_filter == 4:
             v = '-v4'
@@ -40,7 +40,7 @@ def save_chs_as_txt(chs_dict, file_name='live', iptype_filter=None):
                     f.write(f'{w_cate},#genre#\n')
                 for w_name, w_urls in w_vls.items():
                     for w_url in w_urls:
-                        if is_v6(w_url) if iptype_filter == 6 else not is_v6(w_url):  # 三元表达式写法
+                        if is_v6(w_url) if ip_version_filter == 6 else not is_v6(w_url):  # 三元表达式写法
                             f.write(f'{w_name},{w_url}\n')
                             all_chs.add(w_name)
                             urls_num += 1
@@ -62,7 +62,7 @@ def save_chs_as_txt(chs_dict, file_name='live', iptype_filter=None):
     logger.info('>' * 34 + f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个' + '<' * 34)
     logger.info('-' * 100)
 
-def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
+def save_chs_as_m3u(chs_dict, file_name='live', ip_version_filter=None):
     all_cate = set()
     all_chs = set()
     urls_num = 0
@@ -72,7 +72,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
     logger.info('-' * 42 + '开始保存文件(.m3u)' + '-' * 42)
     logger.info(' ')
 
-    if iptype_filter in (4,6):
+    if ip_version_filter in (4,6):
         '''
         if iptype_filter == 4:
             v = '-v4'
@@ -91,7 +91,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', iptype_filter=None):
                 for w_name, w_urls in w_vls.items():
                     tvg_name = tvg_name_regular(w_name) if 'CETV' in w_name or 'CCTV' in w_name else w_name
                     for w_url in w_urls:
-                        if is_v6(w_url) if iptype_filter == 6 else not is_v6(w_url):
+                        if is_v6(w_url) if ip_version_filter == 6 else not is_v6(w_url):
                             f.write(f'''#EXTINF:-1 tvg-id="{tvg_name}" tvg-name="{tvg_name}" tvg-logo="{mirror_url_lst[0]}https://raw.githubusercontent.com/fanmingming/live/main/tv/{tvg_name}.png" group-title="{w_cate}",{w_name}\n''')
                             all_chs.add(w_name)
                             f.write(f'{w_url}\n')

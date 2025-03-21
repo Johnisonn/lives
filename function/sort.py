@@ -10,8 +10,86 @@ import multiprocessing
 import concurrent.futures
 import logging
 
+
 logger = logging.getLogger(__name__)
 
+
+
+
+def is_v6(url):
+# 判别IPV6地址
+    return re.search(r'\[[0-9a-fA-F:]+\]',url) is not None
+
+def sorted_by_ip_version(chs_dict, white_lst, black_lst):
+    sorted_chs_dict = OrderedDict()
+    white_count = 0
+    v6_count = 0
+    v4_count = 0
+
+    logger.info(' ')
+    logger.info('-' * 42 + '开始按地址类型排序' + '-' * 42)
+    logger.info(' ')
+
+    for cate, vls in chs_dict.items():
+        sorted_chs_dict[cate] = OrderedDict()
+        for name, urls in vls.items():
+            sorted_chs_dict[cate][name] = []
+            matched_urls = []
+            urls_v6 = []
+            urls_v4 = []
+            idx_white = 1
+            idx_v6 = 1
+            idx_v4 = 1
+            for url in urls:
+                if not any(black_domain in url for black_domain in black_lst):
+                    for domain in white_lst:
+                        if domain in url:
+                            matched_urls.append((url, domain))
+                            break
+                else:
+                    if is_v6(url):
+                        url = f'{url}$C_{idx_v6}_[v6]'
+                        idx_v6 += 1
+                        urls_v6.append(url)
+                        v6_count += 1
+                    else:
+                        url = f'{url}$B_{idx_v4}_[v4]'
+                        idx_v4 += 1
+                        urls_v4.append(url)
+                        v4_count += 1
+
+#  对白名单urls按照白名单排序
+            urls_by_white = []
+            for domain in white_lst:
+                for url, matched_domain in matched_urls:
+                    if matched_domain == domain:
+                        url = f'{url}$A_{idx_white}_[★]'
+                        urls_by_white.append(url)
+                        idx_white += 1
+
+#################################################
+
+            sorted_chs_dict[cate][name].extend(urls_by_white)
+
+            if v6_or_v4 == 6:
+                sorted_chs_dict[cate][name].extend(urls_v6)
+                sorted_chs_dict[cate][name].extend(urls_v4)
+            else:
+                sorted_chs_dict[cate][name].extend(urls_v4)
+                sorted_chs_dict[cate][name].extend(urls_v6)
+    logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
+    logger.info('>' * 12 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '<' * 12)
+    return sorted_chs_dict
+
+def sorted_by_response(urls_tuple_lst):
+#对传入的（url,t）列表按照响应时间进行排序，并按设定值确定IPV6/IPV4优先序
+    ipv6 = []
+    ipv4 = []
+    [ipv6.append(u) if is_v6(u[0]) else ipv4.append(u) for u in urls_tuple_lst]
+    ipv6.sort(key=lambda x: x[1])
+    ipv4.sort(key=lambda x: x[1])
+    new_urls_tuple_lst = ipv6 + ipv4 if v6_or_v4 == 6 else ipv4 + ipv6
+    return new_urls_tuple_lst
 
 def test_resp_multi_thread(chs_dict, resp_threshold=None):
 # 对传入的频道字典chs_dict中所有url地址，多线程并发测试响应时间，返回带响应时间的频道字典
@@ -81,87 +159,4 @@ def test_resp_multi_thread(chs_dict, resp_threshold=None):
                 out_chs_dict[cate][name].append(f'{url[0]}${url[1]}ms')
     logger.info('筛选和排序完成！')
     return out_chs_dict
-
-def is_v6(url):
-# 判别IPV6地址
-    return re.search(r'\[[0-9a-fA-F:]+\]',url) is not None
-
-def sorted_by_response(urls_tuple_lst):
-#对传入的（url,t）列表按照响应时间进行排序，并按设定值确定IPV6/IPV4优先序
-    ipv6 = []
-    ipv4 = []
-    [ipv6.append(u) if is_v6(u[0]) else ipv4.append(u) for u in urls_tuple_lst]
-    ipv6.sort(key=lambda x: x[1])
-    ipv4.sort(key=lambda x: x[1])
-    new_urls_tuple_lst = ipv6 + ipv4 if v6_or_v4 == 6 else ipv4 + ipv6
-    return new_urls_tuple_lst
-
-def sorted_by_iptype(chs_dict, white_lst):
-    sorted_chs_dict = OrderedDict()
-    white_count = 0
-    v6_count = 0
-    v4_count = 0
-
-    logger.info(' ')
-    logger.info('-' * 42 + '开始按地址类型排序' + '-' * 42)
-    logger.info(' ')
-
-    for cate, vls in chs_dict.items():
-        sorted_chs_dict[cate] = OrderedDict()
-        for name, urls in vls.items():
-            sorted_chs_dict[cate][name] = []
-            white_lst_urls = []
-            urls_v6 = []
-            urls_v4 = []
-            idx_wt = 1
-            idx_v6 = 1
-            idx_v4 = 1
-            for url in urls:
-                for domain in white_lst: # 筛选出包含白名单的urls
-                    if domain in url:
-                        white_lst_urls.append(url)
-                        white_count += 1
-                        break
-                else:
-                    if is_v6(url):
-                        url = f'{url}$C_{idx_v6}_[v6]'
-                        idx_v6 += 1
-                        urls_v6.append(url)
-                        v6_count += 1
-                    else:
-                        url = f'{url}$B_{idx_v4}_[v4]'
-                        idx_v4 += 1
-                        urls_v4.append(url)
-                        v4_count += 1
-
-#  对白名单urls按照白名单排序
-            white_dict = {domain:[] for domain in white_lst} # 将白名单中的domain作为键、空列表[]作为值，写入字典，用于存放包含白名单的urls
-            # 遍历筛选出的urls，放入字典中对应的白名单下
-            for url in white_lst_urls:
-                for ip in white_lst:
-                    if ip in url:
-                        white_dict[ip].append(url)
-            sorted_urls = []
-            for v in white_dict.values():
-                sorted_urls.extend(v)
-            new_sorted_urls = []
-            for v in sorted_urls:
-                v = f'{v}$A_{idx_wt}_[★]'
-                new_sorted_urls.append(v)
-                idx_wt += 1
-
-##################################################
-
-            sorted_chs_dict[cate][name].extend(new_sorted_urls)
-            if v6_or_v4 == 6:
-                sorted_chs_dict[cate][name].extend(urls_v6)
-                sorted_chs_dict[cate][name].extend(urls_v4)
-            else:
-                sorted_chs_dict[cate][name].extend(urls_v4)
-                sorted_chs_dict[cate][name].extend(urls_v6)
-    logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
-    logger.info('>' * 12 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '<' * 12)
-    return sorted_chs_dict
-
-
 

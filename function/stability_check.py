@@ -12,36 +12,16 @@ from urllib.parse import urlparse
 
 
 def extract_domain(url):
-    """
-    从 URL 中提取域名、端口和路径前5个字符，格式为 `domain:port/path_prefix`
-    """
+    """从URL中提取域名（去除端口和路径）"""
     try:
-        # 处理特殊协议（如 rtmp, udp）
         if url.startswith(('rtmp://', 'udp://', 'rtsp://')):
-            # 去除协议头和可能的鉴权信息（如 `user:pass@`）
-            netloc_path = url.split('//')[1].split('@')[-1]
-            domain_port, *path_parts = netloc_path.split('/', 1)
-            path = '/' + path_parts[0] if path_parts else ''
+            netloc = url.split('//')[1].split('/')[0].split('@')[-1]
         else:
-            # 处理标准协议（http/https）
             parsed = urlparse(url)
-            domain_port = parsed.netloc
-            path = parsed.path
-
-        # 分割域名和端口（如 example.com:8080 -> example.com, 8080）
-        domain = domain_port.split(':')[0]
-        port = ':' + domain_port.split(':')[1] if ':' in domain_port else ''
-
-        # 截取路径前5个字符（确保不超过路径长度）
-        path_prefix = (path[:5] if len(path) >= 5 else path).strip('/')
-        path_prefix = f'/{path_prefix}' if path_prefix else ''
-
-        # 组合最终标识
-        identifier = f"{domain}{port}{path_prefix}"
-        return identifier
-
-    except Exception as e:
-        print(f"解析URL失败: {url}, 错误: {e}")
+            netloc = parsed.netloc
+        domain = netloc.split(':')[0]
+        return domain.strip()
+    except:
         return None
 
 

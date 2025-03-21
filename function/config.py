@@ -1,6 +1,5 @@
 ##配置文件
 
-is_dump_remove = 1 # 是否对采集到的地址进行去重
 is_match_template = 1 # 是否匹配模板给定频道
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
 is_stability_test = 1  # 是否对直播地址测试响应时间
@@ -60,6 +59,14 @@ white_lst_manual = [
 
 ]
 
+black_lst = [
+    '8.138.7.223',
+    'www.freetv.top',
+    'kkk.jjjj.jiduo.me',
+
+
+]
+
 source_urls_0 = [
 
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
@@ -83,8 +90,8 @@ source_urls_0 = [
    #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
    #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
 
-    'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt',
-    'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt'
+    # 'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt',
+    'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt',
     # 'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
 
@@ -185,8 +192,7 @@ source_urls = [
 
 ]
 
-# 对网段地址设置黑名单，待开发...
-black_list = []
+
 
 
 

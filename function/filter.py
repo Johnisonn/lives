@@ -12,8 +12,8 @@ def get_ip_version(url):
     else:
         return 4
 
-# 筛选给定类型的IP地址（v4或v6）
-def filter_by_iptype(chs_dict, ip_version=None):
+# 筛选v4或v6的URL
+def filter_by_ip_version(chs_dict, ip_version=None):
     if ip_version not in (4, 6, None):
         raise ValueError("ip_version must be 4, 6, or None")
     if ip_version is None:
