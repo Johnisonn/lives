@@ -32,7 +32,7 @@ def main():
         white_list = white_lst_manual
     chs = sorted_by_ip_version(chs, white_list, black_lst)
     save_chs_as_txt(chs)
-    # save_chs_as_m3u(chs)
+    save_chs_as_m3u(chs)
 
 
 

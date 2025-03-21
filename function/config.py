@@ -2,7 +2,7 @@
 
 is_match_template = 1 # 是否匹配模板给定频道
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
-is_stability_test = 1  # 是否对直播地址测试响应时间
+is_stability_test = 0  # 是否对直播地址测试响应时间
 
 response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
 v6_or_v4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
@@ -63,11 +63,13 @@ black_lst = [
     '8.138.7.223',
     'www.freetv.top',
     'kkk.jjjj.jiduo.me',
+    'stream1.freetv.fun',
+
 
 
 ]
 
-source_urls_0 = [
+source_urls = [
 
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
@@ -100,7 +102,7 @@ source_urls_0 = [
 
 
 #直播源地址列表
-source_urls = [
+source_urls_0 = [
     # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',
