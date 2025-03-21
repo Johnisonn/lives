@@ -24,7 +24,7 @@ def main():
     chs = fetch_chs(source_urls)
     if is_dump_remove:
         chs = remove_dump_urls(chs)
-    chs = filter_by_iptype(chs,4)
+    chs = filter_by_iptype(chs,6)
     if is_match_template:
         chs = match_chs(chs)
     if is_stability_test:
