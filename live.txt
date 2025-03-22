@@ -1,5 +1,5 @@
 ★更新日期★,#genre#
-2025-03-21-18:39,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
+2025-03-22-18:40,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
 ★央视频道★,#genre#
 CCTV-1 综合,http://148.135.93.213:81/live.php?id=CCTV1$A_1_[★]
 CCTV-1 综合,https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8?$A_2_[★]
