@@ -23,10 +23,12 @@ mirror = mirror_url_lst[0]
 
 # 较为稳定白名单
 white_lst_supplement = [
-    '[2409:8087:1:20:20',
-    '148.135.93.213', # 咪咕源
+    '[2409:8087:1:20:20', #FMM
     'ali-m-l.cztv.com', # 浙江频道
     'livestream-bt.nmtv.cn', #内蒙频道
+    'tv.pull.hebtv.com', #河北频道
+    '148.135.93.213',  # 咪咕源
+    '36.40.236.13:9999',  # 54.00fps
 ]
 white_lst_manual = [
 
@@ -34,21 +36,29 @@ white_lst_manual = [
     '148.135.93.213',  # 咪咕源
     'ali-m-l.cztv.com',  # 浙江频道
     'livestream-bt.nmtv.cn',  # 内蒙频道
+    'tv.pull.hebtv.com',  # 57.50fps
 
-    'rthktv33-live.akamaized.net',  # 5386kbps
-    'cdn5.163189.xyz',  # 4216kbps
-    'goo.bkpcp.top',  # 3569kbps
+    'api.olelive.com',  # 175.75fps
+    'rthktv33-live.akamaized.net',  # 149.40fps
+    'jwplay.hebyun.com.cn',  # 122.57fps
+    'cdn5.163189.xyz',  # 93.67fps
+    'php.jdshipin.com',  # 86.50fps
+    '39.164.180.36:19901',  # 85.00fps
+    'php.jdshipin.com:8880',  # 83.44fps
+    'goo.bkpcp.top',  # 71.60fps
+    'ttkx.cc:1658',  # 62.20fps
+    '36.40.236.13:9999',  # 54.00fps
+    '110.7.131.193:9901',  # 34.67fps
+    '110.7.131.4:9901',  # 34.67fps
+    '116.117.104.248:9901',  # 34.67fps
+    '110.7.131.79:9901',  # 34.33fps
+    '116.117.107.84:9901',  # 34.33fps
+
+
     'z.b.bkpcp.top',  # 3544kbps
     'tv.20191209.xyz',  # 3498kbps
-
     '218.93.208.172',  # 288.75fps
-    'www.freetv.top',  # 284.50fps
-    'api.olelive.com',  # 212.50fps
-    'jwplay.hebyun.com.cn',  # 122.50fps
-    'php.jdshipin.com',  # 106.70fps
     'tvbox6.icu',  # 82.00fps
-    'ttkx.cc',  # 79.00fps
-    'tv.pull.hebtv.com',  # 56.50fps
     '125.82.171.210',  # 46.00fps
 
 
@@ -62,6 +72,9 @@ black_lst = [
     'www.freetv.top',
     'kkk.jjjj.jiduo.me',
     'stream1.freetv.fun',
+    ':9901udp',
+
+
 
 
 

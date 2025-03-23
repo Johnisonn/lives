@@ -15,11 +15,11 @@ logger = logging.getLogger(__name__)
 
 
 
-
-def is_v6(url):
 # 判别IPV6地址
+def is_v6(url):
     return re.search(r'\[[0-9a-fA-F:]+\]',url) is not None
 
+# 按照白名单优先排序，以及IPV4或IPV6排序
 def sorted_by_ip_version(chs_dict, white_lst, black_lst):
     sorted_chs_dict = OrderedDict()
     white_count = 0
@@ -27,7 +27,7 @@ def sorted_by_ip_version(chs_dict, white_lst, black_lst):
     v4_count = 0
 
     logger.info(' ')
-    logger.info('-' * 42 + '开始按地址类型排序' + '-' * 42)
+    logger.info('>' * 41 + '【开始按地址类型排序】' + '<' * 41)
     logger.info(' ')
 
     for cate, vls in chs_dict.items():
@@ -45,6 +45,7 @@ def sorted_by_ip_version(chs_dict, white_lst, black_lst):
                     for domain in white_lst:
                         if domain in url:
                             matched_urls.append((url, domain))
+                            white_count += 1
                             break
                 else:
                     if is_v6(url):
@@ -77,8 +78,8 @@ def sorted_by_ip_version(chs_dict, white_lst, black_lst):
             else:
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
-    logger.info('>' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '<' * 39)
-    logger.info('>' * 12 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '<' * 12)
+    logger.info('-' * 39 + f'已按照 IPV{v6_or_v4} 优先完成排序' + '-' * 39)
+    logger.info('-' * 14 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '-' * 14)
     return sorted_chs_dict
 
 def sorted_by_response(urls_tuple_lst):

@@ -20,7 +20,7 @@ def readin_required_chs():
     required_chs_dict = OrderedDict()
 
     logger.info(' ')
-    logger.info('-' * 43 + '开始读入模板信息' + '-' * 43)
+    logger.info('>' * 43 + '开始读入模板信息' + '<' * 43)
     logger.info(' ')
 
     with open(f'{current_path}/template.txt', 'r', encoding='utf-8') as f:
@@ -36,27 +36,8 @@ def readin_required_chs():
                 if line not in required_chs_dict[ch_cate]:
                     required_chs_dict[ch_cate].append(line)
                     chs_count += 1
-    logger.info('>' * 34 + f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个' + '<' * 34)
+    logger.info('-' * 34 + f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个' + '-' * 34)
     return required_chs_dict
-
-def fetch_chs_name(source_urls_lst):
-# 获取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
-    chs_dict = fetch_chs(source_urls_lst)
-    names_dict = OrderedDict()
-    name_num = 0
-    for cate, vls in chs_dict.items():
-        if cate not in names_dict:
-            names_dict[cate] = []
-        for name, urls in vls.items():
-            if name not in names_dict[cate]:
-                names_dict[cate].append(name)
-                name_num += 1
-
-    logger.info('-'*60)
-    logger.info(f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
-    names_dict = remove_dump_name(names_dict) #对所有分类内频道名称去重
-
-    return names_dict
 
 def fetch_chs(source_urls_lst):
     chs_dict = OrderedDict()
@@ -64,7 +45,7 @@ def fetch_chs(source_urls_lst):
     total_ch_num = 0
     total_url_num = 0
 
-    logger.info('-' * 43 + '开始获取频道资源' + '-' *43)
+    logger.info('>' * 42 + '【开始获取频道资源】' + '<' *42)
     logger.info(' ')
 
     for proxy in mirror_url_lst:
@@ -161,8 +142,30 @@ def fetch_chs(source_urls_lst):
     # for k, v in chs_dict.items():
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
-    logger.info('>' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个' + '<' * 25)
+    logger.info('' * 100)
+    logger.info('-' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个' + '-' * 25)
     return chs_dict
+
+def fetch_chs_name(source_urls_lst):
+# 获取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
+    chs_dict = fetch_chs(source_urls_lst)
+    names_dict = OrderedDict()
+    name_num = 0
+    for cate, vls in chs_dict.items():
+        if cate not in names_dict:
+            names_dict[cate] = []
+        for name, urls in vls.items():
+            if name not in names_dict[cate]:
+                names_dict[cate].append(name)
+                name_num += 1
+
+    logger.info('-'*60)
+    logger.info(f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
+    names_dict = remove_dump_name(names_dict) #对所有分类内频道名称去重
+
+    return names_dict
+
+
 
 
 if __name__ == '__main__':

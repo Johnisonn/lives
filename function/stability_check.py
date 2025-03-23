@@ -9,7 +9,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
+# 抽取url中关键字作为后续白名单
 def extract_keyword(url):
 
     keyword = url.split('//')[1]
@@ -20,7 +20,7 @@ def extract_keyword(url):
 
     return keyword
 
-
+# 用FFmpeg检测流畅性
 def analyze_stream(url, timeout=20):
     """检测单个直播源并返回结果（包含域名和FPS）"""
     command = [
@@ -122,12 +122,12 @@ def analyze_stream(url, timeout=20):
         'avg_fps': avg_fps
     }
 
-
+# 线程池并发检测流畅性
 def generate_whitelist(sources, workers=4, output_file='white_lst'):
     """并发检测并生成域名白名单"""
     fluent_domains = {}
     logger.info(' ')
-    logger.info('-' * 43 + '开始流畅性检测' + '-' * 43)
+    logger.info('>' * 42 + '【开始流畅性检测】' + '<' * 42)
     logger.info(' ')
     logger.info('-' * 44 + f'core_num:{os.cpu_count()}' + '-' * 44)
 
@@ -155,13 +155,13 @@ def generate_whitelist(sources, workers=4, output_file='white_lst'):
                 f.write(f"    '{domain}',  # {fps:.2f}fps\n")
                 domain_lst.append(domain)
         f.write("]\n")
-        logger.info('>' * 35 + f'域名白名单已写入：white_lst.txt' + '<' * 35)
+        logger.info('-' * 35 + f'域名白名单已写入：white_lst.txt' + '-' * 35)
 
     return domain_lst
 
 if __name__ == '__main__':
     #示例直播源列表
-    test_sources = urls.test_urls
+    test_sources = ['example.com/path.m3u8']
     print(os.cpu_count())
     generate_whitelist(
         sources=test_sources,

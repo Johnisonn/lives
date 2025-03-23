@@ -19,7 +19,7 @@ def save_chs_as_txt(chs_dict, file_name='live', ip_version_filter=None):
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M')
 
     logger.info(' ')
-    logger.info('-' * 42 + '开始保存文件(.txt)' + '-' * 42)
+    logger.info('>' * 42 + '【开始保存文件(.txt)】' + '<' * 42)
     logger.info(' ')
 
     if ip_version_filter in (4,6):
@@ -58,8 +58,9 @@ def save_chs_as_txt(chs_dict, file_name='live', ip_version_filter=None):
                         f.write(f'{w_name},{w_url}\n')
                         all_chs.add(w_name)
                         urls_num += 1
-    logger.info('>' * 10 + f'频道及url地址已保存在目录:【{path_name}】文件中' + '<' * 10)
-    logger.info('>' * 34 + f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个' + '<' * 34)
+    logger.info('-' * 15 + f'频道及url地址已保存在目录:【{path_name}】文件中' + '-' * 15)
+    logger.info('-' * 34 + f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个' + '-' * 34)
+    logger.info('' * 100)
     logger.info('-' * 100)
 
 def save_chs_as_m3u(chs_dict, file_name='live', ip_version_filter=None):
@@ -69,7 +70,7 @@ def save_chs_as_m3u(chs_dict, file_name='live', ip_version_filter=None):
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M')
 
     logger.info(' ')
-    logger.info('-' * 42 + '开始保存文件(.m3u)' + '-' * 42)
+    logger.info('>' * 42 + '【开始保存文件(.m3u)】' + '<' * 42)
     logger.info(' ')
 
     if ip_version_filter in (4,6):
@@ -112,8 +113,9 @@ def save_chs_as_m3u(chs_dict, file_name='live', ip_version_filter=None):
                         all_chs.add(w_name)
                         f.write(f'{w_url}\n')
                         urls_num += 1
-    logger.info('>' * 10 + f'频道及url地址已保存在目录:【{path_name}】文件中' + '<' * 10)
-    logger.info('>' * 34 + f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个' + '<' * 34)
+    logger.info('-' * 15 + f'频道及url地址已保存在目录:【{path_name}】文件中' + '-' * 15)
+    logger.info('-' * 34 + f'共保存频道 {len(all_chs)} 个、url地址 {urls_num} 个' + '-' * 34)
+    logger.info('' * 100)
     logger.info('=' * 100)
 
 def save_names_as_txt(names_dict, file_name='chs_names'):
