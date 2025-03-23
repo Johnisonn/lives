@@ -28,17 +28,17 @@ jobs:
     - name: Extract config value
       id: extract_var
       run: |
-        IS_STABLE=$(grep 'IS_STABILITY_TEXT' ./function/config.py | awk -F= '{print $2}' | awk -F# '{print $1}' | tr -d ' ')
-        echo "IS_STABILITY_TEXT=${IS_STABLE}" >> $GITHUB_OUTPUT
+        IS_STABLE=$(grep 'IS_STABILITY_TEST' ./function/config.py | awk -F= '{print $2}' | awk -F# '{print $1}' | tr -d ' ')
+        echo "IS_STABILITY_TEST=${IS_STABLE}" >> $GITHUB_OUTPUT
 
     - name: Install FFmpeg
-      if: ${{ steps.extract_var.outputs.IS_STABILITY_TEXT == '1' }}
+      if: ${{ steps.extract_var.outputs.IS_STABILITY_TEST == '1' }}
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
 
     - name: Verify FFmpeg installation
-      if: ${{ fromJson(steps.extract_var.outputs.IS_STABILITY_TEXT) == 1 }}
+      if: ${{ fromJson(steps.extract_var.outputs.IS_STABILITY_TEST) == 1 }}
       run: |
         ffmpeg -version || (echo "❌ FFmpeg 安装失败，请检查日志"; exit 1)
         echo "✅ FFmpeg 已成功安装"
