@@ -6,11 +6,8 @@ import copy
 
 
 # 判定IP地址版本
-def get_ip_version(url):
-    if re.search(r'\[[0-9a-fA-F:]+\]',url) is not None:
-        return 6
-    else:
-        return 4
+def get_ip_version(url: str):
+    return 6 if re.search(r'\[[0-9a-fA-F:]+\]',url) is not None else 4
 
 # 筛选v4或v6的URL
 def filter_by_ip_version(chs_dict, ip_version=None):
@@ -31,8 +28,7 @@ def filter_by_ip_version(chs_dict, ip_version=None):
     return filtered_dict
 
 # 筛选给定频道的urls
-def filter_by_names(chs_dict: OrderedDict,
-                    target_names: Union[str, List[str]]) -> List[str]:
+def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str]]) -> List[str]:
 
     # 标准化输入格式为集合
     search_names = {target_names} if isinstance(target_names, str) else set(target_names)

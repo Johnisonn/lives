@@ -1,4 +1,4 @@
-from config import source_urls, is_match_template, white_lst_manual, is_stability_test, black_lst
+from config import source_urls, white_lst_manual,IS_MATCH_TEMPLATE, IS_STABILITY_TEST, SORT_BY_FPS_OR_SPEED
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
 from filter import filter_by_ip_version, filter_by_names
@@ -19,18 +19,18 @@ logging.basicConfig(
 
 
 def main():
-    # chs = fetch_chs(['/home/uos/Desktop/000.txt'])
+    # chs = fetch_chs(['/home/uos/Desktop/0.txt'])
     chs = fetch_chs(source_urls)
     chs = remove_dump_urls(chs)
     chs = filter_by_ip_version(chs,)
-    if is_match_template:
+    if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
-    if is_stability_test:
-        test_urls = filter_by_names(chs,['CCTV-1 综合','河北卫视'])
-        white_list = generate_whitelist(sources=test_urls, workers=os.cpu_count() * 2, output_file='white_lst.py')
+    if IS_STABILITY_TEST:
+        test_urls = filter_by_names(chs,['CCTV-1 综合','天津卫视'])
+        white_list = generate_whitelist(urls=test_urls, sort_by_fps_or_speed=SORT_BY_FPS_OR_SPEED)
     else:
         white_list = white_lst_manual
-    chs = sorted_by_ip_version(chs, white_list, black_lst)
+    chs = sorted_by_ip_version(chs, white_list,)
     save_chs_as_txt(chs)
     save_chs_as_m3u(chs)
 

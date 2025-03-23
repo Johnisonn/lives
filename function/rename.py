@@ -4,7 +4,7 @@ import re
 import name_dict
 
 
-def ch_name_regular(name):
+def ch_name_regular(name: str):
     name = name.upper()
     cctv_dict = name_dict.cctv_dict #读入需要规范的频道字典
     reg_name = None
@@ -61,7 +61,7 @@ def ch_name_regular(name):
 
     return name
 
-def cate_name_regular(cate):
+def cate_name_regular(cate: str):
     cates = name_dict.category_dict
     for key in cates:
         if key in cate:
@@ -71,7 +71,7 @@ def cate_name_regular(cate):
             reg_cate = cate
     return reg_cate
 
-def tvg_name_regular(name): #对央视频道及教育频道名称进行处理，在写入M3U文件时匹配EPG台标名称
+def tvg_name_regular(name: str): #对央视频道及教育频道名称进行处理，在写入M3U文件时匹配EPG台标名称
     if 'CCTV' in name and '-' in name:
         name = name.split()[0]
         name1,name2 = name.split('-')

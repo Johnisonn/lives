@@ -5,7 +5,7 @@ import os
 import requests
 import logging
 from collections import OrderedDict
-from duplicate_removel import remove_dump_name
+from duplicate_removel import remove_dump_names
 from config import mirror_url_lst
 from rename import ch_name_regular
 
@@ -19,9 +19,7 @@ def readin_required_chs():
 # 从模板文件中读入所需要频道分类和频道名称
     required_chs_dict = OrderedDict()
 
-    logger.info(' ')
-    logger.info('>' * 43 + '开始读入模板信息' + '<' * 43)
-    logger.info(' ')
+    logger.info('>' * 41 + '【开始读入模板信息】' + '<' * 41)
 
     with open(f'{current_path}/template.txt', 'r', encoding='utf-8') as f:
         chs_count = 0
@@ -36,17 +34,17 @@ def readin_required_chs():
                 if line not in required_chs_dict[ch_cate]:
                     required_chs_dict[ch_cate].append(line)
                     chs_count += 1
+
     logger.info('-' * 34 + f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个' + '-' * 34)
     return required_chs_dict
 
-def fetch_chs(source_urls_lst):
+def fetch_chs(source_urls_lst: list):
     chs_dict = OrderedDict()
     header = {'User-Agent': 'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36'}
-    total_ch_num = 0
-    total_url_num = 0
+    total_chs_count = 0
+    total_urls_count = 0
 
     logger.info('>' * 42 + '【开始获取频道资源】' + '<' *42)
-    logger.info(' ')
 
     for proxy in mirror_url_lst:
         u = f'{proxy}https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u'
@@ -54,9 +52,8 @@ def fetch_chs(source_urls_lst):
         if 200 <= r.status_code < 300:
             break
 
-
     for source_url in source_urls_lst:
-        if 'http' in source_url:  # 网络直播源地址
+        if 'http' in source_url:  # 网络直播源
             if 'github' in source_url:
                 source_url = proxy + source_url
             try:
@@ -70,8 +67,8 @@ def fetch_chs(source_urls_lst):
         else:  # 本地直播源文件
             with open(source_url, 'r') as file:
                 lines = file.readlines()
-        ch_num = 0
-        url_num = 0
+        chs_count = 0
+        urls_count = 0
         source_type = 'm3u' if any('#EXTINF' in line for line in lines[:4]) else 'txt'  # 判定直播源类型（txt或者m3u）
         if source_type == 'txt':
             for line in lines:  # 对txt类型的直播源读入
@@ -87,31 +84,31 @@ def fetch_chs(source_urls_lst):
                     if 'cate' not in locals():  # 考虑源中没有分类的情况
                         cate = '无分类'
                         chs_dict[cate] = OrderedDict()
-                    if '#' in url:  # 以海阔模式串联多个url的情况
+                    if '#' in url:  # 以海阔模式串联多个urls的情况
                         urls = url.split('#')
                         urls = [url.split('$')[0] if '$' in url else url for url in urls]
                         n = len(urls)
                         if name not in chs_dict[cate]:
                             chs_dict[cate][name] = []
-                            ch_num += 1
+                            chs_count += 1
                             chs_dict[cate][name].extend(urls)
-                            url_num += n
+                            urls_count += n
                         else:
                             chs_dict[cate][name].extend(urls)
-                            url_num += n
+                            urls_count += n
                         continue
                     if '$' in url:
                         url = url.split('$')[0]
                     if name not in chs_dict[cate]:
                         chs_dict[cate][name] = []
-                        ch_num += 1
+                        chs_count += 1
                         chs_dict[cate][name].append(url)
-                        url_num += 1
+                        urls_count += 1
                     else:
                         chs_dict[cate][name].append(url)
-                        url_num += 1
-            total_ch_num += ch_num
-            total_url_num += url_num
+                        urls_count += 1
+            total_chs_count += chs_count
+            total_urls_count += urls_count
         else:  # 对m3u类型的直播源读入
             for line in lines:
                 if '#EXTINF' in line:
@@ -123,30 +120,30 @@ def fetch_chs(source_urls_lst):
                         if cate not in chs_dict:
                             chs_dict[cate] = OrderedDict()
                             chs_dict[cate][name] = []
-                            ch_num += 1
+                            chs_count += 1
                         elif name not in chs_dict[cate]:
                             chs_dict[cate][name] = []
-                            ch_num += 1
+                            chs_count += 1
                 elif line.strip() and not line.startswith('#'):
                     url = line.strip()
                     if '$' in url:
                         url = url.split('$')[0]
                     if cate and name:
                         chs_dict[cate][name].append(url)
-                        url_num += 1
-            total_ch_num += ch_num
-            total_url_num += url_num
-        logger.info(f'从<{source_url}>获取频道 {ch_num} 个(类内同名已去重)，获取url地址 {url_num} 个(未去重)！')
+                        urls_count += 1
+            total_chs_count += chs_count
+            total_urls_count += urls_count
+        logger.info(f'从<{source_url}>获取频道 {chs_count} 个(类内同名已去重)，获取url地址 {urls_count} 个(未去重)！')
     # 以处内容为保存获取到的频道列表名单到日志
     # logger.info('-'*25 + f'获取到的频道列表' + '-'*25)
     # for k, v in chs_dict.items():
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
-    logger.info('' * 100)
-    logger.info('-' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_ch_num} 个，获取url地址 {total_url_num} 个' + '-' * 25)
+
+    logger.info('-' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_chs_count} 个，获取url地址 {total_urls_count} 个' + '-' * 25)
     return chs_dict
 
-def fetch_chs_name(source_urls_lst):
+def fetch_chs_name(source_urls_lst: list):
 # 获取给定的一组直播源地址列表中的频道名称（含频道分类，对分类内重复频道名去重，）
     chs_dict = fetch_chs(source_urls_lst)
     names_dict = OrderedDict()
@@ -159,9 +156,8 @@ def fetch_chs_name(source_urls_lst):
                 names_dict[cate].append(name)
                 name_num += 1
 
-    logger.info('-'*60)
-    logger.info(f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
-    names_dict = remove_dump_name(names_dict) #对所有分类内频道名称去重
+    logger.info('-'*60 + '\n' + f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
+    names_dict = remove_dump_names(names_dict) #对所有分类内频道名称去重
 
     return names_dict
 

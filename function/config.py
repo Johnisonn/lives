@@ -1,12 +1,11 @@
 ##配置文件
 
-is_match_template = 1 # 是否匹配模板给定频道
-is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
-is_stability_test = 1  # 是否对直播地址测试响应时间
-
-response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
-v6_or_v4 = 6   # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
-
+IS_MATCH_TEMPLATE = 1  # 是否匹配模板给定频道
+IS_MATCH_LOCAL_CHS = 0  # 是否对字典中的地方频道进行匹配
+IS_STABILITY_TEST = 1  # 是否对直播地址测试响应时间
+SORT_BY_V6_OR_V4 = 6  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
+DURATION_TIMEOUT = 25  # 检测每个url流畅性时间
+SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
 
 mirror_url_lst = [
     'https://github.moeyy.xyz/',
@@ -19,7 +18,6 @@ mirror_url_lst = [
     'https://gh.api.99988866.xyz/',
 
 ]
-mirror = mirror_url_lst[0]
 
 # 较为稳定白名单
 white_lst_supplement = [
@@ -27,9 +25,10 @@ white_lst_supplement = [
     'ali-m-l.cztv.com', # 浙江频道
     'livestream-bt.nmtv.cn', #内蒙频道
     'tv.pull.hebtv.com', #河北频道
-    '148.135.93.213',  # 咪咕源
+    '148.135.93.213:81',  # 咪咕源
     '36.40.236.13:9999',  # 54.00fps
 ]
+
 white_lst_manual = [
 
     '[2409:8087:1:20:20',
@@ -74,10 +73,6 @@ black_lst = [
     'stream1.freetv.fun',
     ':9901udp',
 
-
-
-
-
 ]
 
 source_urls_0 = [
@@ -106,11 +101,9 @@ source_urls_0 = [
     # 'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt',
     'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt',
     # 'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
-
+    # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
 
 ]
-
-
 
 #直播源地址列表
 source_urls = [
@@ -204,10 +197,6 @@ source_urls = [
 
 
 ]
-
-
-
-
 
 epg_urls = [
     "https://live.fanmingming.cn/e.xml",

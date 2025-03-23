@@ -4,29 +4,24 @@ import os
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
-from config import white_lst_supplement
+from config import white_lst_supplement, DURATION_TIMEOUT
 import logging
 logger = logging.getLogger(__name__)
 
 
 # 抽取url中关键字作为后续白名单
-def extract_keyword(url):
-
+def extract_keyword(url: str):
     keyword = url.split('//')[1]
-    if '[' in url in url:
-        keyword = keyword.split('::')[0]
-    else:
-        keyword = keyword.split('/')[0]
-
+    keyword = keyword.split('::')[0] if '[' in keyword else keyword.split('/')[0]
     return keyword
 
 # 用FFmpeg检测流畅性
-def analyze_stream(url, timeout=20):
+def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     """检测单个直播源并返回结果（包含域名和FPS）"""
     command = [
         'ffmpeg',
         '-hide_banner',
-        '-t', str(timeout),
+        '-t', str(duration_timeout),
         '-timeout', '5000000',
         '-rw_timeout', '5000000',
         '-i', url,
@@ -42,7 +37,7 @@ def analyze_stream(url, timeout=20):
             stderr=subprocess.PIPE,
             stdout=subprocess.DEVNULL,
             text=True,
-            timeout=timeout + 5
+            timeout=duration_timeout + 5
         )
         log = result.stderr
     except subprocess.TimeoutExpired as e:
@@ -112,36 +107,50 @@ def analyze_stream(url, timeout=20):
     elif avg_fps < 25 or avg_speed < 1.0:
         is_fluent = False
     # 条件3：高频重复错误
-    elif errors.get('repeated_errors', 0) > 10 or errors.get('concealing_errors', 0) > 5:
+    elif (
+            errors.get('repeated_errors', 0) > duration_timeout/2
+            or errors.get('concealing_errors', 0) > 5
+    ):
         is_fluent = False
 
     return {
         'url': url,
         'domain': extract_keyword(url),
         'is_fluent': is_fluent,
-        'avg_fps': avg_fps
+        'avg_fps': avg_fps,
+        'avg_speed': avg_speed,
+        'errors': errors
     }
 
 # 线程池并发检测流畅性
-def generate_whitelist(sources, workers=4, output_file='white_lst'):
+def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='white_lst', sort_by_fps_or_speed='F'):
     """并发检测并生成域名白名单"""
     fluent_domains = {}
-    logger.info(' ')
+    results = {'valid':[], 'error':[]}
+
     logger.info('>' * 42 + '【开始流畅性检测】' + '<' * 42)
-    logger.info(' ')
-    logger.info('-' * 44 + f'core_num:{os.cpu_count()}' + '-' * 44)
+    logger.info('-' * 44 + f'core_count:{os.cpu_count()}' + '-' * 44)
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {executor.submit(analyze_stream, url): url for url in sources}
-        with tqdm(total=len(sources), desc='检测进度') as pbar:
+        futures = {executor.submit(analyze_stream, url): url for url in urls}
+        with tqdm(total=len(urls), desc='样本检测进度', unit="url") as pbar:
             for future in as_completed(futures):
                 res = future.result()
                 if res['is_fluent'] and res['domain']:
+                    results['valid'].append((res['url'], res['avg_fps'], res['avg_speed']))
                     # 记录最高FPS（避免重复域名）
-                    if res['domain'] not in fluent_domains or \
-                            res['avg_fps'] > fluent_domains[res['domain']]:
-                        fluent_domains[res['domain']] = res['avg_fps']
+                    if sort_by_fps_or_speed == 'F':
+                        if res['domain'] not in fluent_domains or \
+                                res['avg_fps'] > fluent_domains[res['domain']]:
+                            fluent_domains[res['domain']] = res['avg_fps']
+                    elif sort_by_fps_or_speed == 'S':
+                        if res['domain'] not in fluent_domains or \
+                                res['avg_speed'] > fluent_domains[res['domain']]:
+                            fluent_domains[res['domain']] = res['avg_speed']
+                else:
+                    results['error'].append(res['errors'])
                 pbar.update(1)
+                pbar.set_postfix_str(f"有效:{len(results['valid'])} 无效:{len(results['error'])}")
 
     # 写入白名单文件
     domain_lst = []
@@ -150,12 +159,20 @@ def generate_whitelist(sources, workers=4, output_file='white_lst'):
         for domain in white_lst_supplement: # 将增补白名单中的内容优先加入
             f.write(f"    '{domain}',\n")
             domain_lst.append(domain)
-        for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
-            if domain not in white_lst_supplement:
-                f.write(f"    '{domain}',  # {fps:.2f}fps\n")
-                domain_lst.append(domain)
-        f.write("]\n")
-        logger.info('-' * 35 + f'域名白名单已写入：white_lst.txt' + '-' * 35)
+        if sort_by_fps_or_speed == 'F':
+            for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
+                if domain not in white_lst_supplement:
+                    f.write(f"    '{domain}',  # {fps:.2f}fps\n")
+                    domain_lst.append(domain)
+            f.write("]\n")
+        elif sort_by_fps_or_speed == 'S':
+            for domain, speed in sorted(fluent_domains.items(), key=lambda x: -x[1]):
+                if domain not in white_lst_supplement:
+                    f.write(f"    '{domain}',  # {speed:.2f}X\n")
+                    domain_lst.append(domain)
+            f.write("]\n")
+
+        logger.info('-' * 35 + f'域名白名单已写入：white_lst.py' + '-' * 35)
 
     return domain_lst
 
