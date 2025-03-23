@@ -2,10 +2,10 @@
 
 is_match_template = 1 # 是否匹配模板给定频道
 is_match_local_chs = 0 # 是否对字典中的地方频道进行匹配
-is_stability_test = 0  # 是否对直播地址测试响应时间
+is_stability_test = 1  # 是否对直播地址测试响应时间
 
 response_time = 300  # 设置筛选直播源url的响应时间，单位毫秒
-v6_or_v4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
+v6_or_v4 = 6   # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
 
 
 mirror_url_lst = [
@@ -20,9 +20,21 @@ mirror_url_lst = [
 
 ]
 mirror = mirror_url_lst[0]
+
+# 较为稳定白名单
+white_lst_supplement = [
+    '[2409:8087:1:20:20',
+    '148.135.93.213', # 咪咕源
+    'ali-m-l.cztv.com', # 浙江频道
+    'livestream-bt.nmtv.cn', #内蒙频道
+]
 white_lst_manual = [
 
-    '148.135.93.213', # 咪咕源
+    '[2409:8087:1:20:20',
+    '148.135.93.213',  # 咪咕源
+    'ali-m-l.cztv.com',  # 浙江频道
+    'livestream-bt.nmtv.cn',  # 内蒙频道
+
     'rthktv33-live.akamaized.net',  # 5386kbps
     'cdn5.163189.xyz',  # 4216kbps
     'goo.bkpcp.top',  # 3569kbps
@@ -55,7 +67,7 @@ black_lst = [
 
 ]
 
-source_urls = [
+source_urls_0 = [
 
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
@@ -88,7 +100,7 @@ source_urls = [
 
 
 #直播源地址列表
-source_urls_0 = [
+source_urls = [
     # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',

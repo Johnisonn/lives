@@ -4,25 +4,21 @@ import os
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
-from urllib.parse import urlparse
+from config import white_lst_supplement
 import logging
 logger = logging.getLogger(__name__)
 
-from urllib.parse import urlparse
 
 
-def extract_domain(url):
-    """从URL中提取域名（去除端口和路径）"""
-    try:
-        if url.startswith(('rtmp://', 'udp://', 'rtsp://')):
-            netloc = url.split('//')[1].split('/')[0].split('@')[-1]
-        else:
-            parsed = urlparse(url)
-            netloc = parsed.netloc
-        domain = netloc.split(':')[0]
-        return domain.strip()
-    except:
-        return None
+def extract_keyword(url):
+
+    keyword = url.split('//')[1]
+    if '[' in url in url:
+        keyword = keyword.split('::')[0]
+    else:
+        keyword = keyword.split('/')[0]
+
+    return keyword
 
 
 def analyze_stream(url, timeout=20):
@@ -121,7 +117,7 @@ def analyze_stream(url, timeout=20):
 
     return {
         'url': url,
-        'domain': extract_domain(url),
+        'domain': extract_keyword(url),
         'is_fluent': is_fluent,
         'avg_fps': avg_fps
     }
@@ -151,16 +147,20 @@ def generate_whitelist(sources, workers=4, output_file='white_lst'):
     domain_lst = []
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write("white_lst = [\n")
-        for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
-            f.write(f"    '{domain}',  # {fps:.2f}fps\n")
+        for domain in white_lst_supplement: # 将增补白名单中的内容优先加入
+            f.write(f"    '{domain}',\n")
             domain_lst.append(domain)
+        for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
+            if domain not in white_lst_supplement:
+                f.write(f"    '{domain}',  # {fps:.2f}fps\n")
+                domain_lst.append(domain)
         f.write("]\n")
         logger.info('>' * 35 + f'域名白名单已写入：white_lst.txt' + '<' * 35)
 
     return domain_lst
 
 if __name__ == '__main__':
-    # 示例直播源列表
+    #示例直播源列表
     test_sources = urls.test_urls
     print(os.cpu_count())
     generate_whitelist(

@@ -22,7 +22,7 @@ def main():
     # chs = fetch_chs(['/home/uos/Desktop/000.txt'])
     chs = fetch_chs(source_urls)
     chs = remove_dump_urls(chs)
-    chs = filter_by_ip_version(chs,4)
+    chs = filter_by_ip_version(chs,)
     if is_match_template:
         chs = match_chs(chs)
     if is_stability_test:
