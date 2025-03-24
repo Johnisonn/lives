@@ -14,7 +14,8 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
     chs_count = 0
     urls_count = 0
 
-    logger.info('>' * 42 + '【开始匹配模板频道】' + '<' * 42)
+    logger.info('—' * 100)
+    logger.info('【开始匹配模板频道】'.center(100))
 
     for cate_n, names_n in r_chs_dict.items():
         if cate_n not in matched_chs_dict:
@@ -37,7 +38,7 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
     local_urls_count = 0
     if IS_MATCH_LOCAL_CHS:  # 获取地方台
         new_cate = '★地方频道★'
-        logger.info('>' * 14 + '【开始查询地方频道】' + '<' * 14)
+        logger.info('【开始查询地方频道】'.center(100))
         for cate_f, vls_f in chs_dict.items():
             for name_f, urls_f in vls_f.items():
                 n = len(urls_f)
@@ -57,7 +58,7 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
                             local_urls_count += n
 
-    logger.info('-' * 33 + f'匹配到地方频道 {local_chs_count} 个、url直播地址 {local_urls_count} 个' + '-' * 33)
-    logger.info('-' * 20 + f'共匹配到模板给定频道(含匹配的地方频道) {chs_count + local_chs_count} 个、url直播地址 {urls_count + local_urls_count} 个' + '-' * 20)
+    logger.info(f'匹配到地方频道 {local_chs_count} 个、url直播地址 {local_urls_count} 个'.center(100))
+    logger.info(f'共匹配到模板给定频道(含匹配的地方频道) {chs_count + local_chs_count} 个、url直播地址 {urls_count + local_urls_count} 个'.center(100))
     return matched_chs_dict
 

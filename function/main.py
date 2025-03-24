@@ -1,4 +1,5 @@
-from config import source_urls, white_lst_manual,IS_MATCH_TEMPLATE, IS_STABILITY_TEST, SORT_BY_FPS_OR_SPEED
+from config import source_urls, white_lst_manual, IS_MATCH_TEMPLATE, IS_STABILITY_TEST, SORT_BY_FPS_OR_SPEED, \
+    TEST_SAMPLES
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
 from filter import filter_by_ip_version, filter_by_names
@@ -26,7 +27,7 @@ def main():
     if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
     if IS_STABILITY_TEST:
-        test_urls = filter_by_names(chs,['CCTV-1 综合','天津卫视'])
+        test_urls = filter_by_names(chs,TEST_SAMPLES)
         white_list = generate_whitelist(urls=test_urls, sort_by_fps_or_speed=SORT_BY_FPS_OR_SPEED)
     else:
         white_list = white_lst_manual

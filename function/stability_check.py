@@ -4,7 +4,7 @@ import os
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
-from config import white_lst_supplement, DURATION_TIMEOUT
+from config import white_lst_stable, DURATION_TIMEOUT
 import logging
 logger = logging.getLogger(__name__)
 
@@ -123,17 +123,17 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     }
 
 # 线程池并发检测流畅性
-def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='white_lst', sort_by_fps_or_speed='F'):
+def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='white_lst.py', sort_by_fps_or_speed='S'):
     """并发检测并生成域名白名单"""
     fluent_domains = {}
     results = {'valid':[], 'error':[]}
 
-    logger.info('>' * 42 + '【开始流畅性检测】' + '<' * 42)
-    logger.info('-' * 44 + f'core_count:{os.cpu_count()}' + '-' * 44)
+    logger.info('—' * 100)
+    logger.info(f'【开始流畅性抽样检测】:CORE_COUNT:{os.cpu_count()}'.center(100))
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(analyze_stream, url): url for url in urls}
-        with tqdm(total=len(urls), desc='样本检测进度', unit="url") as pbar:
+        with tqdm(total=len(urls), desc='样本检测进度', unit="urls") as pbar:
             for future in as_completed(futures):
                 res = future.result()
                 if res['is_fluent'] and res['domain']:
@@ -154,26 +154,27 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
 
     # 写入白名单文件
     domain_lst = []
+    if sort_by_fps_or_speed == 'F':
+        for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
+            domain_lst.append((domain, f'FPS={fps:.2f}'))
+    if sort_by_fps_or_speed == 'S':
+        for domain, speed in sorted(fluent_domains.items(), key=lambda x: -x[1]):
+            domain_lst.append((domain, f'SPEED={speed:.2f}X'))
+
+    for domain in reversed(white_lst_stable):
+        if domain not in [d[0] for d in domain_lst]:
+            domain_lst.insert(0,(domain, 'reserved'))
+
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write("white_lst = [\n")
-        for domain in white_lst_supplement: # 将增补白名单中的内容优先加入
-            f.write(f"    '{domain}',\n")
-            domain_lst.append(domain)
-        if sort_by_fps_or_speed == 'F':
-            for domain, fps in sorted(fluent_domains.items(), key=lambda x: -x[1]):
-                if domain not in white_lst_supplement:
-                    f.write(f"    '{domain}',  # {fps:.2f}fps\n")
-                    domain_lst.append(domain)
-            f.write("]\n")
-        elif sort_by_fps_or_speed == 'S':
-            for domain, speed in sorted(fluent_domains.items(), key=lambda x: -x[1]):
-                if domain not in white_lst_supplement:
-                    f.write(f"    '{domain}',  # {speed:.2f}X\n")
-                    domain_lst.append(domain)
-            f.write("]\n")
+        f.write('white_lst = [\n')
+        for domain in domain_lst:
+            f.write(f"    '{domain[0]}',   # {domain[1]}\n")
+        f.write(f']\n')
 
-        logger.info('-' * 35 + f'域名白名单已写入：white_lst.py' + '-' * 35)
 
+        logger.info(f'抽样检测已完成！域名白名单已写入：{output_file}'.center(100))
+
+    domain_lst = [d[0] for d in domain_lst]
     return domain_lst
 
 if __name__ == '__main__':

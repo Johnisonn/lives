@@ -1,8 +1,11 @@
 
 from collections import OrderedDict
 from typing import Union, List
+from stability_check import extract_keyword
 import re
 import copy
+
+
 
 
 # 判定IP地址版本
@@ -32,12 +35,20 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str]]) 
 
     # 标准化输入格式为集合
     search_names = {target_names} if isinstance(target_names, str) else set(target_names)
-
     result = []
+    features = set()
+    merged_result = []
     # 遍历所有类别
     for category in chs_dict.values():
-        # 遍历当前类别下的所有直播源
         for name, urls in category.items():
             if name in search_names:
                 result.extend(urls)
-    return result
+
+    for url in result:
+        feature = extract_keyword(url)
+        if feature not in features:
+            features.add(feature)
+            merged_result.append(url)
+
+
+    return merged_result

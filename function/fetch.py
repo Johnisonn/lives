@@ -19,7 +19,8 @@ def readin_required_chs():
 # 从模板文件中读入所需要频道分类和频道名称
     required_chs_dict = OrderedDict()
 
-    logger.info('>' * 41 + '【开始读入模板信息】' + '<' * 41)
+    logger.info('—' * 100)
+    logger.info('【开始读入模板信息】'.center(100))
 
     with open(f'{current_path}/template.txt', 'r', encoding='utf-8') as f:
         chs_count = 0
@@ -35,7 +36,7 @@ def readin_required_chs():
                     required_chs_dict[ch_cate].append(line)
                     chs_count += 1
 
-    logger.info('-' * 34 + f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个' + '-' * 34)
+    logger.info(f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个'.center(100))
     return required_chs_dict
 
 def fetch_chs(source_urls_lst: list):
@@ -44,7 +45,8 @@ def fetch_chs(source_urls_lst: list):
     total_chs_count = 0
     total_urls_count = 0
 
-    logger.info('>' * 42 + '【开始获取频道资源】' + '<' *42)
+    logger.info('—' * 100)
+    logger.info('【开始获取频道资源】'.center(100))
 
     for proxy in mirror_url_lst:
         u = f'{proxy}https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u'
@@ -140,7 +142,7 @@ def fetch_chs(source_urls_lst: list):
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
 
-    logger.info('-' * 25 + f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_chs_count} 个，获取url地址 {total_urls_count} 个' + '-' * 25)
+    logger.info(f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_chs_count} 个，获取url地址 {total_urls_count} 个'.center(100))
     return chs_dict
 
 def fetch_chs_name(source_urls_lst: list):
@@ -156,7 +158,7 @@ def fetch_chs_name(source_urls_lst: list):
                 names_dict[cate].append(name)
                 name_num += 1
 
-    logger.info('-'*60 + '\n' + f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！')
+    logger.info(f'共获取频道名称 {name_num} 个(不同分类间同名频道未去重)！'.center(100))
     names_dict = remove_dump_names(names_dict) #对所有分类内频道名称去重
 
     return names_dict

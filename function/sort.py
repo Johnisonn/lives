@@ -19,7 +19,9 @@ def sorted_by_ip_version(chs_dict, white_lst: list, black_lst=black_lst):
     v6_count = 0
     v4_count = 0
 
-    logger.info('>' * 41 + '【开始按地址类型排序】' + '<' * 41)
+    logger.info('—' * 100)
+    logger.info(f'【开始按地址类型排序】:IPV{SORT_BY_V6_OR_V4}优先'.center(100))
+
 
     for cate, vls in chs_dict.items():
         sorted_chs_dict[cate] = OrderedDict()
@@ -67,6 +69,6 @@ def sorted_by_ip_version(chs_dict, white_lst: list, black_lst=black_lst):
             else:
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
-    logger.info('-' * 39 + f'已按照 IPV{SORT_BY_V6_OR_V4} 优先完成排序' + '-' * 39)
-    logger.info('-' * 14 + f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个' + '-' * 14)
+
+    logger.info(f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个'.center(100))
     return sorted_chs_dict

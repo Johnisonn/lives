@@ -3,24 +3,15 @@
 IS_MATCH_TEMPLATE = 1  # 是否匹配模板给定频道
 IS_MATCH_LOCAL_CHS = 0  # 是否对字典中的地方频道进行匹配
 IS_STABILITY_TEST = 1  # 是否对直播地址测试响应时间
-SORT_BY_V6_OR_V4 = 6  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
+SORT_BY_V6_OR_V4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
 DURATION_TIMEOUT = 25  # 检测每个url流畅性时间
 SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
+TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','北京卫视']
 
-mirror_url_lst = [
-    'https://github.moeyy.xyz/',
-    'https://ghproxy.cfd/',
-    'https://hub.gitmirror.com/',
-    # 'https://ghgo.xyz/',
-    'https://ghfast.top/',
-    'https://gh.ddlc.top/',
-    'https://ghproxy.net/',
-    'https://gh.api.99988866.xyz/',
 
-]
 
 # 较为稳定白名单
-white_lst_supplement = [
+white_lst_stable = [
     '[2409:8087:1:20:20', #FMM
     'ali-m-l.cztv.com', # 浙江频道
     'livestream-bt.nmtv.cn', #内蒙频道
@@ -105,9 +96,9 @@ source_urls_0 = [
 
 ]
 
-#直播源地址列表
 source_urls = [
     # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
+    'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     'https://iptv.b2og.com/txt/fmml_ipv6.txt',
 
@@ -198,6 +189,22 @@ source_urls = [
 
 ]
 
+mirror_url_lst = [
+    'https://github.moeyy.xyz/',
+    'https://ghproxy.cfd/',
+    'https://hub.gitmirror.com/',
+    # 'https://ghgo.xyz/',
+    'https://ghfast.top/',
+    'https://gh.ddlc.top/',
+    'https://ghproxy.net/',
+    'https://gh.api.99988866.xyz/',
+
+]
+
+head_info = {'cate':'★更新日期★',
+             'tvg-logo':'https://live.fanmingming.cn/tv/之江纪录.png',
+             'url':'https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8'}
+
 epg_urls = [
     "https://live.fanmingming.cn/e.xml",
     "http://epg.51zmt.top:8000/e.xml",
@@ -206,8 +213,3 @@ epg_urls = [
     "https://epg.pw/xmltv/epg_HK.xml",
     "https://epg.pw/xmltv/epg_TW.xml"
 ]
-
-# 文件头信息
-head_info = {'cate':'★更新日期★',
-             'tvg-logo':'https://live.fanmingming.cn/tv/之江纪录.png',
-             'url':'https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8'}
