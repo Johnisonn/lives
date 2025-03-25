@@ -36,6 +36,7 @@ def readin_required_chs():
                     required_chs_dict[ch_cate].append(line)
                     chs_count += 1
 
+
     logger.info(f'共提取模板中分类 {len(required_chs_dict)} 个、频道 {chs_count} 个'.center(100))
     return required_chs_dict
 
@@ -49,7 +50,7 @@ def fetch_chs(source_urls_lst: list):
     logger.info('【开始获取频道资源】'.center(100))
 
     for proxy in mirror_url_lst:
-        u = f'{proxy}https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u'
+        u = f'{proxy}https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u'
         r = requests.get(u, headers=header, timeout=4)
         if 200 <= r.status_code < 300:
             break
@@ -142,6 +143,7 @@ def fetch_chs(source_urls_lst: list):
     #     for n, u in v.items():
     #         logger.info(f'{k}-{n}-{u}')
 
+    logger.info('-' * 100)
     logger.info(f'共从 {len(source_urls_lst)} 个源地址中获取频道 {total_chs_count} 个，获取url地址 {total_urls_count} 个'.center(100))
     return chs_dict
 

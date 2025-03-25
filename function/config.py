@@ -12,12 +12,17 @@ TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','�
 
 # 较为稳定白名单
 white_lst_stable = [
-    '[2409:8087:1:20:20', #FMM
     'ali-m-l.cztv.com', # 浙江频道
-    'livestream-bt.nmtv.cn', #内蒙频道
-    'tv.pull.hebtv.com', #河北频道
+    'livestream-bt.nmtv.cn', # 内蒙频道
+    'gxlive.snrtv.com', # 陕西频道
+    'tv.pull.hebtv.com', # 河北频道
+    'tencentplay.gztv.com', # 广州频道
+
+    '[2409:8087:1:20:20', # FMM
+    '[2409:8087:7008:20', # 1888
     '148.135.93.213:81',  # 咪咕源
-    '36.40.236.13:9999',  # 54.00fps
+
+
 ]
 
 white_lst_manual = [
@@ -100,7 +105,8 @@ source_urls = [
     # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
     'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
-    'https://iptv.b2og.com/txt/fmml_ipv6.txt',
+    # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
+    'https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u', # FMM
 
     'https://gitee.com/zhang-station1/genius-film-and-television/raw/master/3658',
     'http://8.138.7.223/live.txt',
