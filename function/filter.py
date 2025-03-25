@@ -4,6 +4,8 @@ from typing import Union, List
 from stability_check import extract_keyword
 import re
 import copy
+import logging
+logger = logging.getLogger(__name__)
 
 
 
@@ -31,24 +33,34 @@ def filter_by_ip_version(chs_dict, ip_version=None):
     return filtered_dict
 
 # 筛选给定频道的urls
-def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str]]) -> List[str]:
-
-    # 标准化输入格式为集合
-    search_names = {target_names} if isinstance(target_names, str) else set(target_names)
+def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], None] = None) -> List[str]:
     result = []
     features = set()
     merged_result = []
-    # 遍历所有类别
-    for category in chs_dict.values():
-        for name, urls in category.items():
-            if name in search_names:
-                result.extend(urls)
 
+    logger.info('—' * 100)
+
+    if target_names is None:
+        # target_names 为空，提取所有 urls
+        logger.info('【开始抽取样本】:全部采集不抽样'.center(100))
+        for category in chs_dict.values():
+            for urls in category.values():
+                result.extend(urls)
+    else:
+        # target_names 不为空，提取指定名称对应的 urls
+        search_names = {target_names} if isinstance(target_names, str) else set(target_names)
+        logger.info(f'【开始抽取样本】:样本：{','.join(search_names)}'.center(100))
+        for category in chs_dict.values():
+            for name, urls in category.items():
+                if name in search_names:
+                    result.extend(urls)
+
+    # 根据 extract_keyword 函数规则去重
     for url in result:
         feature = extract_keyword(url)
         if feature not in features:
             features.add(feature)
             merged_result.append(url)
 
-
+    logger.info(f'共从 {len(search_names)} 个样本中采集urls {len(merged_result)} 个'.center(100))
     return merged_result

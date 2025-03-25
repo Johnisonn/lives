@@ -1,6 +1,7 @@
 import subprocess
 import re
 import os
+import datetime
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
@@ -166,6 +167,7 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
             domain_lst.insert(0,(domain, 'reserved'))
 
     with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(f'#  {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n')
         f.write('white_lst = [\n')
         for domain in domain_lst:
             f.write(f"    '{domain[0]}',   # {domain[1]}\n")

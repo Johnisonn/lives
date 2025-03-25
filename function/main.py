@@ -20,14 +20,15 @@ logging.basicConfig(
 
 
 def main():
-    # chs = fetch_chs(['/home/uos/Desktop/0.txt'])
+    # chs = fetch_chs(['/home/uos/Desktop/iptv4.m3u'])
     chs = fetch_chs(source_urls)
     chs = remove_dump_urls(chs)
     chs = filter_by_ip_version(chs,)
     if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
     if IS_STABILITY_TEST:
-        test_urls = filter_by_names(chs,TEST_SAMPLES)
+        test_urls = filter_by_names(chs, TEST_SAMPLES)
+        # test_urls = filter_by_names(chs,)
         white_list = generate_whitelist(urls=test_urls, sort_by_fps_or_speed=SORT_BY_FPS_OR_SPEED)
     else:
         white_list = white_lst_manual

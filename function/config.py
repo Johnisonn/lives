@@ -4,7 +4,7 @@ IS_MATCH_TEMPLATE = 1  # 是否匹配模板给定频道
 IS_MATCH_LOCAL_CHS = 0  # 是否对字典中的地方频道进行匹配
 IS_STABILITY_TEST = 1  # 是否对直播地址测试响应时间
 SORT_BY_V6_OR_V4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
-DURATION_TIMEOUT = 25  # 检测每个url流畅性时间
+DURATION_TIMEOUT = 30  # 检测每个url流畅性时间
 SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
 TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','北京卫视']
 
@@ -71,7 +71,7 @@ black_lst = [
 
 ]
 
-source_urls_0 = [
+source_urls0 = [
 
    # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
    # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
@@ -95,9 +95,11 @@ source_urls_0 = [
    #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
 
     # 'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt',
-    'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt',
+    # 'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt',
+    'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     # 'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
+    'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
 
 ]
 
@@ -107,6 +109,9 @@ source_urls = [
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
     'https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u', # FMM
+    'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
+    'https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/refs/heads/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt',
+    'https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/refs/heads/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt',
 
     'https://gitee.com/zhang-station1/genius-film-and-television/raw/master/3658',
     'http://8.138.7.223/live.txt',

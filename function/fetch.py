@@ -132,8 +132,9 @@ def fetch_chs(source_urls_lst: list):
                     if '$' in url:
                         url = url.split('$')[0]
                     if cate and name:
-                        chs_dict[cate][name].append(url)
-                        urls_count += 1
+                        if '://' in url:
+                            chs_dict[cate][name].append(url)
+                            urls_count += 1
             total_chs_count += chs_count
             total_urls_count += urls_count
         logger.info(f'从<{source_url}>获取频道 {chs_count} 个(类内同名已去重)，获取url地址 {urls_count} 个(未去重)！')
