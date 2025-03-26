@@ -20,7 +20,7 @@ logging.basicConfig(
 
 
 def main():
-    # chs = fetch_chs(['/home/uos/Desktop/iptv4.m3u'])
+    # chs = fetch_chs(['/home/uos/Desktop/0.txt'])
     chs = fetch_chs(source_urls)
     chs = remove_dump_urls(chs)
     chs = filter_by_ip_version(chs,)

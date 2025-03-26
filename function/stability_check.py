@@ -16,7 +16,7 @@ def extract_keyword(url: str):
         keyword = url.split('//')[1]
         keyword = keyword.split('::')[0] if '[' in keyword else keyword.split('/')[0]
     else:
-        print(url)
+        print(f'此处出现问题：url={url}')
         return None
     return keyword
 
@@ -42,6 +42,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
             stderr=subprocess.PIPE,
             stdout=subprocess.DEVNULL,
             text=True,
+            # encoding='utf-8',
             timeout=duration_timeout + 5
         )
         log = result.stderr
