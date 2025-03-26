@@ -12,8 +12,12 @@ logger = logging.getLogger(__name__)
 
 # 抽取url中关键字作为后续白名单
 def extract_keyword(url: str):
-    keyword = url.split('//')[1]
-    keyword = keyword.split('::')[0] if '[' in keyword else keyword.split('/')[0]
+    if url:
+        keyword = url.split('//')[1]
+        keyword = keyword.split('::')[0] if '[' in keyword else keyword.split('/')[0]
+    else:
+        print(url)
+        return None
     return keyword
 
 # 用FFmpeg检测流畅性

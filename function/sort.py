@@ -13,15 +13,18 @@ def is_v6(url: str):
     return re.search(r'\[[0-9a-fA-F:]+\]',url) is not None
 
 # 优先按照白名单排序，其余按IPV4或IPV6排序
-def sorted_by_ip_version(chs_dict, white_lst: list, black_lst=black_lst):
+def sorted_by_ip_version(chs_dict, white_lst, black_lst=black_lst, is_keey_only_white_lst=0):
     sorted_chs_dict = OrderedDict()
     white_count = 0
     v6_count = 0
     v4_count = 0
 
-    logger.info('—' * 100)
-    logger.info(f'【开始按地址类型排序】:IPV{SORT_BY_V6_OR_V4}优先'.center(100))
-
+    if not is_keey_only_white_lst:
+        logger.info('—' * 100)
+        logger.info(f'【开始按地址类型排序】:IPV{SORT_BY_V6_OR_V4}优先'.center(100))
+    else:
+        logger.info('—' * 100)
+        logger.info('【开始按白名单顺序排序】:只保留白名单URLS'.center(100))
 
     for cate, vls in chs_dict.items():
         sorted_chs_dict[cate] = OrderedDict()
@@ -62,6 +65,8 @@ def sorted_by_ip_version(chs_dict, white_lst: list, black_lst=black_lst):
                         idx_white += 1
 
             sorted_chs_dict[cate][name].extend(urls_by_white)
+            if is_keey_only_white_lst:
+                continue
 
             if SORT_BY_V6_OR_V4 == 6:
                 sorted_chs_dict[cate][name].extend(urls_v6)
@@ -70,5 +75,9 @@ def sorted_by_ip_version(chs_dict, white_lst: list, black_lst=black_lst):
                 sorted_chs_dict[cate][name].extend(urls_v4)
                 sorted_chs_dict[cate][name].extend(urls_v6)
 
-    logger.info(f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个'.center(100))
+    if is_keey_only_white_lst:
+        logger.info(f'已按白名单地址排序完成，共有白名单地址 {white_count} 个'.center(100))
+    else:
+        logger.info(f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个'.center(100))
+
     return sorted_chs_dict

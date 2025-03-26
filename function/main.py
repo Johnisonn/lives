@@ -1,5 +1,5 @@
 from config import source_urls, white_lst_manual, IS_MATCH_TEMPLATE, IS_STABILITY_TEST, SORT_BY_FPS_OR_SPEED, \
-    TEST_SAMPLES
+    TEST_SAMPLES, IS_KEEY_ONLY_WHITE_LST
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
 from filter import filter_by_ip_version, filter_by_names
@@ -27,12 +27,12 @@ def main():
     if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
     if IS_STABILITY_TEST:
-        test_urls = filter_by_names(chs, TEST_SAMPLES)
-        # test_urls = filter_by_names(chs,)
+        # test_urls = filter_by_names(chs, TEST_SAMPLES)
+        test_urls = filter_by_names(chs,)
         white_list = generate_whitelist(urls=test_urls, sort_by_fps_or_speed=SORT_BY_FPS_OR_SPEED)
     else:
         white_list = white_lst_manual
-    chs = sorted_by_ip_version(chs, white_list,)
+    chs = sorted_by_ip_version(chs, white_list,is_keey_only_white_lst=IS_KEEY_ONLY_WHITE_LST)
     save_chs_as_txt(chs)
     save_chs_as_m3u(chs)
 

@@ -7,6 +7,7 @@ SORT_BY_V6_OR_V4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前�
 DURATION_TIMEOUT = 30  # 检测每个url流畅性时间
 SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
 TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','北京卫视']
+IS_KEEY_ONLY_WHITE_LST = 1  # 流畅性检测完成后，是否只保留白名单地址URLS
 
 
 
@@ -19,7 +20,6 @@ white_lst_stable = [
     'tencentplay.gztv.com', # 广州频道
 
     '[2409:8087:1:20:20', # FMM
-    '[2409:8087:7008:20', # 1888
     '148.135.93.213:81',  # 咪咕源
 
 

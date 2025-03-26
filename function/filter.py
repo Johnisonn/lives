@@ -37,6 +37,7 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], N
     result = []
     features = set()
     merged_result = []
+    search_names = {}
 
     logger.info('—' * 100)
 
