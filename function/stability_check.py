@@ -12,11 +12,12 @@ logger = logging.getLogger(__name__)
 
 # 抽取url中关键字作为后续白名单
 def extract_keyword(url: str):
-    if url:
+    if '://' in url:
         keyword = url.split('//')[1]
         keyword = keyword.split('::')[0] if '[' in keyword else keyword.split('/')[0]
+        # print(keyword)
     else:
-        print(f'此处出现问题：url={url}')
+        print(f'此url较特殊：-------------------------------------------------url={url}')
         return None
     return keyword
 
@@ -42,7 +43,11 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
             stderr=subprocess.PIPE,
             stdout=subprocess.DEVNULL,
             text=True,
-            # encoding='utf-8',
+            # 这里需要加入对输出编码的正确解码，有些直播源经ffmpeg处理后的输出为非UTF-8编码，会产生错误，需要更换解码。
+            # 可使用latin-1（能处理所有字节）或替换错误字符来处理错误。
+            # 可添加encoding='latin-1'和errors='replace'，这样可以避免解码错误
+            # 如明确输出编码有中文字符，可使用encoding='gbk',
+            errors='replace',  # 用 � 替换非法字符
             timeout=duration_timeout + 5
         )
         log = result.stderr

@@ -49,11 +49,15 @@ def fetch_chs(source_urls_lst: list):
     logger.info('—' * 100)
     logger.info('【开始获取频道资源】'.center(100))
 
-    for proxy in mirror_url_lst:
-        u = f'{proxy}https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u'
-        r = requests.get(u, headers=header, timeout=4)
-        if 200 <= r.status_code < 300:
-            break
+    for proxy in mirror_url_lst:  # 查找可用代理
+        try:
+            u = f'{proxy}https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u'
+            r = requests.get(u, headers=header, timeout=4)
+            if 200 <= r.status_code < 300:
+                print(f"找到可用代理: {proxy}")
+                break
+        except requests.RequestException as e:
+            print(f"使用代理 {proxy} 时出现错误: {e}")
 
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源
@@ -80,7 +84,7 @@ def fetch_chs(source_urls_lst: list):
                     cate = line.split(',')[0]
                     if cate not in chs_dict:
                         chs_dict[cate] = OrderedDict()
-                elif re.match(r'^(.*?),(.*?)$', line):  # 正则匹配IP地址
+                elif re.match(r'^(.+),(.+)$', line):  # 正则匹配IP地址
                     name, url = line.split(',', 1)
                     name = ch_name_regular(name)
                     url = url.strip()
