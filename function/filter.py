@@ -43,7 +43,7 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], N
 
     if target_names is None:
         # target_names 为空，提取所有 urls
-        logger.info('【开始抽取样本】:全部采集不抽样'.center(100))
+        logger.info('【开始抽取样本】:全部采集'.center(100))
         for category in chs_dict.values():
             for urls in category.values():
                 result.extend(urls)

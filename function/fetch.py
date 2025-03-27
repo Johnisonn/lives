@@ -2,6 +2,8 @@
 
 import re
 import os
+import sys
+
 import requests
 import logging
 from collections import OrderedDict
@@ -49,15 +51,20 @@ def fetch_chs(source_urls_lst: list):
     logger.info('—' * 100)
     logger.info('【开始获取频道资源】'.center(100))
 
+    found_proxy = False
     for proxy in mirror_url_lst:  # 查找可用代理
         try:
             u = f'{proxy}https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u'
             r = requests.get(u, headers=header, timeout=4)
             if 200 <= r.status_code < 300:
                 print(f"找到可用代理: {proxy}")
+                found_proxy = True
                 break
         except requests.RequestException as e:
             print(f"使用代理 {proxy} 时出现错误: {e}")
+    if not found_proxy:
+        print("未找到可用代理，程序退出。")
+        sys.exit(1)
 
     for source_url in source_urls_lst:
         if 'http' in source_url:  # 网络直播源
