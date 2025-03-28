@@ -7,6 +7,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from config import white_lst_stable, DURATION_TIMEOUT
 import logging
+
+from merged_urls_sample import merged_urls_samlpe
+
 logger = logging.getLogger(__name__)
 
 
@@ -59,7 +62,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     fps_values = []
     speed_values = []
     # 匹配FPS和Speed
-    fps_pattern = r'frame=\s*\d+\s+fps=([\d.]+)'
+    fps_pattern = r'frame=\s*\d+\s*fps=([\s\d.]+)'
     speed_pattern = r'speed=([\d.]+)x'
     for line in log.split('\n'):
         if 'fps=' in line:
@@ -76,8 +79,8 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
             errors['connection_timeout'] += 1
         if 'Connection refused' in line:
             errors['connection_refused'] += 1
-        if 'HTTP error 404' in line:
-            errors['http_404'] += 1
+        if 'HTTP error' in line:
+            errors['http_error'] += 1
         if 'Invalid data found' in line:  # 新增：输入数据错误
             errors['invalid_data_error'] += 1
         if 'decode_slice_header error' in line:
@@ -115,7 +118,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     ):
         is_fluent = False
     # 条件2：性能指标不达标
-    elif avg_fps < 25 or avg_speed < 1.0:
+    elif avg_fps < 25 or avg_speed < 0.8:
         is_fluent = False
     # 条件3：高频重复错误
     elif (
@@ -149,7 +152,7 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
                 if res['is_fluent']:
                     results['valid'].append((res['url'], res['avg_fps'], res['avg_speed']))
                 else:
-                    results['error'].append(res['errors'])
+                    results['error'].append((res['url'], res['errors']))
                 pbar.update(1)
                 pbar.set_postfix_str(f"有效:{len(results['valid'])} 无效:{len(results['error'])}")
 
@@ -194,10 +197,12 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
 
 if __name__ == '__main__':
     #示例直播源列表
-    test_sources = ['example.com/path.m3u8']
+    test_sources = merged_urls_samlpe
     print(os.cpu_count())
     generate_whitelist(
-        sources=test_sources,
+        urls=test_sources,
         workers=os.cpu_count() * 2,
         output_file='white_lst.py'
     )
+
+    # analyze_stream('https://p6-dy.byteimg.com/origin/pgc-image/bebfddceee5c40f495882785675174cf')

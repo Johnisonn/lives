@@ -22,7 +22,7 @@ logging.basicConfig(
 def main():
     chs = fetch_chs(source_urls)
     chs = remove_dump_urls(chs)
-    chs = filter_by_ip_version(chs,)
+    chs = filter_by_ip_version(chs,4)
     if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
     if IS_STABILITY_TEST:
