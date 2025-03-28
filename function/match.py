@@ -8,14 +8,17 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def match_chs(chs_dict): # 将获取到的直播源字典传参
+def match_chs(chs_dict, is_match_local=IS_MATCH_LOCAL_CHS): # 将获取到的直播源字典传参
     r_chs_dict = readin_required_chs() # 导入所需频道
     matched_chs_dict = OrderedDict()
     chs_count = 0
     urls_count = 0
 
     logger.info('—' * 100)
-    logger.info('【开始匹配模板频道】'.center(100))
+    if is_match_local:
+        logger.info('【开始匹配模板频道】:匹配地方频道'.center(100))
+    else:
+        logger.info('【开始匹配模板频道】:不匹配地方频道'.center(100))
 
     for cate_n, names_n in r_chs_dict.items():
         if cate_n not in matched_chs_dict:
@@ -36,7 +39,7 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                             urls_count += n
     local_chs_count = 0
     local_urls_count = 0
-    if IS_MATCH_LOCAL_CHS:  # 获取地方台
+    if is_match_local:  # 获取地方台
         new_cate = '★地方频道★'
         logger.info('【开始查询地方频道】'.center(100))
         for cate_f, vls_f in chs_dict.items():
@@ -50,15 +53,16 @@ def match_chs(chs_dict): # 将获取到的直播源字典传参
                         if local_name not in matched_chs_dict[new_cate]:
                             matched_chs_dict[new_cate][local_name] = []
                             # logger.info('-' * 60)
-                            logger.info(f'查询到【{local_name}】-已归集到【地方频道】！')
+                            logger.info(f'查询到【{local_name}】-已归集到【地方频道】！'.center(100))
                             local_chs_count += 1
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
                             local_urls_count += n
                         else:
                             matched_chs_dict[new_cate][local_name].extend(urls_f)
                             local_urls_count += n
+    if is_match_local:
+        logger.info(f'匹配到地方频道 {local_chs_count} 个、url直播地址 {local_urls_count} 个'.center(100))
+    logger.info(f'共匹配到模板给定频道 {chs_count + local_chs_count} 个、url直播地址 {urls_count + local_urls_count} 个'.center(100))
 
-    logger.info(f'匹配到地方频道 {local_chs_count} 个、url直播地址 {local_urls_count} 个'.center(100))
-    logger.info(f'共匹配到模板给定频道(含匹配的地方频道) {chs_count + local_chs_count} 个、url直播地址 {urls_count + local_urls_count} 个'.center(100))
     return matched_chs_dict
 

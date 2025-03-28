@@ -30,6 +30,9 @@ def filter_by_ip_version(chs_dict, ip_version=None):
                 filtered_names[name] = filtered_urls
         if filtered_names:
             filtered_dict[cate] = filtered_names
+    logger.info('—' * 100)
+    logger.info(f'【按IP_VERSION筛选】:IPV{ip_version}'.center(100))
+
     return filtered_dict
 
 # 筛选给定频道的urls
@@ -68,7 +71,11 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], N
         for u in merged_result:
             f.write(f"    '{u}',\n")
         f.write(']\n')
+    if target_names is None:
+        logger.info(f'共合并urls {len(merged_result)} 个'.center(100))
+    else:
+        logger.info(f'共从 {len(search_names)} 个样本中采集urls {len(merged_result)} 个'.center(100))
     logger.info(f'采样urls名单已保存到文件 {output_file} 中！'.center(100))
 
-    logger.info(f'共从 {len(search_names)} 个样本中采集urls {len(merged_result)} 个'.center(100))
+
     return merged_result
