@@ -33,7 +33,7 @@ def filter_by_ip_version(chs_dict, ip_version=None):
     return filtered_dict
 
 # 筛选给定频道的urls
-def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], None] = None) -> List[str]:
+def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], None] = None, output_file='merged_urls_sample.py') -> List[str]:
     result = []
     features = set()
     merged_result = []
@@ -62,6 +62,13 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], N
         if feature not in features:
             features.add(feature)
             merged_result.append(url)
+
+    with open(output_file, 'w', encoding='utf-8',) as f:
+        f.write('merged_urls_samlpe=[\n')
+        for u in merged_result:
+            f.write(f"    '{u}',\n")
+        f.write(']\n')
+    logger.info(f'采样urls名单已保存到文件 {output_file} 中！'.center(100))
 
     logger.info(f'共从 {len(search_names)} 个样本中采集urls {len(merged_result)} 个'.center(100))
     return merged_result

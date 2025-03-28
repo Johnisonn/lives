@@ -28,7 +28,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
         'ffmpeg',
         '-hide_banner',
         '-t', str(duration_timeout),
-        '-timeout', '5000000',
+        '-timeout', '10000000',
         '-rw_timeout', '5000000',
         '-i', url,
         '-f', 'null',
@@ -126,7 +126,6 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
 
     return {
         'url': url,
-        'domain': extract_keyword(url),
         'is_fluent': is_fluent,
         'avg_fps': avg_fps,
         'avg_speed': avg_speed,
@@ -147,21 +146,25 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
         with tqdm(total=len(urls), desc='样本检测进度', unit="urls") as pbar:
             for future in as_completed(futures):
                 res = future.result()
-                if res['is_fluent'] and res['domain']:
+                if res['is_fluent']:
                     results['valid'].append((res['url'], res['avg_fps'], res['avg_speed']))
-                    # 记录最高FPS（避免重复域名）
-                    if sort_by_fps_or_speed == 'F':
-                        if res['domain'] not in fluent_domains or \
-                                res['avg_fps'] > fluent_domains[res['domain']]:
-                            fluent_domains[res['domain']] = res['avg_fps']
-                    elif sort_by_fps_or_speed == 'S':
-                        if res['domain'] not in fluent_domains or \
-                                res['avg_speed'] > fluent_domains[res['domain']]:
-                            fluent_domains[res['domain']] = res['avg_speed']
                 else:
                     results['error'].append(res['errors'])
                 pbar.update(1)
                 pbar.set_postfix_str(f"有效:{len(results['valid'])} 无效:{len(results['error'])}")
+
+        # 统一提取有效 URL 的域名
+    for url, fps, speed in results['valid']:
+        domain = extract_keyword(url)
+        if not domain:
+            continue  # 跳过无效域名
+        # 更新 fluent_domains
+        if sort_by_fps_or_speed == 'F':
+            if domain not in fluent_domains or fps > fluent_domains[domain]:
+                fluent_domains[domain] = fps
+        elif sort_by_fps_or_speed == 'S':
+            if domain not in fluent_domains or speed > fluent_domains[domain]:
+                fluent_domains[domain] = speed
 
     # 写入白名单文件
     domain_lst = []

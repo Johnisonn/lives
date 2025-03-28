@@ -57,11 +57,11 @@ def fetch_chs(source_urls_lst: list):
             u = f'{proxy}https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u'
             r = requests.get(u, headers=header, timeout=4)
             if 200 <= r.status_code < 300:
-                print(f"找到可用代理: {proxy}")
+                logger.info(f"找到可用代理: {proxy}".center(100))
                 found_proxy = True
                 break
         except requests.RequestException as e:
-            print(f"使用代理 {proxy} 时出现错误: {e}")
+            logger.error(f"使用代理 {proxy} 时出现错误: {e}")
     if not found_proxy:
         print("未找到可用代理，程序退出。")
         sys.exit(1)
