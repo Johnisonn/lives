@@ -14,13 +14,13 @@ IS_KEEY_ONLY_WHITE_LST = 1  # 稳定性检测完成后，是否只保留白名�
 # 较为稳定白名单
 white_lst_stable = [
     'ali-m-l.cztv.com', # 浙江频道
-    'livestream-bt.nmtv.cn', # 内蒙频道
+    # 'livestream-bt.nmtv.cn', # 内蒙频道
     'gxlive.snrtv.com', # 陕西频道
     'tv.pull.hebtv.com', # 河北频道
     'tencentplay.gztv.com', # 广州频道
 
     # '[2409:8087:1:20:20', # FMM
-    '148.135.93.213:81',  # 咪咕源
+    # '148.135.93.213:81',  # 咪咕源
 
 
 ]
@@ -68,6 +68,12 @@ black_lst = [
     'kkk.jjjj.jiduo.me',
     'stream1.freetv.fun',
     ':9901udp',
+    'ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8',
+    '120.76.248.139',
+    '公众号玉玉软件库',
+    'zb.xmzb.xyz',
+    '76.5432123.xyz'
+
 
 ]
 

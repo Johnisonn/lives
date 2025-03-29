@@ -194,12 +194,12 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
 
 if __name__ == '__main__':
     #示例直播源列表
-    test_sources = merged_urls_samlpe
-    print(os.cpu_count())
-    generate_whitelist(
-        urls=test_sources,
-        workers=os.cpu_count() * 2,
-        output_file='white_lst.py'
-    )
+    # test_sources = merged_urls_samlpe
+    # print(os.cpu_count())
+    # generate_whitelist(
+    #     urls=test_sources,
+    #     workers=os.cpu_count() * 2,
+    #     output_file='white_lst.py'
+    # )
 
-    # analyze_stream('https://p6-dy.byteimg.com/origin/pgc-image/bebfddceee5c40f495882785675174cf')
+    analyze_stream('https://nlive.zjkgdcs.com:8572/live/xwzhpd.m3u8')
