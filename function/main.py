@@ -26,8 +26,8 @@ def main():
     if IS_MATCH_TEMPLATE:
         chs = match_chs(chs)
     if IS_STABILITY_TEST:
-        # test_urls = filter_by_names(chs, TEST_SAMPLES)
-        test_urls = filter_by_names(chs,)
+        test_urls = filter_by_names(chs, TEST_SAMPLES)
+        # test_urls = filter_by_names(chs,)
         white_list = generate_whitelist(urls=test_urls, sort_by_fps_or_speed=SORT_BY_FPS_OR_SPEED)
     else:
         white_list = white_lst_manual

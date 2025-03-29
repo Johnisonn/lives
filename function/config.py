@@ -4,10 +4,10 @@ IS_MATCH_TEMPLATE = 1  # 是否匹配模板给定频道
 IS_MATCH_LOCAL_CHS = 0  # 是否对字典中的地方频道进行匹配
 IS_STABILITY_TEST = 1  # 是否对直播地址进行稳定测试
 SORT_BY_V6_OR_V4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前值为4
-DURATION_TIMEOUT = 30  # 检测每个url流畅性时间
-SORT_BY_FPS_OR_SPEED = 'F'  # 白名单按fps或speed排序
+DURATION_TIMEOUT = 20  # 检测每个url流畅性时间
+SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
 TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','北京卫视']
-IS_KEEY_ONLY_WHITE_LST = 1  # 稳定性检测完成后，是否只保留白名单地址URLS
+IS_KEEY_ONLY_WHITE_LST = 0  # 稳定性检测完成后，是否只保留白名单地址URLS
 
 
 
@@ -72,7 +72,11 @@ black_lst = [
     '120.76.248.139',
     '公众号玉玉软件库',
     'zb.xmzb.xyz',
-    '76.5432123.xyz'
+    '76.5432123.xyz',
+    '218.93.208.172:35455',
+    'jwplay.hebyun.com.cn',
+    '150.158.112.123',
+
 
 
 ]
