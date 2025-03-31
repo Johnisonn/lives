@@ -7,7 +7,7 @@ SORT_BY_V6_OR_V4 = 4  # 根据地址类型排序,IPV6在前值为6，IPV4在前�
 DURATION_TIMEOUT = 20  # 检测每个url流畅性时间
 SORT_BY_FPS_OR_SPEED = 'S'  # 白名单按fps或speed排序
 TEST_SAMPLES = ['CCTV-1 综合','天津卫视','河北卫视','凤凰卫视','北京卫视']
-IS_KEEY_ONLY_WHITE_LST = 0  # 稳定性检测完成后，是否只保留白名单地址URLS
+IS_KEEY_ONLY_WHITE_LST = 1  # 稳定性检测完成后，是否只保留白名单地址URLS
 
 
 
@@ -16,7 +16,7 @@ white_lst_stable = [
     'ali-m-l.cztv.com', # 浙江频道
     # 'livestream-bt.nmtv.cn', # 内蒙频道
     'gxlive.snrtv.com', # 陕西频道
-    'tv.pull.hebtv.com', # 河北频道
+    # 'tv.pull.hebtv.com', # 河北频道
     'tencentplay.gztv.com', # 广州频道
 
     # '[2409:8087:1:20:20', # FMM
@@ -83,38 +83,7 @@ black_lst = [
 
 source_urls0 = [
 
-   # 'http://cqitv.fh4u.org/iptv/jiangsu.txt',
-   # 'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u',
-   # 'https://live.kilvn.com/iptv.m3u',
-   #  'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
-   #  "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
-   #  'https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u',
-   #  "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
-   #  'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
-   #  'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
-   #  "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
-   #  "http://rihou.cc:567/gggg.nzk",  # 日后线路
-   #  "http://meowtv.top/zb", # 喵TV
-   #  "https://live.zhoujie218.top/tv/iptv6.txt",  # 可用
-   #  "https://live.zhoujie218.top/tv/iptv4.txt",  # 可用
-   #  'http://211.101.234.24:866/kxzb.txt', # 开心直播，同 http://211.101.234.24:866/qiyu.php?url=c
-   #  'http://211.101.234.24:866/aishang.txt',
-   #  'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
-   #  'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
-   #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u',
-   #  'https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u',
-
-    # 'https://cdn.jsdelivr.net/gh/Johnisonn/tvbox@main/Garter/live.txt',
-    # 'https://cdn.jsdelivr.net/gh/Johnisonn/lives@main/live.txt',
-    # 'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
-    # 'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
     # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
-    # 'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
-    # "https://github.com/Johnisonn/tvbox/raw/main/Garter/live.txt",
-    # 'https://iptv.b2og.com/txt/fmml_ipv6.txt',
-    # test
-    # 'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt',
-    # 'https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt',
 
 ]
 
@@ -123,9 +92,25 @@ source_urls = [
     'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
+    'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
+    'https://live.zbds.top/tv/iptv6.m3u',
+    'https://live.izbds.com/tv/iptv6.txt',
+    'https://live.kilvn.com/iptv.m3u',
+    'https://live.hacks.tools/tv/iptv4.txt',
+    'http://124.71.189.194/zb.txt',
+    'http://8.138.7.223/live.txt',
+    'http://cqitv.fh4u.org/iptv/jiangsu.txt',
+    "http://cqitv.fh4u.org/iptv/20241126/gitv.txt",  # 本地址引发的BUG已修复，地址中无分类引发判断错误，V4
+    "http://meowtv.top/zb",  # 喵TV
+    "https://tv.youdu.fan:666/live/",  # 可用，V4酒店源
+    "http://rihou.cc:567/gggg.nzk",  # 日后线路
+    "http://rihou.cc:555/gggg.nzk",  # 日后线路
+    "http://kv.netsite.cc/tvlive",
+    "http://ww.weidonglong.com/dsj.txt",  # WMDZ源，V4
+    "http://xhztv.top/zbc.txt",  # 可用 有字节码\ufeff开头，V4
+
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u', # FMM
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",  # guovin 每日更新
-    'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
     'https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt',
     'https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt',
     "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",  # 每日更新，条目较多
@@ -150,27 +135,11 @@ source_urls = [
     "https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
     "https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt",  # 可用，条目较多
     "https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt",  # 可用
-    "https://github.com/Moexin/IPTV/raw/Files/IPTV.m3u",
-    'https://gitee.com/zhang-station1/genius-film-and-television/raw/master/3658',
-    'http://8.138.7.223/live.txt',
-    'http://cqitv.fh4u.org/iptv/jiangsu.txt',
-    'https://live.kilvn.com/iptv.m3u',
-    'https://live.zbds.top/tv/iptv6.m3u',
-    'http://175.178.251.183:6689/live.m3u',
-    "http://meowtv.top/zb", # 喵TV
-    "https://live.zhoujie218.top/tv/iptv6.txt", #可用
-    "https://live.zhoujie218.top/tv/iptv4.txt", #可用
-    "https://tv.youdu.fan:666/live/", #可用，V4酒店源
-    "http://rihou.cc:567/gggg.nzk",  # 日后线路
-    "http://rihou.cc:555/gggg.nzk",  # 日后线路
-    "http://kv.netsite.cc/tvlive",
-    "http://ww.weidonglong.com/dsj.txt", # WMDZ源，V4
-    "http://cqitv.fh4u.org/iptv/20241126/gitv.txt", # 本地址引发的BUG已修复，地址中无分类引发判断错误，V4
-    "http://xhztv.top/zbc.txt", #可用 有字节码\ufeff开头，V4
-    "https://raw.githubusercontent.com/lystv/short/main/影视/tvb/MTV.txt", #MTV
-    "https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/douyuyqk.m3u", #斗鱼视频
-    "https://raw.githubusercontent.com/cymz6/AutoIPTV-Hotel/main/lives.txt", #已弃，空分类
-    "https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt", #仅一组
+    'https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u'
+
+    # "https://raw.githubusercontent.com/lystv/short/main/影视/tvb/MTV.txt", #MTV
+    # "https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/douyuyqk.m3u", #斗鱼视频
+
 
 
 
