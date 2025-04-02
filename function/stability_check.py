@@ -27,8 +27,9 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     command = [
         'ffmpeg',
         '-hide_banner',
+        '-v', 'info',
         '-t', str(duration_timeout),
-        '-timeout', '10000000',
+        '-timeout', '3000000',
         '-rw_timeout', '5000000',
         '-i', url,
         '-f', 'null',
@@ -37,6 +38,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
 
     errors = defaultdict(int)
     log = ''
+
     try:
         result = subprocess.run(
             command,
@@ -58,9 +60,10 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     # 解析FPS和Speed
     fps_values = []
     speed_values = []
+
     # 匹配FPS和Speed
     fps_pattern = r'frame=\s*\d+\s*fps=([\s\d.]+)'
-    speed_pattern = r'speed=([\d.]+)x'
+    speed_pattern = r'speed=\s*([\d.]+)x'
     for line in log.split('\n'):
         if 'fps=' in line:
             fps_match = re.search(fps_pattern, line)
@@ -115,7 +118,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     ):
         is_fluent = False
     # 条件2：性能指标不达标
-    elif avg_fps < 25 or avg_speed < 0.8:
+    elif avg_fps < 25 or avg_speed < 1:
         is_fluent = False
     # 条件3：高频重复错误
     elif (

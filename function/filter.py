@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 def get_ip_version(url: str):
     return 6 if re.search(r'\[[0-9a-fA-F:]+\]',url) is not None else 4
 
-# 筛选v4或v6的URL
+# 筛选v4或v6地址
 def filter_by_ip_version(chs_dict, ip_version=None):
     if ip_version not in (4, 6, None):
         raise ValueError("ip_version must be 4, 6, or None")
@@ -75,7 +75,7 @@ def filter_by_names(chs_dict: OrderedDict, target_names: Union[str, List[str], N
         logger.info(f'共合并urls {len(merged_result)} 个'.center(100))
     else:
         logger.info(f'共从 {len(search_names)} 个样本中采集urls {len(merged_result)} 个'.center(100))
-    logger.info(f'采样urls名单已保存到文件 {output_file} 中！'.center(100))
+    logger.info(f'采样urls名单已保存到文件 {output_file}'.center(100))
 
 
     return merged_result

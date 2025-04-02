@@ -3,7 +3,7 @@ from config import source_urls, white_lst_manual, IS_MATCH_TEMPLATE, IS_STABILIT
 from duplicate_removel import remove_dump_urls
 from fetch import fetch_chs, fetch_chs_name
 from filter import filter_by_ip_version, filter_by_names
-from stability_check import generate_whitelist, extract_keyword
+from stability_check import generate_whitelist
 from match import match_chs
 from sort import sorted_by_ip_version
 from save_as import save_chs_as_txt, save_chs_as_m3u
@@ -41,11 +41,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # chs = fetch_chs(['/home/uos/Desktop/error.txt'])
-    # test_urls = filter_by_names(chs, )
-    #
-    # for u in test_urls:
-    #     extract_keyword(u)
+
 
 
 ##  ---------获取各源中的频道名称-------------
