@@ -83,7 +83,7 @@ def fetch_chs(source_urls_lst: list):
                 lines = file.readlines()
         chs_count = 0
         urls_count = 0
-        source_type = 'm3u' if any('#EXTINF' in line for line in lines[:4]) else 'txt'  # 判定直播源类型（txt或者m3u）
+        source_type = 'm3u' if any('#EXTINF' in line or '#EXTM3U' in line for line in lines[:4]) else 'txt'  # 判定直播源类型（txt或者m3u）
         if source_type == 'txt':
             for line in lines:  # 对txt类型的直播源读入
                 if '#genre#' in line:
@@ -91,7 +91,7 @@ def fetch_chs(source_urls_lst: list):
                     cate = line.split(',')[0]
                     if cate not in chs_dict:
                         chs_dict[cate] = OrderedDict()
-                elif re.match(r'^(.+),(.+)$', line):  # 正则匹配IP地址
+                elif re.match(r'^(.+),(.+:.+)$', line):  # 正则匹配IP地址
                     name, url = line.split(',', 1)
                     name = ch_name_regular(name)
                     url = url.strip()

@@ -21,6 +21,7 @@ logging.basicConfig(
 
 def main():
     chs = fetch_chs(source_urls)
+    # chs = fetch_chs(['/home/uos/Desktop/0.txt'])
     chs = remove_dump_urls(chs)
     chs = filter_by_ip_version(chs,4)
     if IS_MATCH_TEMPLATE:

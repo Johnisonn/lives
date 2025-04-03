@@ -18,6 +18,8 @@ white_lst_stable = [
     'gxlive.snrtv.com', # 陕西频道
     # 'tv.pull.hebtv.com', # 河北频道
     'tencentplay.gztv.com', # 广州频道
+    'nlive.zjkgdcs.com:8572', # zjk
+    'nlive.zjkgdcs.com:8091', # zjk
 
     # '[2409:8087:1:20:20', # FMM
     # '148.135.93.213:81',  # 咪咕源
@@ -77,6 +79,7 @@ black_lst = [
     'jwplay.hebyun.com.cn',
     '150.158.112.123',
     'live-hls-web-ajb.getaj.net',
+    'tvbox6.icu',
 
 
 
