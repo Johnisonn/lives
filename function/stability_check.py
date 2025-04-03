@@ -1,7 +1,9 @@
+import select
 import subprocess
 import re
 import os
 import datetime
+import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
@@ -23,7 +25,6 @@ def extract_keyword(url: str):
 
 # 用FFmpeg检测流畅性
 def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
-    """检测单个直播源并返回结果（包含域名和FPS）"""
     command = [
         'ffmpeg',
         '-hide_banner',
@@ -37,34 +38,79 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     ]
 
     errors = defaultdict(int)
-    log = ''
+    log = []
+    first_packet_time = None
+    start_time = time.time()
 
+    process = subprocess.Popen(
+        command,
+        stderr=subprocess.PIPE,
+        stdout=subprocess.DEVNULL,
+        text=True,
+        errors='replace'
+    )
+
+    # 实时读取stderr
     try:
-        result = subprocess.run(
-            command,
-            stderr=subprocess.PIPE,
-            stdout=subprocess.DEVNULL,
-            text=True,
-            # 这里需要加入对输出编码的正确解码，有些直播源经ffmpeg处理后的输出为非UTF-8编码，会产生错误，需要更换解码。
-            # 可使用latin-1（能处理所有字节）或替换错误字符来处理错误。
-            # 可添加encoding='latin-1'和errors='replace'，这样可以避免解码错误
-            # 如明确输出编码有中文字符，可使用encoding='gbk',
-            errors='replace',  # 用 � 替换非法字符
-            timeout=duration_timeout + 5
-        )
-        log = result.stderr
-    except subprocess.TimeoutExpired as e:
-        log = e.stderr.decode('utf-8') if e.stderr else ''
-        errors['process_timeout'] = 1
+        while True:
+            # 使用 select 实现非阻塞读取
+            ready, _, _ = select.select([process.stderr], [], [], 1)  # 超时时间设为 1 秒
+            if ready:
+                line = process.stderr.readline()
+                if not line:
+                    break
+                log.append(line)
 
-    # 解析FPS和Speed
+                # 检测首帧请求
+                if 'frame=' in line and not first_packet_time:
+                    first_packet_time = time.time() - start_time
+                # 原有错误检测逻辑（示例，需补充完整）
+                if 'Connection timed out' in line:
+                    errors['connection_timeout'] += 1
+                if 'Connection refused' in line:
+                    errors['connection_refused'] += 1
+                if 'HTTP error' in line:
+                    errors['http_error'] += 1
+                if 'Invalid data found' in line:  # 新增：输入数据错误
+                    errors['invalid_data_error'] += 1
+                if 'decode_slice_header error' in line:
+                    errors['decode_error'] += 1
+                if 'Last message repeated' in line:
+                    errors['repeated_errors'] += 1
+                if 'buffer exhausted' in line.lower():
+                    errors['buffer_exhausted'] += 1
+                if 'Stream ends prematurely' in line:  # 新增：流提前终止
+                    errors['stream_premature_end'] += 1
+                if 'corrupt decoded frame' in line:  # 新增：解码帧损坏
+                    errors['corrupt_frame'] += 1
+                if 'concealing' in line and 'errors in' in line:  # 新增：错误掩盖
+                    errors['concealing_errors'] += 1
+                if 'Input/output error' in line:  # 增强：高频I/O错误
+                    errors['io_error'] += 1
+            # 检查是否超时
+            if time.time() - start_time > DURATION_TIMEOUT + 5:
+                # print(f"{url}=进程超时，已强制终止")
+                process.kill()
+                break
+
+        # 等待子进程结束
+        process.wait()
+    except Exception as e:
+        print(f"发生错误: {e}")
+    finally:
+        # 关闭文件描述符
+        if process.stderr:
+            process.stderr.close()
+
+
+    # 解析FPS等其他逻辑（保持不变）...
     fps_values = []
     speed_values = []
 
     # 匹配FPS和Speed
     fps_pattern = r'frame=\s*\d+\s*fps=([\s\d.]+)'
     speed_pattern = r'speed=\s*([\d.]+)x'
-    for line in log.split('\n'):
+    for line in log:
         if 'fps=' in line:
             fps_match = re.search(fps_pattern, line)
             if fps_match:
@@ -73,30 +119,6 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
             speed_match = re.search(speed_pattern, line)
             if speed_match:
                 speed_values.append(float(speed_match.group(1)))
-
-        # 检测关键错误（新增特征）
-        if 'Connection timed out' in line:
-            errors['connection_timeout'] += 1
-        if 'Connection refused' in line:
-            errors['connection_refused'] += 1
-        if 'HTTP error' in line:
-            errors['http_error'] += 1
-        if 'Invalid data found' in line:  # 新增：输入数据错误
-            errors['invalid_data_error'] += 1
-        if 'decode_slice_header error' in line:
-            errors['decode_error'] += 1
-        if 'Last message repeated' in line:
-            errors['repeated_errors'] += 1
-        if 'buffer exhausted' in line.lower():
-            errors['buffer_exhausted'] += 1
-        if 'Stream ends prematurely' in line:  # 新增：流提前终止
-            errors['stream_premature_end'] += 1
-        if 'corrupt decoded frame' in line:  # 新增：解码帧损坏
-            errors['corrupt_frame'] += 1
-        if 'concealing' in line and 'errors in' in line:  # 新增：错误掩盖
-            errors['concealing_errors'] += 1
-        if 'Input/output error' in line:  # 增强：高频I/O错误
-            errors['io_error'] += 1
 
     avg_fps = sum(fps_values) / len(fps_values) if fps_values else 0
     avg_speed = sum(speed_values) / len(speed_values) if speed_values else 0
@@ -127,13 +149,22 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     ):
         is_fluent = False
 
+    # print(f'u:{url}')
+    # print(f'is_fluent:{is_fluent}')
+    # print(f'fps:{avg_fps}')
+    # print(f'speed:{avg_speed}')
+    # print(f'fst_time:{first_packet_time}')
+    # print(f'errors:{errors}')
+
     return {
         'url': url,
         'is_fluent': is_fluent,
         'avg_fps': avg_fps,
         'avg_speed': avg_speed,
+        'first_packet_ms': first_packet_time if first_packet_time else 10000,
         'errors': errors
     }
+
 
 # 线程池并发检测流畅性
 def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='white_lst.py', sort_by_fps_or_speed='S'):
@@ -150,14 +181,14 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
             for future in as_completed(futures):
                 res = future.result()
                 if res['is_fluent']:
-                    results['valid'].append((res['url'], res['avg_fps'], res['avg_speed']))
+                    results['valid'].append((res['url'], res['avg_fps'], res['avg_speed'], res['first_packet_ms']))
                 else:
                     results['error'].append((res['url'], res['errors']))
                 pbar.update(1)
                 pbar.set_postfix_str(f"有效:{len(results['valid'])} 无效:{len(results['error'])}")
 
         # 统一提取有效 URL 的域名
-    for url, fps, speed in results['valid']:
+    for url, fps, speed, fst_time in results['valid']:
         domain = extract_keyword(url)
         if not domain:
             continue  # 跳过无效域名
@@ -168,6 +199,9 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
         elif sort_by_fps_or_speed == 'S':
             if domain not in fluent_domains or speed > fluent_domains[domain]:
                 fluent_domains[domain] = speed
+        elif sort_by_fps_or_speed == 'T':
+            if domain not in fluent_domains or fst_time > fluent_domains[domain]:
+                fluent_domains[domain] = fst_time
 
     # 写入白名单文件
     domain_lst = []
@@ -177,6 +211,9 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
     if sort_by_fps_or_speed == 'S':
         for domain, speed in sorted(fluent_domains.items(), key=lambda x: -x[1]):
             domain_lst.append((domain, f'SPEED={speed:.2f}X'))
+    if sort_by_fps_or_speed == 'T':
+        for domain, fst_time in sorted(fluent_domains.items(), key=lambda x: x[1]):
+            domain_lst.append((domain, f'F_TIME={fst_time:.2f}m'))
 
     for domain in reversed(white_lst_stable):
         if domain not in [d[0] for d in domain_lst]:
@@ -205,4 +242,5 @@ if __name__ == '__main__':
     #     output_file='white_lst.py'
     # )
 
-    analyze_stream('https://nlive.zjkgdcs.com:8572/live/xwzhpd.m3u8')
+    analyze_stream('http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8')
+    # generate_whitelist(urls=merged_urls_samlpe,sort_by_fps_or_speed='T')
