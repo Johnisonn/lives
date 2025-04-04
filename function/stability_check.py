@@ -90,6 +90,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
             # 检查是否超时
             if time.time() - start_time > DURATION_TIMEOUT + 5:
                 # print(f"{url}=进程超时，已强制终止")
+                errors['process_timeout'] += 1
                 process.kill()
                 break
 
@@ -129,7 +130,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     if errors.get('process_timeout', 0) > 0:
         is_fluent = False
     elif (
-            errors.get('http_404', 0) > 0
+            errors.get('http_error', 0) > 0
             or errors.get('connection_timeout', 0) > 0
             or errors.get('buffer_exhausted', 0) > 0
             or errors.get('stream_premature_end', 0) > 0  # 新增条件
@@ -140,7 +141,7 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     ):
         is_fluent = False
     # 条件2：性能指标不达标
-    elif avg_fps < 25 or avg_speed < 1:
+    elif avg_fps < 25 or avg_speed < 1.2:
         is_fluent = False
     # 条件3：高频重复错误
     elif (
