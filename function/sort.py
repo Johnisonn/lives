@@ -1,7 +1,7 @@
 ## 响应检测，为匹配后的urls地址列表加入响应时间并排序
 
 from collections import OrderedDict
-from config import SORT_BY_V6_OR_V4, black_lst
+from config import SORT_BY_V6_OR_V4, black_lst, SORT_BY_FPS_OR_SPEED
 import re
 import logging
 logger = logging.getLogger(__name__)
@@ -76,7 +76,7 @@ def sorted_by_ip_version(chs_dict, white_lst, black_lst=black_lst, is_keey_only_
                 sorted_chs_dict[cate][name].extend(urls_v6)
 
     if is_keey_only_white_lst:
-        logger.info(f'已按白名单地址排序完成，共有白名单地址 {white_count} 个'.center(100))
+        logger.info(f'已按白名单地址完成排序(by_{SORT_BY_FPS_OR_SPEED})，共有白名单地址 {white_count} 个'.center(100))
     else:
         logger.info(f'共有 {white_count + v4_count + v6_count} 个url地址参与排序，其中V6地址 {v6_count} 个、V4地址 {v4_count} 个、白名单地址 {white_count} 个'.center(100))
 

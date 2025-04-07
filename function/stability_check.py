@@ -11,6 +11,30 @@ from config import white_lst_stable, DURATION_TIMEOUT
 import logging
 logger = logging.getLogger(__name__)
 
+# 预编译正则表达式
+FPS_SPEED_RE = re.compile(r'frame=\s*\d+\s*fps=([\s\d.]+).*speed=\s*([\d.]+)x')
+ERROR_PATTERNS = {
+    'Connection_timeout': r'Connection timed out',  # 连接超时
+    'Connection_refused': r'Connection refused',  # 连接被拒绝
+    'Http_error': r'HTTP error',  # HTTP错误
+    'Stream_premature_end': r'Stream ends prematurely',  # 流提前结束
+    'Packet_corrupt': r'Packet corrupt',  # 数据包损坏
+    'Invalid_data': r'Invalid data found',  # 无效数据
+    'Buffer_exhausted': r'buffer exhausted',  # 缓冲区耗尽
+    'Frame_corrupt': r'corrupt decoded frame',  # 解码帧损坏
+    'IO_error': r'Input/output error',  # 输入输出错误
+
+    'repeated_errors': r'Last message repeated',
+    'decode_error': r'decode_slice_header error',
+    'concealing_errors': r'concealing .* errors',
+
+}
+# 编译错误正则表达式
+ERROR_REGEX = re.compile(
+    '|'.join(f'({pattern})' for pattern in ERROR_PATTERNS.values()),
+    flags=re.IGNORECASE
+)
+ERROR_KEYS = list(ERROR_PATTERNS.keys())
 
 # 抽取url中关键字作为后续白名单
 def extract_keyword(url: str):
@@ -31,14 +55,15 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
         '-v', 'info',
         '-t', str(duration_timeout),
         '-timeout', '3000000',
-        '-rw_timeout', '5000000',
+        '-rw_timeout', '4000000',
         '-i', url,
         '-f', 'null',
         '-'
     ]
 
     errors = defaultdict(int)
-    log = []
+    fps_values = []
+    speed_values = []
     first_packet_time = None
     start_time = time.time()
 
@@ -50,110 +75,79 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
         errors='replace'
     )
 
-    # 实时读取stderr
     try:
         while True:
-            # 使用 select 实现非阻塞读取
-            ready, _, _ = select.select([process.stderr], [], [], 1)  # 超时时间设为 1 秒
+            # 减少select超时时间到0.1秒
+            ready, _, _ = select.select([process.stderr], [], [], 0.1)
             if ready:
                 line = process.stderr.readline()
                 if not line:
                     break
-                log.append(line)
-
                 # 检测首帧请求
                 if 'frame=' in line and not first_packet_time:
                     first_packet_time = time.time() - start_time
-                # 原有错误检测逻辑（示例，需补充完整）
-                if 'Connection timed out' in line:
-                    errors['connection_timeout'] += 1
-                if 'Connection refused' in line:
-                    errors['connection_refused'] += 1
-                if 'HTTP error' in line:
-                    errors['http_error'] += 1
-                if 'Invalid data found' in line:  # 新增：输入数据错误
-                    errors['invalid_data_error'] += 1
-                if 'decode_slice_header error' in line:
-                    errors['decode_error'] += 1
-                if 'Last message repeated' in line:
-                    errors['repeated_errors'] += 1
-                if 'buffer exhausted' in line.lower():
-                    errors['buffer_exhausted'] += 1
-                if 'Stream ends prematurely' in line:  # 新增：流提前终止
-                    errors['stream_premature_end'] += 1
-                if 'corrupt decoded frame' in line:  # 新增：解码帧损坏
-                    errors['corrupt_frame'] += 1
-                if 'concealing' in line and 'errors in' in line:  # 新增：错误掩盖
-                    errors['concealing_errors'] += 1
-                if 'Input/output error' in line:  # 增强：高频I/O错误
-                    errors['io_error'] += 1
-            # 检查是否超时
-            if time.time() - start_time > DURATION_TIMEOUT + 5:
-                # print(f"{url}=进程超时，已强制终止")
+
+                # 批量匹配错误类型
+                error_matches = ERROR_REGEX.findall(line)
+                for match in error_matches:
+                    for i, group in enumerate(match):
+                        if group:
+                            errors[ERROR_KEYS[i]] += 1
+                            break  # 每行每个错误类型只计一次
+
+                # 实时提取性能数据
+                fps_speed_match = FPS_SPEED_RE.search(line)
+                if fps_speed_match:
+                    try:
+                        fps_values.append(float(fps_speed_match.group(1)))
+                        speed_values.append(float(fps_speed_match.group(2)))
+                    except ValueError:
+                        pass
+
+            # 超时检查
+            if time.time() - start_time > duration_timeout + 5:
+                errors['process_timeout'] += 1
                 process.kill()
                 break
 
-        # 等待子进程结束
         process.wait()
+        # 检查FFmpeg返回码
+        if process.returncode != 0 and not errors.get('process_timeout'):
+            errors['non_0_exit'] = 1
+
     except Exception as e:
-        print(f"发生错误: {e}")
+        print(f"监控异常: {e}")
+        errors['runtime_error'] = 1
     finally:
-        # 关闭文件描述符
         if process.stderr:
             process.stderr.close()
 
+    # 计算平均值
+    avg_fps = sum(fps_values)/len(fps_values) if fps_values else 0
+    avg_speed = sum(speed_values)/len(speed_values) if speed_values else 0
 
-    # 解析FPS等其他逻辑（保持不变）...
-    fps_values = []
-    speed_values = []
+    # 流畅度判定（新增返回码检查）
+    is_fluent = not (
+        errors.get('Connection_timeout') or
+        errors.get('Connection_refused') or
+        errors.get('Http_error') or
+        errors.get('Stream_premature_end') or
+        errors.get('Corrupt_frame') or
+        errors.get('Invalid_data_error') or
+        errors.get('Buffer_exhausted') or
+        errors.get('IO_error', 0) > 3 or
+        errors.get('process_timeout') or
+        errors.get('non_0_exit') or
+        avg_fps < 25 or
+        avg_speed < 1
 
-    # 匹配FPS和Speed
-    fps_pattern = r'frame=\s*\d+\s*fps=([\s\d.]+)'
-    speed_pattern = r'speed=\s*([\d.]+)x'
-    for line in log:
-        if 'fps=' in line:
-            fps_match = re.search(fps_pattern, line)
-            if fps_match:
-                fps_values.append(float(fps_match.group(1)))
-        if 'speed=' in line:
-            speed_match = re.search(speed_pattern, line)
-            if speed_match:
-                speed_values.append(float(speed_match.group(1)))
+    )
 
-    avg_fps = sum(fps_values) / len(fps_values) if fps_values else 0
-    avg_speed = sum(speed_values) / len(speed_values) if speed_values else 0
-
-    # 判定规则
-    is_fluent = True
-    # 条件1：进程超时或存在致命错误
-    if errors.get('process_timeout', 0) > 0:
-        is_fluent = False
-    elif (
-            errors.get('http_404', 0) > 0
-            or errors.get('connection_timeout', 0) > 0
-            or errors.get('buffer_exhausted', 0) > 0
-            or errors.get('stream_premature_end', 0) > 0  # 新增条件
-            or errors.get('corrupt_frame', 0) > 0  # 新增条件
-            or errors.get('io_error', 0) > 3  # 高频I/O错误
-            or errors.get('invalid_data_error',0) > 0
-            or errors.get('connection_refused',0) > 0
-    ):
-        is_fluent = False
-    # 条件2：性能指标不达标
-    elif avg_fps < 25 or avg_speed < 1:
-        is_fluent = False
-    # 条件3：高频重复错误
-    elif (
-            errors.get('repeated_errors', 0) > duration_timeout/2
-            or errors.get('concealing_errors', 0) > 5
-    ):
-        is_fluent = False
-
-    # print(f'u:{url}')
+    # print(f'url:{url}')
     # print(f'is_fluent:{is_fluent}')
-    # print(f'fps:{avg_fps}')
-    # print(f'speed:{avg_speed}')
-    # print(f'fst_time:{first_packet_time}')
+    # print(f'avg_fps:{avg_fps}')
+    # print(f'avg_speed:{avg_speed}')
+    # print(f'first_packet_time:{first_packet_time}')
     # print(f'errors:{errors}')
 
     return {
@@ -161,8 +155,8 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
         'is_fluent': is_fluent,
         'avg_fps': avg_fps,
         'avg_speed': avg_speed,
-        'first_packet_ms': first_packet_time if first_packet_time else 10000,
-        'errors': errors
+        'first_packet_time': round(first_packet_time, 2) if first_packet_time else 10000,
+        'errors': dict(errors)
     }
 
 
@@ -181,7 +175,7 @@ def generate_whitelist(urls: list, workers=os.cpu_count() * 2, output_file='whit
             for future in as_completed(futures):
                 res = future.result()
                 if res['is_fluent']:
-                    results['valid'].append((res['url'], res['avg_fps'], res['avg_speed'], res['first_packet_ms']))
+                    results['valid'].append((res['url'], res['avg_fps'], res['avg_speed'], res['first_packet_time']))
                 else:
                     results['error'].append((res['url'], res['errors']))
                 pbar.update(1)
@@ -242,5 +236,5 @@ if __name__ == '__main__':
     #     output_file='white_lst.py'
     # )
 
-    analyze_stream('http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8')
+    analyze_stream('http://nlive.zjkgdcs.com:8091/live/xwzhpd.m3u8')
     # generate_whitelist(urls=merged_urls_samlpe,sort_by_fps_or_speed='T')
