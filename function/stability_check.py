@@ -77,7 +77,6 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
 
     try:
         while True:
-            # 减少select超时时间到0.1秒
             ready, _, _ = select.select([process.stderr], [], [], 0.1)
             if ready:
                 line = process.stderr.readline()
@@ -111,13 +110,13 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
                 break
 
         process.wait()
-        # 检查FFmpeg返回码
-        if process.returncode != 0 and not errors.get('process_timeout'):
-            errors['non_0_exit'] = 1
 
     except Exception as e:
         print(f"监控异常: {e}")
         errors['runtime_error'] = 1
+        process.kill()
+        process.wait()
+
     finally:
         if process.stderr:
             process.stderr.close()
@@ -137,9 +136,8 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
         errors.get('Buffer_exhausted') or
         errors.get('IO_error', 0) > 3 or
         errors.get('process_timeout') or
-        errors.get('non_0_exit') or
         avg_fps < 25 or
-        avg_speed < 1
+        avg_speed < 1.5
 
     )
 
