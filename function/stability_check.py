@@ -10,7 +10,6 @@ from tqdm import tqdm
 from config import white_lst_stable, DURATION_TIMEOUT
 import logging
 
-from function.merged_urls_sample import merged_urls_samlpe
 
 logger = logging.getLogger(__name__)
 
