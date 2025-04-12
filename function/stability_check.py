@@ -9,6 +9,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from config import white_lst_stable, DURATION_TIMEOUT
 import logging
+
+from function.merged_urls_sample import merged_urls_samlpe
+
 logger = logging.getLogger(__name__)
 
 # 预编译正则表达式
@@ -23,6 +26,7 @@ ERROR_PATTERNS = {
     'Buffer_exhausted': r'buffer exhausted',  # 缓冲区耗尽
     'Frame_corrupt': r'corrupt decoded frame',  # 解码帧损坏
     'IO_error': r'Input/output error',  # 输入输出错误
+    'Dts_error': 'non monotonically increasing dts',  # DTS非递增
 
     'repeated_errors': r'Last message repeated',
     'decode_error': r'decode_slice_header error',
@@ -98,8 +102,9 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
                 fps_speed_match = FPS_SPEED_RE.search(line)
                 if fps_speed_match:
                     try:
-                        fps_values.append(float(fps_speed_match.group(1)))
-                        speed_values.append(float(fps_speed_match.group(2)))
+                        if fps_speed_match.group(1)!= '0':
+                            fps_values.append(float(fps_speed_match.group(1)))
+                            speed_values.append(float(fps_speed_match.group(2)))
                     except ValueError:
                         pass
 
@@ -125,11 +130,12 @@ def analyze_stream(url: str, duration_timeout=DURATION_TIMEOUT):
     avg_fps = sum(fps_values)/len(fps_values) if fps_values else 0
     avg_speed = sum(speed_values)/len(speed_values) if speed_values else 0
 
-    # 流畅度判定（新增返回码检查）
+    # 流畅度判定
     is_fluent = not (
         errors.get('Connection_timeout') or
         errors.get('Connection_refused') or
         errors.get('Http_error') or
+        errors.get('Dts_error')or
         errors.get('Stream_premature_end') or
         errors.get('Corrupt_frame') or
         errors.get('Invalid_data_error') or
@@ -234,5 +240,5 @@ if __name__ == '__main__':
     #     output_file='white_lst.py'
     # )
 
-    analyze_stream('http://nlive.zjkgdcs.com:8091/live/xwzhpd.m3u8')
-    # generate_whitelist(urls=merged_urls_samlpe,sort_by_fps_or_speed='T')
+    # analyze_stream('https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8')
+    generate_whitelist(urls=merged_urls_samlpe,sort_by_fps_or_speed='T')
