@@ -1,82 +1,82 @@
-2025-04-18 18:42:57-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:42:57-PM ==> |                                               【开始获取频道资源】                                             
-2025-04-18 18:42:58-PM ==> |                                   找到可用代理: https://github.moeyy.xyz/                                  
-2025-04-18 18:42:59-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt>获取频道 147 个(类内同名已去重)，获取url地址 703 个(未去重)！
-2025-04-18 18:42:59-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt>获取频道 396 个(类内同名已去重)，获取url地址 547 个(未去重)！
-2025-04-18 18:43:00-PM ==> |  从<https://live.izbds.com/tv/iptv4.txt>获取频道 1397 个(类内同名已去重)，获取url地址 2595 个(未去重)！
-2025-04-18 18:43:00-PM ==> |  从<https://live.zbds.top/tv/iptv6.m3u>获取频道 39 个(类内同名已去重)，获取url地址 41 个(未去重)！
-2025-04-18 18:43:01-PM ==> |  从<https://live.izbds.com/tv/iptv6.txt>获取频道 3 个(类内同名已去重)，获取url地址 72 个(未去重)！
-2025-04-18 18:43:01-PM ==> |  https://live.kilvn.com/iptv.m3u请求失败，错误信息: 403 Client Error: Forbidden for url: https://live.kilvn.com/iptv.m3u
-2025-04-18 18:43:01-PM ==> |  从<https://live.hacks.tools/tv/iptv4.txt>获取频道 0 个(类内同名已去重)，获取url地址 2594 个(未去重)！
-2025-04-18 18:43:02-PM ==> |  http://124.71.189.194/zb.txt请求失败，错误信息: HTTPConnectionPool(host='124.71.189.194', port=80): Max retries exceeded with url: /zb.txt (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3ec3288050>: Failed to establish a new connection: [Errno 111] Connection refused'))
-2025-04-18 18:43:02-PM ==> |  从<http://8.138.7.223/live.txt>获取频道 3483 个(类内同名已去重)，获取url地址 4959 个(未去重)！
-2025-04-18 18:43:04-PM ==> |  从<http://cqitv.fh4u.org/iptv/jiangsu.txt>获取频道 225 个(类内同名已去重)，获取url地址 227 个(未去重)！
-2025-04-18 18:43:04-PM ==> |  从<http://cqitv.fh4u.org/iptv/20241126/gitv.txt>获取频道 73 个(类内同名已去重)，获取url地址 81 个(未去重)！
-2025-04-18 18:43:06-PM ==> |  从<http://meowtv.top/zb>获取频道 1421 个(类内同名已去重)，获取url地址 2246 个(未去重)！
-2025-04-18 18:43:13-PM ==> |  从<https://tv.youdu.fan:666/live/>获取频道 2139 个(类内同名已去重)，获取url地址 7178 个(未去重)！
-2025-04-18 18:43:17-PM ==> |  http://rihou.cc:567/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=567): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f3ec2e4fdf0>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
-2025-04-18 18:43:21-PM ==> |  http://rihou.cc:555/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=555): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f3ec2e04270>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
-2025-04-18 18:43:23-PM ==> |  从<http://kv.netsite.cc/tvlive>获取频道 199 个(类内同名已去重)，获取url地址 418 个(未去重)！
-2025-04-18 18:43:24-PM ==> |  http://ww.weidonglong.com/dsj.txt请求失败，错误信息: HTTPConnectionPool(host='ww.weidonglong.com', port=80): Max retries exceeded with url: /dsj.txt (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f3ec350dae0>: Failed to resolve 'ww.weidonglong.com' ([Errno -2] Name or service not known)"))
-2025-04-18 18:43:24-PM ==> |  http://xhztv.top/zbc.txt请求失败，错误信息: 404 Client Error: Not Found for url: http://xhztv.top/zbc.txt
-2025-04-18 18:43:24-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u>获取频道 53 个(类内同名已去重)，获取url地址 67 个(未去重)！
-2025-04-18 18:43:24-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u>获取频道 107 个(类内同名已去重)，获取url地址 107 个(未去重)！
-2025-04-18 18:43:25-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u>获取频道 789 个(类内同名已去重)，获取url地址 2566 个(未去重)！
-2025-04-18 18:43:25-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt>获取频道 23 个(类内同名已去重)，获取url地址 106 个(未去重)！
-2025-04-18 18:43:26-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt>获取频道 37 个(类内同名已去重)，获取url地址 136 个(未去重)！
-2025-04-18 18:43:26-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt>获取频道 2575 个(类内同名已去重)，获取url地址 24478 个(未去重)！
-2025-04-18 18:43:26-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt>获取频道 142 个(类内同名已去重)，获取url地址 209 个(未去重)！
-2025-04-18 18:43:27-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt>获取频道 179 个(类内同名已去重)，获取url地址 293 个(未去重)！
-2025-04-18 18:43:27-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u>获取频道 63 个(类内同名已去重)，获取url地址 13745 个(未去重)！
-2025-04-18 18:43:28-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt>获取频道 1666 个(类内同名已去重)，获取url地址 3125 个(未去重)！
-2025-04-18 18:43:28-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u>获取频道 1293 个(类内同名已去重)，获取url地址 1406 个(未去重)！
-2025-04-18 18:43:28-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u>获取频道 128 个(类内同名已去重)，获取url地址 128 个(未去重)！
-2025-04-18 18:43:28-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
-2025-04-18 18:43:29-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
-2025-04-18 18:43:29-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u>获取频道 112 个(类内同名已去重)，获取url地址 176 个(未去重)！
-2025-04-18 18:43:29-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u>获取频道 85 个(类内同名已去重)，获取url地址 85 个(未去重)！
-2025-04-18 18:43:30-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u>获取频道 3 个(类内同名已去重)，获取url地址 76 个(未去重)！
-2025-04-18 18:43:30-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u>获取频道 0 个(类内同名已去重)，获取url地址 55 个(未去重)！
-2025-04-18 18:43:30-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u>获取频道 93 个(类内同名已去重)，获取url地址 94 个(未去重)！
-2025-04-18 18:43:30-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u>获取频道 0 个(类内同名已去重)，获取url地址 67 个(未去重)！
-2025-04-18 18:43:31-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u>获取频道 998 个(类内同名已去重)，获取url地址 1286 个(未去重)！
-2025-04-18 18:43:31-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u>获取频道 0 个(类内同名已去重)，获取url地址 58 个(未去重)！
-2025-04-18 18:43:31-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt>获取频道 55 个(类内同名已去重)，获取url地址 114 个(未去重)！
-2025-04-18 18:43:32-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u>获取频道 64 个(类内同名已去重)，获取url地址 555 个(未去重)！
-2025-04-18 18:43:32-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt>获取频道 127 个(类内同名已去重)，获取url地址 129 个(未去重)！
-2025-04-18 18:43:32-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt>获取频道 5020 个(类内同名已去重)，获取url地址 11550 个(未去重)！
-2025-04-18 18:43:33-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt>获取频道 6 个(类内同名已去重)，获取url地址 87 个(未去重)！
-2025-04-18 18:43:33-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u>获取频道 25 个(类内同名已去重)，获取url地址 72 个(未去重)！
-2025-04-18 18:43:33-PM ==> |  ----------------------------------------------------------------------------------------------------
-2025-04-18 18:43:33-PM ==> |                                共从 46 个源地址中获取频道 23165 个，获取url地址 82431 个                               
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                              【开始对url地址去重】                                            
-2025-04-18 18:43:33-PM ==> |                                    共去除重复频道 7281 个，去除重复url地址 33691 个                                  
-2025-04-18 18:43:33-PM ==> |                                    去重后剩余频道 15884 个，剩余url地址 48740 个                                   
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                          【按IP_VERSION筛选】:IPV4                                        
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                               【开始读入模板信息】                                             
-2025-04-18 18:43:33-PM ==> |                                         共提取模板中分类 15 个、频道 274 个                                       
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                           【开始匹配模板频道】:不匹配地方频道                                         
-2025-04-18 18:43:33-PM ==> |                                    共匹配到模板给定频道 233 个、url直播地址 24121 个                                  
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                             【开始抽取样本】:全部采集                                            
-2025-04-18 18:43:33-PM ==> |                                             共合并urls 1167 个                                           
-2025-04-18 18:43:33-PM ==> |                                  采样urls名单已保存到文件 merged_urls_sample.py                                
-2025-04-18 18:43:33-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:43:33-PM ==> |                                        【开始流畅性抽样检测】:CORE_COUNT:4                                      
-2025-04-18 18:56:51-PM ==> |                                     抽样检测已完成！域名白名单已写入：white_lst.py                                    
-2025-04-18 18:56:51-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:56:51-PM ==> |                                        【开始按白名单顺序排序】:只保留白名单URLS                                       
-2025-04-18 18:56:51-PM ==> |                                    已按白名单地址完成排序(by_S)，共有白名单地址 412 个                                   
-2025-04-18 18:56:51-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:56:51-PM ==> |                                             【开始保存文件(.txt)】                                           
-2025-04-18 18:56:51-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.txt】文件中                     
-2025-04-18 18:56:51-PM ==> |                                        共保存频道 102 个、url地址 412 个                                       
-2025-04-18 18:56:51-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-04-18 18:56:51-PM ==> |                                             【开始保存文件(.m3u)】                                           
-2025-04-18 18:56:51-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.m3u】文件中                     
-2025-04-18 18:56:51-PM ==> |                                        共保存频道 102 个、url地址 412 个                                       
-2025-04-18 18:56:51-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:01-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:01-PM ==> |                                               【开始获取频道资源】                                             
+2025-04-19 18:40:02-PM ==> |                                   找到可用代理: https://github.moeyy.xyz/                                  
+2025-04-19 18:40:02-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt>获取频道 104 个(类内同名已去重)，获取url地址 428 个(未去重)！
+2025-04-19 18:40:02-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt>获取频道 398 个(类内同名已去重)，获取url地址 547 个(未去重)！
+2025-04-19 18:40:03-PM ==> |  从<https://live.izbds.com/tv/iptv4.txt>获取频道 1205 个(类内同名已去重)，获取url地址 2067 个(未去重)！
+2025-04-19 18:40:04-PM ==> |  从<https://live.zbds.top/tv/iptv6.m3u>获取频道 41 个(类内同名已去重)，获取url地址 43 个(未去重)！
+2025-04-19 18:40:04-PM ==> |  从<https://live.izbds.com/tv/iptv6.txt>获取频道 5 个(类内同名已去重)，获取url地址 60 个(未去重)！
+2025-04-19 18:40:04-PM ==> |  https://live.kilvn.com/iptv.m3u请求失败，错误信息: 403 Client Error: Forbidden for url: https://live.kilvn.com/iptv.m3u
+2025-04-19 18:40:06-PM ==> |  从<https://live.hacks.tools/tv/iptv4.txt>获取频道 0 个(类内同名已去重)，获取url地址 2066 个(未去重)！
+2025-04-19 18:40:06-PM ==> |  http://124.71.189.194/zb.txt请求失败，错误信息: HTTPConnectionPool(host='124.71.189.194', port=80): Max retries exceeded with url: /zb.txt (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7facb0ddc050>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 18:40:07-PM ==> |  从<http://8.138.7.223/live.txt>获取频道 3483 个(类内同名已去重)，获取url地址 4959 个(未去重)！
+2025-04-19 18:40:08-PM ==> |  从<http://cqitv.fh4u.org/iptv/jiangsu.txt>获取频道 225 个(类内同名已去重)，获取url地址 227 个(未去重)！
+2025-04-19 18:40:09-PM ==> |  从<http://cqitv.fh4u.org/iptv/20241126/gitv.txt>获取频道 73 个(类内同名已去重)，获取url地址 81 个(未去重)！
+2025-04-19 18:40:14-PM ==> |  从<http://meowtv.top/zb>获取频道 1421 个(类内同名已去重)，获取url地址 2246 个(未去重)！
+2025-04-19 18:40:29-PM ==> |  从<https://tv.youdu.fan:666/live/>获取频道 2139 个(类内同名已去重)，获取url地址 7178 个(未去重)！
+2025-04-19 18:40:32-PM ==> |  从<http://rihou.cc:567/gggg.nzk>获取频道 5306 个(类内同名已去重)，获取url地址 7671 个(未去重)！
+2025-04-19 18:40:36-PM ==> |  从<http://rihou.cc:555/gggg.nzk>获取频道 0 个(类内同名已去重)，获取url地址 7671 个(未去重)！
+2025-04-19 18:40:36-PM ==> |  从<http://kv.netsite.cc/tvlive>获取频道 199 个(类内同名已去重)，获取url地址 418 个(未去重)！
+2025-04-19 18:40:37-PM ==> |  http://ww.weidonglong.com/dsj.txt请求失败，错误信息: HTTPConnectionPool(host='ww.weidonglong.com', port=80): Max retries exceeded with url: /dsj.txt (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7facb10a9e10>: Failed to resolve 'ww.weidonglong.com' ([Errno -2] Name or service not known)"))
+2025-04-19 18:40:37-PM ==> |  http://xhztv.top/zbc.txt请求失败，错误信息: 404 Client Error: Not Found for url: http://xhztv.top/zbc.txt
+2025-04-19 18:40:37-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u>获取频道 50 个(类内同名已去重)，获取url地址 67 个(未去重)！
+2025-04-19 18:40:37-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u>获取频道 107 个(类内同名已去重)，获取url地址 107 个(未去重)！
+2025-04-19 18:40:38-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u>获取频道 796 个(类内同名已去重)，获取url地址 2583 个(未去重)！
+2025-04-19 18:40:38-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt>获取频道 23 个(类内同名已去重)，获取url地址 106 个(未去重)！
+2025-04-19 18:40:38-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt>获取频道 37 个(类内同名已去重)，获取url地址 136 个(未去重)！
+2025-04-19 18:40:39-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt>获取频道 2606 个(类内同名已去重)，获取url地址 24665 个(未去重)！
+2025-04-19 18:40:39-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt>获取频道 142 个(类内同名已去重)，获取url地址 209 个(未去重)！
+2025-04-19 18:40:39-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt>获取频道 179 个(类内同名已去重)，获取url地址 293 个(未去重)！
+2025-04-19 18:40:40-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u>获取频道 61 个(类内同名已去重)，获取url地址 13745 个(未去重)！
+2025-04-19 18:40:40-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt>获取频道 1477 个(类内同名已去重)，获取url地址 2585 个(未去重)！
+2025-04-19 18:40:40-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u>获取频道 1110 个(类内同名已去重)，获取url地址 1212 个(未去重)！
+2025-04-19 18:40:41-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u>获取频道 128 个(类内同名已去重)，获取url地址 128 个(未去重)！
+2025-04-19 18:40:41-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
+2025-04-19 18:40:41-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
+2025-04-19 18:40:41-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u>获取频道 112 个(类内同名已去重)，获取url地址 176 个(未去重)！
+2025-04-19 18:40:41-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u>获取频道 85 个(类内同名已去重)，获取url地址 85 个(未去重)！
+2025-04-19 18:40:42-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u>获取频道 3 个(类内同名已去重)，获取url地址 76 个(未去重)！
+2025-04-19 18:40:42-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u>获取频道 0 个(类内同名已去重)，获取url地址 55 个(未去重)！
+2025-04-19 18:40:42-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u>获取频道 93 个(类内同名已去重)，获取url地址 94 个(未去重)！
+2025-04-19 18:40:42-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u>获取频道 0 个(类内同名已去重)，获取url地址 67 个(未去重)！
+2025-04-19 18:40:43-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u>获取频道 998 个(类内同名已去重)，获取url地址 1286 个(未去重)！
+2025-04-19 18:40:43-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u>获取频道 0 个(类内同名已去重)，获取url地址 58 个(未去重)！
+2025-04-19 18:40:43-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt>获取频道 55 个(类内同名已去重)，获取url地址 114 个(未去重)！
+2025-04-19 18:40:43-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u>获取频道 66 个(类内同名已去重)，获取url地址 594 个(未去重)！
+2025-04-19 18:40:44-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt>获取频道 127 个(类内同名已去重)，获取url地址 129 个(未去重)！
+2025-04-19 18:40:44-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt>获取频道 5020 个(类内同名已去重)，获取url地址 11550 个(未去重)！
+2025-04-19 18:40:44-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt>获取频道 1 个(类内同名已去重)，获取url地址 20 个(未去重)！
+2025-04-19 18:40:44-PM ==> |  从<https://github.moeyy.xyz/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u>获取频道 25 个(类内同名已去重)，获取url地址 72 个(未去重)！
+2025-04-19 18:40:44-PM ==> |  ----------------------------------------------------------------------------------------------------
+2025-04-19 18:40:44-PM ==> |                                共从 46 个源地址中获取频道 27900 个，获取url地址 95874 个                               
+2025-04-19 18:40:44-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:44-PM ==> |                                              【开始对url地址去重】                                            
+2025-04-19 18:40:44-PM ==> |                                    共去除重复频道 7855 个，去除重复url地址 41774 个                                  
+2025-04-19 18:40:44-PM ==> |                                    去重后剩余频道 20045 个，剩余url地址 54100 个                                   
+2025-04-19 18:40:44-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:44-PM ==> |                                          【按IP_VERSION筛选】:IPV4                                        
+2025-04-19 18:40:44-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:44-PM ==> |                                               【开始读入模板信息】                                             
+2025-04-19 18:40:44-PM ==> |                                         共提取模板中分类 15 个、频道 274 个                                       
+2025-04-19 18:40:44-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:44-PM ==> |                                           【开始匹配模板频道】:不匹配地方频道                                         
+2025-04-19 18:40:45-PM ==> |                                    共匹配到模板给定频道 233 个、url直播地址 24674 个                                  
+2025-04-19 18:40:45-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:45-PM ==> |                                             【开始抽取样本】:全部采集                                            
+2025-04-19 18:40:45-PM ==> |                                             共合并urls 1350 个                                           
+2025-04-19 18:40:45-PM ==> |                                  采样urls名单已保存到文件 merged_urls_sample.py                                
+2025-04-19 18:40:45-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:40:45-PM ==> |                                        【开始流畅性抽样检测】:CORE_COUNT:4                                      
+2025-04-19 18:54:09-PM ==> |                                     抽样检测已完成！域名白名单已写入：white_lst.py                                    
+2025-04-19 18:54:09-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:54:09-PM ==> |                                        【开始按白名单顺序排序】:只保留白名单URLS                                       
+2025-04-19 18:54:10-PM ==> |                                    已按白名单地址完成排序(by_S)，共有白名单地址 680 个                                   
+2025-04-19 18:54:10-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:54:10-PM ==> |                                             【开始保存文件(.txt)】                                           
+2025-04-19 18:54:10-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.txt】文件中                     
+2025-04-19 18:54:10-PM ==> |                                        共保存频道 126 个、url地址 680 个                                       
+2025-04-19 18:54:10-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-04-19 18:54:10-PM ==> |                                             【开始保存文件(.m3u)】                                           
+2025-04-19 18:54:10-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.m3u】文件中                     
+2025-04-19 18:54:10-PM ==> |                                        共保存频道 126 个、url地址 680 个                                       
+2025-04-19 18:54:10-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
