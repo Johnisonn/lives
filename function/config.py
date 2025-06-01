@@ -176,6 +176,7 @@ source_urls = [
     'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
+    'https://nptv.freetv.top/juhe.m3u', #小暴脾气_肥羊
     'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
     'https://live.zbds.top/tv/iptv6.m3u',
     'https://live.izbds.com/tv/iptv6.txt',
