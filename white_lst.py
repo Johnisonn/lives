@@ -1,37 +1,37 @@
-#  2025-07-17 18:48:36
+#  2025-07-18 18:48:42
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'jwplay.hebyun.com.cn',   # SPEED=20.82X
-    'stream1.freetv.fun',   # SPEED=19.64X
-    'rthktv33-live.akamaized.net',   # SPEED=15.00X
-    'l.cztvcloud.com',   # SPEED=13.38X
-    '0472.org',   # SPEED=12.98X
-    'live-hls-web-ajb.getaj.net',   # SPEED=12.61X
-    'english-livetx.cgtn.com',   # SPEED=12.19X
-    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=11.97X
-    'ali-vl.cztv.com',   # SPEED=9.79X
-    '38.64.72.148:80',   # SPEED=9.33X
-    'live.jinchuanrmt.com:90',   # SPEED=8.81X
-    'antvlive.ab5c6921.cdnviet.com',   # SPEED=8.20X
-    'ldncctvwbcdcnc.v.wscdns.com',   # SPEED=8.06X
-    'tencentplay.gztv.com',   # SPEED=7.26X
-    'live.zohi.tv',   # SPEED=7.13X
-    'ali-m-l.cztv.com',   # SPEED=6.89X
-    '182.150.115.21:8030',   # SPEED=6.17X
-    'live.zohi.tv:80',   # SPEED=5.38X
-    'nn.7x9d.cn',   # SPEED=5.17X
-    '39.137.75.234',   # SPEED=4.91X
-    'sport.pendy.dpdns.org',   # SPEED=4.63X
-    '222.169.85.8:9901',   # SPEED=4.43X
-    'ali-m-l.cztv.com:80',   # SPEED=4.34X
-    '221.7.175.154:8445',   # SPEED=4.11X
-    '1.94.31.214',   # SPEED=3.08X
-    'event.pull.hebtv.com',   # SPEED=2.98X
-    'zhibo.hkstv.tv',   # SPEED=2.62X
-    'tc-tct.douyucdn2.cn',   # SPEED=2.12X
-    'zhibo.hkstv.tv:80',   # SPEED=2.04X
-    'www.lizhinas.top:1009',   # SPEED=1.95X
+    'stream1.freetv.fun',   # SPEED=17.51X
+    'live-hls-web-ajb.getaj.net',   # SPEED=16.95X
+    'www.freetv.top',   # SPEED=14.64X
+    'jwplay.hebyun.com.cn',   # SPEED=13.12X
+    'ldncctvwbcdcnc.v.wscdns.com',   # SPEED=11.72X
+    'rthktv33-live.akamaized.net',   # SPEED=11.21X
+    'l.cztvcloud.com',   # SPEED=10.94X
+    'ali-vl.cztv.com',   # SPEED=8.70X
+    'tencentplay.gztv.com',   # SPEED=8.58X
+    'live.jinchuanrmt.com:90',   # SPEED=8.36X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=7.93X
+    'antvlive.ab5c6921.cdnviet.com',   # SPEED=7.15X
+    'sport.pendy.dpdns.org',   # SPEED=7.13X
+    'goo.bkpcp.top',   # SPEED=6.88X
+    'z.b.bkpcp.top',   # SPEED=6.84X
+    'live.zohi.tv:80',   # SPEED=6.61X
+    'ali-m-l.cztv.com',   # SPEED=5.75X
+    '182.150.115.21:8030',   # SPEED=5.64X
+    '38.64.72.148:80',   # SPEED=5.49X
+    'live.zohi.tv',   # SPEED=5.25X
+    '222.128.55.152:9080',   # SPEED=4.85X
+    'global.cgtn.cicc.media.caton.cloud',   # SPEED=4.74X
+    'play1-qk.nmtv.cn:80',   # SPEED=3.47X
+    '221.7.175.154:8445',   # SPEED=3.37X
+    'ali-m-l.cztv.com:80',   # SPEED=3.11X
+    'zhibo.hkstv.tv:80',   # SPEED=3.01X
+    'event.pull.hebtv.com',   # SPEED=2.79X
+    'www.lizhinas.top:1009',   # SPEED=2.78X
+    '1.94.31.214',   # SPEED=2.58X
+    'tc-tct.douyucdn2.cn',   # SPEED=1.51X
 ]
