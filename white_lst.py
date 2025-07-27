@@ -1,42 +1,40 @@
-#  2025-07-26 18:45:22
+#  2025-07-27 18:44:39
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    '0472.org',   # SPEED=23.90X
-    'jwplay.hebyun.com.cn',   # SPEED=22.68X
-    'english-livetx.cgtn.com',   # SPEED=19.43X
-    'stream1.freetv.fun',   # SPEED=18.56X
-    'live-hls-web-ajb.getaj.net',   # SPEED=12.81X
-    'l.cztvcloud.com',   # SPEED=11.99X
-    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=11.42X
-    'live.jinchuanrmt.com:90',   # SPEED=10.69X
-    'ali-vl.cztv.com',   # SPEED=9.90X
-    'antvlive.ab5c6921.cdnviet.com',   # SPEED=9.21X
-    'tencentplay.gztv.com',   # SPEED=9.00X
-    'rthktv33-live.akamaized.net',   # SPEED=8.38X
-    'www.freetv.top',   # SPEED=8.18X
-    'gdcucc.v1.mk',   # SPEED=8.06X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=7.63X
-    'live.zohi.tv:80',   # SPEED=7.22X
-    'migu.188766.xyz',   # SPEED=6.14X
-    'ali-m-l.cztv.com',   # SPEED=6.10X
-    'live.zohi.tv',   # SPEED=5.83X
-    '182.150.115.21:8030',   # SPEED=5.35X
-    'liveout.btzx.com.cn',   # SPEED=5.13X
-    '38.64.72.148:80',   # SPEED=4.40X
-    'play1-qk.nmtv.cn:80',   # SPEED=4.35X
-    '221.7.175.154:8445',   # SPEED=4.13X
-    'ali-m-l.cztv.com:80',   # SPEED=3.79X
-    'zhibo.hkstv.tv',   # SPEED=2.77X
-    'live.sxrtv.com',   # SPEED=2.74X
-    '222.128.55.152:9080',   # SPEED=2.57X
-    'go.bkpcp.top',   # SPEED=2.53X
-    'cdn6.bkpcp.top',   # SPEED=2.17X
-    't.061899.xyz',   # SPEED=2.13X
-    '1.94.31.214',   # SPEED=2.00X
-    'zhibo.hkstv.tv:80',   # SPEED=1.91X
-    'event.pull.hebtv.com',   # SPEED=1.77X
-    '124.93.18.238:9002',   # SPEED=1.74X
+    'stream1.freetv.fun',   # SPEED=20.74X
+    'jwplay.hebyun.com.cn',   # SPEED=16.76X
+    'www.freetv.top',   # SPEED=15.47X
+    'english-livetx.cgtn.com',   # SPEED=14.54X
+    'live-hls-web-ajb.getaj.net',   # SPEED=13.30X
+    'ali-vl.cztv.com',   # SPEED=11.70X
+    'live.jinchuanrmt.com:90',   # SPEED=9.97X
+    'l.cztvcloud.com',   # SPEED=9.82X
+    'rthktv33-live.akamaized.net',   # SPEED=9.14X
+    'antvlive.ab5c6921.cdnviet.com',   # SPEED=7.90X
+    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=7.89X
+    'free.cnlive.club',   # SPEED=7.69X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=7.40X
+    'live.zohi.tv:80',   # SPEED=7.24X
+    'live.zohi.tv',   # SPEED=7.10X
+    'ali-m-l.cztv.com',   # SPEED=5.68X
+    'tencentplay.gztv.com',   # SPEED=5.20X
+    '182.150.115.21:8030',   # SPEED=5.13X
+    'gdcucc.v1.mk',   # SPEED=4.25X
+    'ali-m-l.cztv.com:80',   # SPEED=4.14X
+    'cdn6.bkpcp.top',   # SPEED=3.41X
+    'nn.7x9d.cn',   # SPEED=3.31X
+    't.061899.xyz',   # SPEED=3.10X
+    '221.7.175.154:8445',   # SPEED=3.09X
+    'go.bkpcp.top',   # SPEED=3.08X
+    '38.64.72.148:80',   # SPEED=3.00X
+    'zhibo.hkstv.tv:80',   # SPEED=2.70X
+    '1.94.31.214',   # SPEED=2.68X
+    'event.pull.hebtv.com',   # SPEED=2.66X
+    'tc-tct.douyucdn2.cn',   # SPEED=2.44X
+    'live.sxrtv.com',   # SPEED=2.29X
+    'livepull-tcms.sztv.com.cn',   # SPEED=2.13X
+    '124.93.18.238:9002',   # SPEED=1.56X
 ]
