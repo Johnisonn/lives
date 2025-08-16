@@ -1,32 +1,36 @@
-#  2025-08-15 18:44:49
+#  2025-08-16 18:41:11
 
 white_lst = [
+    'ali-m-l.cztv.com',   # reserved
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'stream1.freetv.fun',   # SPEED=20.31X
-    'jwplay.hebyun.com.cn',   # SPEED=15.57X
-    'ali-vl.cztv.com',   # SPEED=12.07X
-    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=10.22X
-    'l.cztvcloud.com',   # SPEED=9.78X
-    'live.jinchuanrmt.com:90',   # SPEED=8.94X
-    'tencentplay.gztv.com',   # SPEED=7.49X
-    'ikcdn01.ikzybf.com',   # SPEED=7.43X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=7.15X
-    'live.zohi.tv',   # SPEED=7.04X
-    'live.zohi.tv:80',   # SPEED=5.87X
-    'ali-m-l.cztv.com',   # SPEED=5.59X
-    '203.205.191.53',   # SPEED=4.96X
-    '182.150.115.21:8030',   # SPEED=4.60X
-    'live-hls-web-ajb.getaj.net',   # SPEED=4.07X
-    'play1-qk.nmtv.cn:80',   # SPEED=4.01X
-    'ali-m-l.cztv.com:80',   # SPEED=3.90X
-    'ucdn.sd.chinamobile.com:8089',   # SPEED=3.62X
-    '38.64.72.148:80',   # SPEED=3.53X
-    'liveout.btzx.com.cn',   # SPEED=3.27X
-    '221.7.175.154:8445',   # SPEED=2.90X
-    'zhibo.hkstv.tv',   # SPEED=2.62X
-    '1.94.31.214',   # SPEED=2.36X
-    'zhibo.hkstv.tv:80',   # SPEED=2.28X
-    'tc-tct.douyucdn2.cn',   # SPEED=1.64X
+    'jwplay.hebyun.com.cn',   # SPEED=22.07X
+    'stream1.freetv.fun',   # SPEED=20.39X
+    'english-livetx.cgtn.com',   # SPEED=13.16X
+    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=12.99X
+    'ali-vl.cztv.com',   # SPEED=12.56X
+    'tencentplay.gztv.com',   # SPEED=10.41X
+    'live.jinchuanrmt.com:90',   # SPEED=9.64X
+    '0472.org',   # SPEED=9.63X
+    'l.cztvcloud.com',   # SPEED=8.42X
+    'live.zohi.tv',   # SPEED=7.67X
+    'live.zohi.tv:80',   # SPEED=7.08X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=6.99X
+    'liveout.btzx.com.cn',   # SPEED=6.09X
+    '203.205.191.53',   # SPEED=6.03X
+    '182.150.115.21:8030',   # SPEED=5.96X
+    'ali-m-l.cztv.com:80',   # SPEED=4.70X
+    'play1-qk.nmtv.cn:80',   # SPEED=4.52X
+    '222.128.55.152:9080',   # SPEED=3.54X
+    'live-hls-web-ajb.getaj.net',   # SPEED=3.45X
+    '182.113.6.210:9901',   # SPEED=3.10X
+    '221.7.175.154:8445',   # SPEED=2.98X
+    '38.64.72.148:80',   # SPEED=2.85X
+    'zhibo.hkstv.tv:80',   # SPEED=2.54X
+    '1.94.31.214',   # SPEED=2.39X
+    'tc-tct.douyucdn2.cn',   # SPEED=2.24X
+    'nn.7x9d.cn',   # SPEED=2.22X
+    '39.150.96.141:65535',   # SPEED=2.01X
+    'push-rtmp-hs-spe-f5.douyincdn.com',   # SPEED=1.78X
 ]
