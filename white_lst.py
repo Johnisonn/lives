@@ -1,36 +1,31 @@
-#  2025-08-16 18:41:11
+#  2025-08-17 18:43:07
 
 white_lst = [
-    'ali-m-l.cztv.com',   # reserved
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'jwplay.hebyun.com.cn',   # SPEED=22.07X
-    'stream1.freetv.fun',   # SPEED=20.39X
-    'english-livetx.cgtn.com',   # SPEED=13.16X
-    'ldcctvwbcdks.v.kcdnvip.com',   # SPEED=12.99X
-    'ali-vl.cztv.com',   # SPEED=12.56X
-    'tencentplay.gztv.com',   # SPEED=10.41X
-    'live.jinchuanrmt.com:90',   # SPEED=9.64X
-    '0472.org',   # SPEED=9.63X
-    'l.cztvcloud.com',   # SPEED=8.42X
-    'live.zohi.tv',   # SPEED=7.67X
-    'live.zohi.tv:80',   # SPEED=7.08X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=6.99X
-    'liveout.btzx.com.cn',   # SPEED=6.09X
-    '203.205.191.53',   # SPEED=6.03X
-    '182.150.115.21:8030',   # SPEED=5.96X
-    'ali-m-l.cztv.com:80',   # SPEED=4.70X
-    'play1-qk.nmtv.cn:80',   # SPEED=4.52X
-    '222.128.55.152:9080',   # SPEED=3.54X
-    'live-hls-web-ajb.getaj.net',   # SPEED=3.45X
-    '182.113.6.210:9901',   # SPEED=3.10X
-    '221.7.175.154:8445',   # SPEED=2.98X
-    '38.64.72.148:80',   # SPEED=2.85X
-    'zhibo.hkstv.tv:80',   # SPEED=2.54X
-    '1.94.31.214',   # SPEED=2.39X
-    'tc-tct.douyucdn2.cn',   # SPEED=2.24X
-    'nn.7x9d.cn',   # SPEED=2.22X
-    '39.150.96.141:65535',   # SPEED=2.01X
-    'push-rtmp-hs-spe-f5.douyincdn.com',   # SPEED=1.78X
+    'stream1.freetv.fun',   # SPEED=20.58X
+    'epg.pw',   # SPEED=20.25X
+    '0472.org',   # SPEED=15.86X
+    'english-livetx.cgtn.com',   # SPEED=14.11X
+    'ali-vl.cztv.com',   # SPEED=12.66X
+    'jwplay.hebyun.com.cn',   # SPEED=12.15X
+    'l.cztvcloud.com',   # SPEED=10.34X
+    'ldncctvwbcdcnc.v.wscdns.com',   # SPEED=10.34X
+    'tencentplay.gztv.com',   # SPEED=7.70X
+    'live.zohi.tv',   # SPEED=7.33X
+    'live-hls-web-ajb.getaj.net',   # SPEED=6.44X
+    '203.205.191.53',   # SPEED=6.30X
+    'live.zohi.tv:80',   # SPEED=5.70X
+    '38.64.72.148:80',   # SPEED=5.56X
+    'ali-m-l.cztv.com',   # SPEED=4.85X
+    'play1-qk.nmtv.cn:80',   # SPEED=4.55X
+    'ali-m-l.cztv.com:80',   # SPEED=4.42X
+    '222.128.55.152:9080',   # SPEED=3.85X
+    '110.42.63.51:51351',   # SPEED=3.11X
+    'live.jinchuanrmt.com:90',   # SPEED=2.89X
+    '221.7.175.154:8445',   # SPEED=2.75X
+    '1.94.31.214',   # SPEED=2.42X
+    'zhibo.hkstv.tv:80',   # SPEED=2.32X
+    'tc-tct.douyucdn2.cn',   # SPEED=2.19X
 ]
