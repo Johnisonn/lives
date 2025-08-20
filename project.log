@@ -1,84 +1,84 @@
-2025-08-19 18:35:42-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:35:42-PM ==> |                                               【开始获取频道资源】                                             
-2025-08-19 18:35:46-PM ==> |  使用代理 https://github.moeyy.xyz/ 时出现错误: HTTPSConnectionPool(host='github.moeyy.xyz', port=443): Read timed out. (read timeout=4)
-2025-08-19 18:35:46-PM ==> |                                      找到可用代理: https://ghproxy.cfd/                                    
-2025-08-19 18:35:47-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt>获取频道 76 个(类内同名已去重)，获取url地址 157 个(未去重)！
-2025-08-19 18:35:47-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt>获取频道 398 个(类内同名已去重)，获取url地址 547 个(未去重)！
-2025-08-19 18:35:51-PM ==> |  https://nptv.freetv.top/juhe.m3u请求失败，错误信息: HTTPSConnectionPool(host='nptv.freetv.top', port=443): Read timed out. (read timeout=4)
-2025-08-19 18:35:52-PM ==> |  从<https://live.izbds.com/tv/iptv4.txt>获取频道 934 个(类内同名已去重)，获取url地址 1379 个(未去重)！
-2025-08-19 18:35:53-PM ==> |  从<https://live.zbds.top/tv/iptv6.m3u>获取频道 43 个(类内同名已去重)，获取url地址 43 个(未去重)！
-2025-08-19 18:35:54-PM ==> |  从<https://live.izbds.com/tv/iptv6.txt>获取频道 7 个(类内同名已去重)，获取url地址 54 个(未去重)！
-2025-08-19 18:35:54-PM ==> |  https://live.kilvn.com/iptv.m3u请求失败，错误信息: 403 Client Error: Forbidden for url: https://live.kilvn.com/iptv.m3u
-2025-08-19 18:35:55-PM ==> |  从<https://live.hacks.tools/tv/iptv4.txt>获取频道 55 个(类内同名已去重)，获取url地址 1072 个(未去重)！
-2025-08-19 18:35:55-PM ==> |  http://124.71.189.194/zb.txt请求失败，错误信息: HTTPConnectionPool(host='124.71.189.194', port=80): Max retries exceeded with url: /zb.txt (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36dd68de80>: Failed to establish a new connection: [Errno 111] Connection refused'))
-2025-08-19 18:35:55-PM ==> |  从<http://8.138.7.223/live.txt>获取频道 10 个(类内同名已去重)，获取url地址 10 个(未去重)！
-2025-08-19 18:35:56-PM ==> |  从<http://cqitv.fh4u.org/iptv/jiangsu.txt>获取频道 225 个(类内同名已去重)，获取url地址 227 个(未去重)！
-2025-08-19 18:35:57-PM ==> |  从<http://cqitv.fh4u.org/iptv/20241126/gitv.txt>获取频道 73 个(类内同名已去重)，获取url地址 81 个(未去重)！
-2025-08-19 18:35:58-PM ==> |  http://meowtv.top/zb请求失败，错误信息: HTTPConnectionPool(host='meowtv.top', port=80): Max retries exceeded with url: /zb (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f36dd642c40>: Failed to resolve 'meowtv.top' ([Errno -5] No address associated with hostname)"))
-2025-08-19 18:35:59-PM ==> |  https://tv.youdu.fan:666/live/请求失败，错误信息: 403 Client Error: Forbidden for url: https://tv.youdu.fan:666/live/
-2025-08-19 18:36:03-PM ==> |  http://rihou.cc:567/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=567): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f36dd60f0b0>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
-2025-08-19 18:36:07-PM ==> |  http://rihou.cc:555/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=555): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f36dd696f10>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
-2025-08-19 18:36:08-PM ==> |  从<http://kv.netsite.cc/tvlive>获取频道 199 个(类内同名已去重)，获取url地址 418 个(未去重)！
-2025-08-19 18:36:08-PM ==> |  从<http://ww.weidonglong.com/dsj.txt>获取频道 16 个(类内同名已去重)，获取url地址 16 个(未去重)！
-2025-08-19 18:36:08-PM ==> |  http://xhztv.top/zbc.txt请求失败，错误信息: 404 Client Error: Not Found for url: http://xhztv.top/zbc.txt
-2025-08-19 18:36:08-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u>获取频道 59 个(类内同名已去重)，获取url地址 82 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u>获取频道 113 个(类内同名已去重)，获取url地址 113 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u>获取频道 749 个(类内同名已去重)，获取url地址 1945 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt>获取频道 36 个(类内同名已去重)，获取url地址 429 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt>获取频道 41 个(类内同名已去重)，获取url地址 334 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt>获取频道 6 个(类内同名已去重)，获取url地址 6 个(未去重)！
-2025-08-19 18:36:09-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt>获取频道 142 个(类内同名已去重)，获取url地址 209 个(未去重)！
-2025-08-19 18:36:10-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt>获取频道 179 个(类内同名已去重)，获取url地址 293 个(未去重)！
-2025-08-19 18:36:10-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u>获取频道 54 个(类内同名已去重)，获取url地址 13745 个(未去重)！
-2025-08-19 18:36:10-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt>获取频道 1207 个(类内同名已去重)，获取url地址 1891 个(未去重)！
-2025-08-19 18:36:10-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u>获取频道 852 个(类内同名已去重)，获取url地址 932 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u>获取频道 128 个(类内同名已去重)，获取url地址 128 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u>获取频道 112 个(类内同名已去重)，获取url地址 176 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u>获取频道 85 个(类内同名已去重)，获取url地址 85 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u>获取频道 3 个(类内同名已去重)，获取url地址 76 个(未去重)！
-2025-08-19 18:36:11-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u>获取频道 0 个(类内同名已去重)，获取url地址 55 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u>获取频道 93 个(类内同名已去重)，获取url地址 94 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u>获取频道 0 个(类内同名已去重)，获取url地址 82 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u>获取频道 998 个(类内同名已去重)，获取url地址 1286 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u>获取频道 0 个(类内同名已去重)，获取url地址 58 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt>获取频道 184 个(类内同名已去重)，获取url地址 317 个(未去重)！
-2025-08-19 18:36:12-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u>获取频道 63 个(类内同名已去重)，获取url地址 672 个(未去重)！
-2025-08-19 18:36:13-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt>获取频道 127 个(类内同名已去重)，获取url地址 129 个(未去重)！
-2025-08-19 18:36:13-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt>获取频道 5033 个(类内同名已去重)，获取url地址 11550 个(未去重)！
-2025-08-19 18:36:13-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt>获取频道 3 个(类内同名已去重)，获取url地址 41 个(未去重)！
-2025-08-19 18:36:13-PM ==> |  https://ghproxy.cfd/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u请求失败，错误信息: 404 Client Error: Not Found for url: https://ghproxy.cfd/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u
-2025-08-19 18:36:13-PM ==> |  ----------------------------------------------------------------------------------------------------
-2025-08-19 18:36:13-PM ==> |                                共从 47 个源地址中获取频道 12303 个，获取url地址 38732 个                               
-2025-08-19 18:36:13-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:13-PM ==> |                                              【开始对url地址去重】                                            
-2025-08-19 18:36:13-PM ==> |                                    共去除重复频道 3014 个，去除重复url地址 10948 个                                  
-2025-08-19 18:36:13-PM ==> |                                     去重后剩余频道 9289 个，剩余url地址 27784 个                                   
-2025-08-19 18:36:13-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:13-PM ==> |                                          【按IP_VERSION筛选】:IPV4                                        
-2025-08-19 18:36:13-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:13-PM ==> |                                               【开始读入模板信息】                                             
-2025-08-19 18:36:13-PM ==> |                                         共提取模板中分类 15 个、频道 274 个                                       
-2025-08-19 18:36:13-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:13-PM ==> |                                           【开始匹配模板频道】:不匹配地方频道                                         
-2025-08-19 18:36:13-PM ==> |                                    共匹配到模板给定频道 218 个、url直播地址 14576 个                                  
-2025-08-19 18:36:14-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:14-PM ==> |                                             【开始抽取样本】:全部采集                                            
-2025-08-19 18:36:14-PM ==> |                                             共合并urls 686 个                                            
-2025-08-19 18:36:14-PM ==> |                                  采样urls名单已保存到文件 merged_urls_sample.py                                
-2025-08-19 18:36:14-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:36:14-PM ==> |                                        【开始流畅性抽样检测】:CORE_COUNT:4                                      
-2025-08-19 18:43:27-PM ==> |                                     抽样检测已完成！域名白名单已写入：white_lst.py                                    
-2025-08-19 18:43:27-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:43:27-PM ==> |                                        【开始按白名单顺序排序】:只保留白名单URLS                                       
-2025-08-19 18:43:27-PM ==> |                                    已按白名单地址完成排序(by_S)，共有白名单地址 132 个                                   
-2025-08-19 18:43:27-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:43:27-PM ==> |                                             【开始保存文件(.txt)】                                           
-2025-08-19 18:43:27-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.txt】文件中                     
-2025-08-19 18:43:27-PM ==> |                                         共保存频道 68 个、url地址 132 个                                       
-2025-08-19 18:43:27-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
-2025-08-19 18:43:27-PM ==> |                                             【开始保存文件(.m3u)】                                           
-2025-08-19 18:43:27-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.m3u】文件中                     
-2025-08-19 18:43:27-PM ==> |                                         共保存频道 68 个、url地址 132 个                                       
-2025-08-19 18:43:27-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:23-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:23-PM ==> |                                               【开始获取频道资源】                                             
+2025-08-20 18:35:27-PM ==> |  使用代理 https://github.moeyy.xyz/ 时出现错误: HTTPSConnectionPool(host='github.moeyy.xyz', port=443): Read timed out. (read timeout=4)
+2025-08-20 18:35:27-PM ==> |                                      找到可用代理: https://ghproxy.cfd/                                    
+2025-08-20 18:35:27-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt>获取频道 69 个(类内同名已去重)，获取url地址 137 个(未去重)！
+2025-08-20 18:35:27-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt>获取频道 402 个(类内同名已去重)，获取url地址 547 个(未去重)！
+2025-08-20 18:35:32-PM ==> |  https://nptv.freetv.top/juhe.m3u请求失败，错误信息: HTTPSConnectionPool(host='nptv.freetv.top', port=443): Read timed out. (read timeout=4)
+2025-08-20 18:35:33-PM ==> |  从<https://live.izbds.com/tv/iptv4.txt>获取频道 946 个(类内同名已去重)，获取url地址 1384 个(未去重)！
+2025-08-20 18:35:34-PM ==> |  从<https://live.zbds.top/tv/iptv6.m3u>获取频道 43 个(类内同名已去重)，获取url地址 43 个(未去重)！
+2025-08-20 18:35:35-PM ==> |  从<https://live.izbds.com/tv/iptv6.txt>获取频道 7 个(类内同名已去重)，获取url地址 55 个(未去重)！
+2025-08-20 18:35:35-PM ==> |  https://live.kilvn.com/iptv.m3u请求失败，错误信息: 403 Client Error: Forbidden for url: https://live.kilvn.com/iptv.m3u
+2025-08-20 18:35:36-PM ==> |  从<https://live.hacks.tools/tv/iptv4.txt>获取频道 0 个(类内同名已去重)，获取url地址 1383 个(未去重)！
+2025-08-20 18:35:36-PM ==> |  http://124.71.189.194/zb.txt请求失败，错误信息: HTTPConnectionPool(host='124.71.189.194', port=80): Max retries exceeded with url: /zb.txt (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7febc0e52510>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-20 18:35:36-PM ==> |  从<http://8.138.7.223/live.txt>获取频道 10 个(类内同名已去重)，获取url地址 10 个(未去重)！
+2025-08-20 18:35:41-PM ==> |  从<http://cqitv.fh4u.org/iptv/jiangsu.txt>获取频道 225 个(类内同名已去重)，获取url地址 227 个(未去重)！
+2025-08-20 18:35:43-PM ==> |  从<http://cqitv.fh4u.org/iptv/20241126/gitv.txt>获取频道 73 个(类内同名已去重)，获取url地址 81 个(未去重)！
+2025-08-20 18:35:43-PM ==> |  http://meowtv.top/zb请求失败，错误信息: HTTPConnectionPool(host='meowtv.top', port=80): Max retries exceeded with url: /zb (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7febc0e07820>: Failed to resolve 'meowtv.top' ([Errno -5] No address associated with hostname)"))
+2025-08-20 18:35:45-PM ==> |  https://tv.youdu.fan:666/live/请求失败，错误信息: 403 Client Error: Forbidden for url: https://tv.youdu.fan:666/live/
+2025-08-20 18:35:49-PM ==> |  http://rihou.cc:567/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=567): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7febc0dd30b0>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
+2025-08-20 18:35:53-PM ==> |  http://rihou.cc:555/gggg.nzk请求失败，错误信息: HTTPConnectionPool(host='rihou.cc', port=555): Max retries exceeded with url: /gggg.nzk (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7febc0e59040>, 'Connection to rihou.cc timed out. (connect timeout=4)'))
+2025-08-20 18:35:53-PM ==> |  从<http://kv.netsite.cc/tvlive>获取频道 199 个(类内同名已去重)，获取url地址 418 个(未去重)！
+2025-08-20 18:35:54-PM ==> |  从<http://ww.weidonglong.com/dsj.txt>获取频道 16 个(类内同名已去重)，获取url地址 16 个(未去重)！
+2025-08-20 18:35:54-PM ==> |  http://xhztv.top/zbc.txt请求失败，错误信息: 404 Client Error: Not Found for url: http://xhztv.top/zbc.txt
+2025-08-20 18:35:54-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u>获取频道 59 个(类内同名已去重)，获取url地址 82 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u>获取频道 113 个(类内同名已去重)，获取url地址 113 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u>获取频道 752 个(类内同名已去重)，获取url地址 1954 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt>获取频道 36 个(类内同名已去重)，获取url地址 429 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E4%BC%98%E8%B4%A8%E5%8D%AB%E8%A7%86.txt>获取频道 41 个(类内同名已去重)，获取url地址 334 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt>获取频道 6 个(类内同名已去重)，获取url地址 6 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt>获取频道 142 个(类内同名已去重)，获取url地址 209 个(未去重)！
+2025-08-20 18:35:55-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt>获取频道 179 个(类内同名已去重)，获取url地址 293 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u>获取频道 54 个(类内同名已去重)，获取url地址 13745 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt>获取频道 1219 个(类内同名已去重)，获取url地址 1897 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u>获取频道 864 个(类内同名已去重)，获取url地址 947 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u>获取频道 128 个(类内同名已去重)，获取url地址 128 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u>获取频道 112 个(类内同名已去重)，获取url地址 176 个(未去重)！
+2025-08-20 18:35:56-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u>获取频道 85 个(类内同名已去重)，获取url地址 85 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u>获取频道 3 个(类内同名已去重)，获取url地址 76 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u>获取频道 0 个(类内同名已去重)，获取url地址 55 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u>获取频道 93 个(类内同名已去重)，获取url地址 94 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u>获取频道 0 个(类内同名已去重)，获取url地址 82 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u>获取频道 998 个(类内同名已去重)，获取url地址 1286 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u>获取频道 0 个(类内同名已去重)，获取url地址 58 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt>获取频道 184 个(类内同名已去重)，获取url地址 317 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u>获取频道 63 个(类内同名已去重)，获取url地址 672 个(未去重)！
+2025-08-20 18:35:57-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt>获取频道 127 个(类内同名已去重)，获取url地址 129 个(未去重)！
+2025-08-20 18:35:58-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt>获取频道 5033 个(类内同名已去重)，获取url地址 11550 个(未去重)！
+2025-08-20 18:35:58-PM ==> |  从<https://ghproxy.cfd/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt>获取频道 0 个(类内同名已去重)，获取url地址 0 个(未去重)！
+2025-08-20 18:35:58-PM ==> |  https://ghproxy.cfd/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u请求失败，错误信息: 404 Client Error: Not Found for url: https://ghproxy.cfd/https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u
+2025-08-20 18:35:58-PM ==> |  ----------------------------------------------------------------------------------------------------
+2025-08-20 18:35:58-PM ==> |                                共从 47 个源地址中获取频道 12281 个，获取url地址 39018 个                               
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                              【开始对url地址去重】                                            
+2025-08-20 18:35:58-PM ==> |                                    共去除重复频道 2997 个，去除重复url地址 11395 个                                  
+2025-08-20 18:35:58-PM ==> |                                     去重后剩余频道 9284 个，剩余url地址 27623 个                                   
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                          【按IP_VERSION筛选】:IPV4                                        
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                               【开始读入模板信息】                                             
+2025-08-20 18:35:58-PM ==> |                                         共提取模板中分类 15 个、频道 274 个                                       
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                           【开始匹配模板频道】:不匹配地方频道                                         
+2025-08-20 18:35:58-PM ==> |                                    共匹配到模板给定频道 216 个、url直播地址 14502 个                                  
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                             【开始抽取样本】:全部采集                                            
+2025-08-20 18:35:58-PM ==> |                                             共合并urls 676 个                                            
+2025-08-20 18:35:58-PM ==> |                                  采样urls名单已保存到文件 merged_urls_sample.py                                
+2025-08-20 18:35:58-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:35:58-PM ==> |                                        【开始流畅性抽样检测】:CORE_COUNT:4                                      
+2025-08-20 18:43:25-PM ==> |                                     抽样检测已完成！域名白名单已写入：white_lst.py                                    
+2025-08-20 18:43:25-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:43:25-PM ==> |                                        【开始按白名单顺序排序】:只保留白名单URLS                                       
+2025-08-20 18:43:25-PM ==> |                                    已按白名单地址完成排序(by_S)，共有白名单地址 134 个                                   
+2025-08-20 18:43:25-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:43:25-PM ==> |                                             【开始保存文件(.txt)】                                           
+2025-08-20 18:43:25-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.txt】文件中                     
+2025-08-20 18:43:25-PM ==> |                                         共保存频道 69 个、url地址 134 个                                       
+2025-08-20 18:43:25-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
+2025-08-20 18:43:25-PM ==> |                                             【开始保存文件(.m3u)】                                           
+2025-08-20 18:43:25-PM ==> |                       频道及url地址已保存在目录:【/home/runner/work/lives/lives/live.m3u】文件中                     
+2025-08-20 18:43:25-PM ==> |                                         共保存频道 69 个、url地址 134 个                                       
+2025-08-20 18:43:25-PM ==> |  ————————————————————————————————————————————————————————————————————————————————————————————————————
