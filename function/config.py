@@ -173,26 +173,36 @@ source_urls0 = [
 
 source_urls = [
 
+    'https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt',
+    'https://iptvindex.com/tv.txt',
+    'https://gitee.com/mytv-android/iptv-api/raw/master/output/result.m3u',
+    ''
+    
+
+
+
+#---------------------------------------
+    
     'https://raw.githubusercontent.com/Johnisonn/lives/main/live.txt',
     'https://raw.githubusercontent.com/Johnisonn/tvbox/main/Garter/live.txt',
 
-    'https://nptv.freetv.top/juhe.m3u', #小暴脾气_肥羊
+    #'https://nptv.freetv.top/juhe.m3u', #小暴脾气_肥羊
     'https://live.izbds.com/tv/iptv4.txt', # live.izbds.com
     'https://live.zbds.top/tv/iptv6.m3u',
     'https://live.izbds.com/tv/iptv6.txt',
     'https://live.kilvn.com/iptv.m3u',
     'https://live.hacks.tools/tv/iptv4.txt',
-    'http://124.71.189.194/zb.txt',
+    #'http://124.71.189.194/zb.txt',
     'http://8.138.7.223/live.txt',
-    'http://cqitv.fh4u.org/iptv/jiangsu.txt',
+    #'http://cqitv.fh4u.org/iptv/jiangsu.txt',
     "http://cqitv.fh4u.org/iptv/20241126/gitv.txt",  # 本地址引发的BUG已修复，地址中无分类引发判断错误，V4
-    "http://meowtv.top/zb",  # 喵TV
-    "https://tv.youdu.fan:666/live/",  # 可用，V4酒店源
+    #"http://meowtv.top/zb",  # 喵TV
+    #"https://tv.youdu.fan:666/live/",  # 可用，V4酒店源
     "http://rihou.cc:567/gggg.nzk",  # 日后线路
     "http://rihou.cc:555/gggg.nzk",  # 日后线路
     "http://kv.netsite.cc/tvlive",
     "http://ww.weidonglong.com/dsj.txt",  # WMDZ源，V4
-    "http://xhztv.top/zbc.txt",  # 可用 有字节码\ufeff开头，V4
+    #"http://xhztv.top/zbc.txt",  # 可用 有字节码\ufeff开头，V4
 
     'https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u', # FMM
     'https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u',
@@ -203,7 +213,7 @@ source_urls = [
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt',
     'https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt',
     "https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u",  # 每日更新
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
+    #"https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",  # 每日更新，条目较多
     'https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u',
     'https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u',
     'https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u',
@@ -221,7 +231,7 @@ source_urls = [
     "https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
     "https://raw.githubusercontent.com/qingwen07/awesome-iptv/main/tvbox_live_all.txt",  # 可用，条目较多
     "https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt",  # 可用
-    'https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u'
+    #'https://raw.githubusercontent.com/Moexin/IPTV/Files/IPTV.m3u'
 
     # "https://raw.githubusercontent.com/lystv/short/main/影视/tvb/MTV.txt", #MTV
     # "https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/douyuyqk.m3u", #斗鱼视频
@@ -232,7 +242,7 @@ source_urls = [
 ]
 
 mirror_url_lst = [
-    'https://github.moeyy.xyz/',
+    #'https://github.moeyy.xyz/',
     'https://ghproxy.cfd/',
     'https://gh-proxy.com/',
     'https://hub.gitmirror.com/',
