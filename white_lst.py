@@ -1,44 +1,45 @@
-#  2026-07-28 20:17:30
+#  2026-07-29 21:08:53
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    '207.56.13.146:81',   # SPEED=18.33X
-    '204.12.221.218:8181',   # SPEED=15.97X
-    'stream.freetv.fun',   # SPEED=14.73X
-    '0472.org',   # SPEED=14.60X
-    'english-livetx.cgtn.com',   # SPEED=11.94X
-    '38.64.72.148:80',   # SPEED=11.12X
-    'stream1.freetv.fun',   # SPEED=10.93X
-    'shcm-stream-cf1.stream.264788.xyz',   # SPEED=10.59X
-    'rihou.cc:555/tv/[mg]湖南卫视',   # SPEED=9.88X
-    't.freetv.fun',   # SPEED=9.85X
-    'srs.iyb983.cn',   # SPEED=9.69X
-    'ali-xwl.cztv.com',   # SPEED=9.37X
-    'dash2.antik.sk',   # SPEED=9.29X
-    'srs.iyb983.cn:443',   # SPEED=9.12X
-    'live.zohi.tv',   # SPEED=8.66X
-    '173.208.212.130:8181',   # SPEED=8.37X
-    'rihou.cc:555/tv/[mg]深圳卫视',   # SPEED=7.87X
-    'live.jinchuanrmt.com:90',   # SPEED=7.74X
-    'mg.cttv.vip',   # SPEED=6.87X
-    'tencentplay.gztv.com',   # SPEED=6.86X
-    'english-livebkali.cgtn.com',   # SPEED=6.30X
-    'antvlive.ab5c6921.cdnviet.com',   # SPEED=6.18X
-    'live.zohi.tv:80',   # SPEED=5.76X
-    '198.204.228.26',   # SPEED=5.20X
-    'ali-m-l.cztv.com:80',   # SPEED=5.15X
-    'rihou.cc:555/tv/[mg]海南卫视',   # SPEED=4.13X
-    'event.pull.hebtv.com',   # SPEED=4.11X
-    'l.cztvcloud.com',   # SPEED=4.10X
-    'webcast.hkstv.tv',   # SPEED=4.03X
-    'ali-m-l.cztv.com',   # SPEED=4.00X
-    'home.yulei.online:9999',   # SPEED=3.99X
-    '1.202.119.183:15500',   # SPEED=3.75X
-    '221.7.175.154:8445',   # SPEED=3.31X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.15X
-    '1.94.31.214',   # SPEED=3.03X
-    'live.metshop.top',   # SPEED=2.99X
-    'rihou.cc:555/tv/[mg]浙江卫视',   # SPEED=1.56X
+    '204.12.221.218:8181',   # SPEED=17.38X
+    '74.91.26.218:82',   # SPEED=14.43X
+    'iptv.catvod.com',   # SPEED=12.49X
+    '63.141.230.178:82',   # SPEED=12.22X
+    'txmov2.a.kwimgs.com',   # SPEED=10.54X
+    '38.64.72.148:80',   # SPEED=10.14X
+    '107.150.60.122',   # SPEED=9.41X
+    't.freetv.fun',   # SPEED=9.16X
+    'ali-m-l.cztv.com',   # SPEED=8.53X
+    'ali-m-l.cztv.com:80',   # SPEED=8.11X
+    'tencentplay.gztv.com',   # SPEED=7.88X
+    'live.zohi.tv:80',   # SPEED=7.86X
+    'live.jinchuanrmt.com:90',   # SPEED=7.69X
+    'r.jdshipin.com',   # SPEED=7.59X
+    'srs.iyb983.cn:443',   # SPEED=7.49X
+    '0472.org',   # SPEED=7.45X
+    'stream1.freetv.fun',   # SPEED=7.21X
+    'dash2.antik.sk',   # SPEED=7.15X
+    'english-livetx.cgtn.com',   # SPEED=6.89X
+    'live.zohi.tv',   # SPEED=6.74X
+    '182.150.115.21:8030',   # SPEED=5.94X
+    '198.204.228.26',   # SPEED=5.46X
+    'srs.iyb983.cn',   # SPEED=5.32X
+    'l.cztvcloud.com',   # SPEED=5.25X
+    '38.75.136.137:98',   # SPEED=5.13X
+    'event.pull.hebtv.com',   # SPEED=5.11X
+    '173.208.212.130:8181',   # SPEED=4.98X
+    '207.56.13.146:81',   # SPEED=4.92X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=4.56X
+    'mg.cttv.vip',   # SPEED=4.54X
+    'english-livebkali.cgtn.com',   # SPEED=4.01X
+    '119.39.9.8:9901',   # SPEED=3.18X
+    'live.metshop.top',   # SPEED=3.05X
+    'home.yulei.online:9999',   # SPEED=2.82X
+    'webcast.hkstv.tv',   # SPEED=2.65X
+    '1.94.31.214',   # SPEED=2.60X
+    'ik6.iptv8.net:8888',   # SPEED=2.37X
+    'liveout.xntv.tv',   # SPEED=1.97X
 ]
