@@ -1,29 +1,31 @@
-#  2026-11-06 02:01:10
+#  2026-11-07 02:13:29
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'ali-vl.cztv.com',   # SPEED=20.68X
-    'english-livetx.cgtn.com',   # SPEED=16.38X
-    'live.jinchuanrmt.com:90',   # SPEED=14.06X
-    '0472.org',   # SPEED=12.25X
-    'epg.pw',   # SPEED=10.52X
-    'srs.iyb983.cn',   # SPEED=10.04X
-    'srs.iyb983.cn:443',   # SPEED=8.97X
-    'tencentplaybusiness.gztv.com',   # SPEED=8.93X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=8.07X
-    'ali-xwl.cztv.com',   # SPEED=7.28X
-    'tencentplay.gztv.com',   # SPEED=7.15X
-    'live.zohi.tv',   # SPEED=7.01X
-    'ali-m-l.cztv.com',   # SPEED=6.75X
-    'live.zohi.tv:80',   # SPEED=6.73X
-    'ali-m-l.cztv.com:80',   # SPEED=6.41X
-    'p2.bdstatic.com',   # SPEED=6.37X
-    'l.cztvcloud.com',   # SPEED=4.67X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=4.66X
-    'play1-qk.nmtv.cn',   # SPEED=3.79X
-    'bp-resource-dfl.bestv.cn',   # SPEED=3.23X
-    'live.metshop.top',   # SPEED=3.15X
-    'liveout.xntv.tv',   # SPEED=2.41X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=18.75X
+    'txmov2.a.kwimgs.com',   # SPEED=15.10X
+    'ali-vl.cztv.com',   # SPEED=13.28X
+    'live.jinchuanrmt.com:90',   # SPEED=11.24X
+    'epg.pw',   # SPEED=10.78X
+    '0472.org',   # SPEED=9.44X
+    'english-livetx.cgtn.com',   # SPEED=9.09X
+    'ali-xwl.cztv.com',   # SPEED=8.42X
+    'tencentplaybusiness.gztv.com',   # SPEED=8.30X
+    'live.zohi.tv',   # SPEED=7.87X
+    'l.cztvcloud.com',   # SPEED=7.12X
+    'ali-m-l.cztv.com:80',   # SPEED=6.98X
+    'srs.iyb983.cn',   # SPEED=6.89X
+    'srs.iyb983.cn:443',   # SPEED=6.56X
+    'p2.bdstatic.com',   # SPEED=6.40X
+    'ali-m-l.cztv.com',   # SPEED=5.84X
+    'live.zohi.tv:80',   # SPEED=5.56X
+    'tencentplay.gztv.com',   # SPEED=4.73X
+    'bp-resource-dfl.bestv.cn',   # SPEED=3.09X
+    '182.150.115.21:8030',   # SPEED=3.02X
+    'play1-qk.nmtv.cn',   # SPEED=2.91X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=2.49X
+    'liveout.xntv.tv',   # SPEED=2.38X
+    '119.39.9.8:9901',   # SPEED=1.89X
 ]
