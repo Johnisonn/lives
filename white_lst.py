@@ -1,30 +1,29 @@
-#  2026-11-10 04:42:29
+#  2026-11-11 01:47:23
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'ali-vl.cztv.com',   # SPEED=18.88X
-    'english-livetx.cgtn.com',   # SPEED=18.15X
-    '0472.org',   # SPEED=16.37X
-    'epg.pw',   # SPEED=13.51X
-    'ali-xwl.cztv.com',   # SPEED=11.01X
-    'live.jinchuanrmt.com:90',   # SPEED=10.09X
-    'txmov2.a.kwimgs.com',   # SPEED=8.34X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=7.94X
-    'live.zohi.tv:80',   # SPEED=7.72X
-    '182.150.115.21:8030',   # SPEED=7.25X
-    'ali-m-l.cztv.com',   # SPEED=7.13X
-    'ali-m-l.cztv.com:80',   # SPEED=6.93X
-    'l.cztvcloud.com',   # SPEED=6.77X
-    'p2.bdstatic.com',   # SPEED=6.30X
-    'srs.iyb983.cn',   # SPEED=6.30X
-    'srs.iyb983.cn:443',   # SPEED=5.78X
-    'tencentplaybusiness.gztv.com',   # SPEED=4.28X
-    'live.zohi.tv',   # SPEED=4.25X
-    'tencentplay.gztv.com',   # SPEED=4.18X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.98X
-    'live.metshop.top',   # SPEED=3.38X
-    'play1-qk.nmtv.cn',   # SPEED=2.96X
-    'liveout.xntv.tv',   # SPEED=1.82X
+    'epg.pw',   # SPEED=19.43X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=16.55X
+    '0472.org',   # SPEED=15.56X
+    'english-livetx.cgtn.com',   # SPEED=15.40X
+    'txmov2.a.kwimgs.com',   # SPEED=13.19X
+    'ali-xwl.cztv.com',   # SPEED=10.38X
+    'srs.iyb983.cn:443',   # SPEED=9.35X
+    'tencentplay.gztv.com',   # SPEED=8.44X
+    'live.jinchuanrmt.com:90',   # SPEED=7.78X
+    'srs.iyb983.cn',   # SPEED=6.90X
+    'live.zohi.tv',   # SPEED=6.83X
+    'tencentplaybusiness.gztv.com',   # SPEED=6.67X
+    'ali-vl.cztv.com',   # SPEED=6.46X
+    'live.zohi.tv:80',   # SPEED=6.39X
+    'p2.bdstatic.com',   # SPEED=6.38X
+    '182.150.115.21:8030',   # SPEED=5.70X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=4.18X
+    'ali-m-l.cztv.com',   # SPEED=3.66X
+    'live.metshop.top',   # SPEED=3.18X
+    'play1-qk.nmtv.cn',   # SPEED=2.78X
+    'bp-resource-dfl.bestv.cn',   # SPEED=2.75X
+    'liveout.xntv.tv',   # SPEED=2.12X
 ]
