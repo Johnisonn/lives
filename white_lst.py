@@ -1,29 +1,30 @@
-#  2026-11-15 00:36:03
+#  2026-11-16 01:05:21
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'english-livetx.cgtn.com',   # SPEED=17.77X
-    '0472.org',   # SPEED=16.97X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=11.15X
-    'epg.pw',   # SPEED=9.05X
-    'live.jinchuanrmt.com:90',   # SPEED=8.98X
-    'ali-m-l.cztv.com',   # SPEED=8.78X
-    'live.zohi.tv',   # SPEED=6.72X
-    'ali-m-l.cztv.com:80',   # SPEED=6.47X
-    '8.138.214.88:1905',   # SPEED=6.27X
-    'p2.bdstatic.com',   # SPEED=5.87X
-    '8.138.7.223',   # SPEED=5.12X
-    'l.cztvcloud.com',   # SPEED=5.01X
-    'live.zohi.tv:80',   # SPEED=4.91X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=4.11X
-    'tencentplaybusiness.gztv.com',   # SPEED=3.21X
-    '223.78.65.165:9901',   # SPEED=3.16X
-    'tencentplay.gztv.com',   # SPEED=3.14X
-    'play1-qk.nmtv.cn',   # SPEED=2.79X
-    '182.150.115.21:8030',   # SPEED=2.50X
-    'bp-resource-dfl.bestv.cn',   # SPEED=2.31X
-    '221.7.175.154:8445',   # SPEED=2.21X
-    'ali-vl.cztv.com',   # SPEED=1.95X
+    'txmov2.a.kwimgs.com',   # SPEED=16.00X
+    'english-livetx.cgtn.com',   # SPEED=14.49X
+    '0472.org',   # SPEED=14.30X
+    'epg.pw',   # SPEED=11.11X
+    'ali-vl.cztv.com',   # SPEED=7.26X
+    'p2.bdstatic.com',   # SPEED=5.76X
+    'live.zohi.tv:80',   # SPEED=5.28X
+    'ali-m-l.cztv.com:80',   # SPEED=4.81X
+    'srs.iyb983.cn',   # SPEED=4.73X
+    'live.zohi.tv',   # SPEED=4.70X
+    '8.138.214.88:1905',   # SPEED=4.50X
+    'live.jinchuanrmt.com:90',   # SPEED=4.09X
+    'tencentplay.gztv.com',   # SPEED=3.99X
+    'srs.iyb983.cn:443',   # SPEED=3.91X
+    '8.138.7.223',   # SPEED=3.87X
+    '8.134.101.151',   # SPEED=3.53X
+    'ali-m-l.cztv.com',   # SPEED=3.47X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.24X
+    'tencentplaybusiness.gztv.com',   # SPEED=3.15X
+    'bp-resource-dfl.bestv.cn',   # SPEED=2.99X
+    '182.150.115.21:8030',   # SPEED=2.95X
+    'play1-qk.nmtv.cn',   # SPEED=2.82X
+    '221.7.175.154:8445',   # SPEED=1.80X
 ]
