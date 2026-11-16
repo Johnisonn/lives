@@ -1,30 +1,31 @@
-#  2026-11-16 01:05:21
+#  2026-11-17 04:27:06
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'txmov2.a.kwimgs.com',   # SPEED=16.00X
-    'english-livetx.cgtn.com',   # SPEED=14.49X
-    '0472.org',   # SPEED=14.30X
-    'epg.pw',   # SPEED=11.11X
-    'ali-vl.cztv.com',   # SPEED=7.26X
-    'p2.bdstatic.com',   # SPEED=5.76X
-    'live.zohi.tv:80',   # SPEED=5.28X
-    'ali-m-l.cztv.com:80',   # SPEED=4.81X
-    'srs.iyb983.cn',   # SPEED=4.73X
-    'live.zohi.tv',   # SPEED=4.70X
-    '8.138.214.88:1905',   # SPEED=4.50X
-    'live.jinchuanrmt.com:90',   # SPEED=4.09X
-    'tencentplay.gztv.com',   # SPEED=3.99X
-    'srs.iyb983.cn:443',   # SPEED=3.91X
-    '8.138.7.223',   # SPEED=3.87X
-    '8.134.101.151',   # SPEED=3.53X
-    'ali-m-l.cztv.com',   # SPEED=3.47X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.24X
-    'tencentplaybusiness.gztv.com',   # SPEED=3.15X
-    'bp-resource-dfl.bestv.cn',   # SPEED=2.99X
-    '182.150.115.21:8030',   # SPEED=2.95X
-    'play1-qk.nmtv.cn',   # SPEED=2.82X
-    '221.7.175.154:8445',   # SPEED=1.80X
+    'english-livetx.cgtn.com',   # SPEED=17.77X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=10.16X
+    'srs.iyb983.cn:443',   # SPEED=9.83X
+    'srs.iyb983.cn',   # SPEED=9.75X
+    'txmov2.a.kwimgs.com',   # SPEED=8.86X
+    'ali-m-l.cztv.com:80',   # SPEED=7.88X
+    'epg.pw',   # SPEED=6.78X
+    'ali-m-l.cztv.com',   # SPEED=6.54X
+    'live.zohi.tv:80',   # SPEED=6.45X
+    'live.jinchuanrmt.com:90',   # SPEED=6.03X
+    'l.cztvcloud.com',   # SPEED=6.00X
+    'p2.bdstatic.com',   # SPEED=5.94X
+    'live.zohi.tv',   # SPEED=5.79X
+    'hls-qhmh.lanzhousobey.cn',   # SPEED=4.73X
+    'tencentplaybusiness.gztv.com',   # SPEED=3.51X
+    '182.150.115.21:8030',   # SPEED=3.46X
+    'tencentplay.gztv.com',   # SPEED=3.41X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.31X
+    'play1-qk.nmtv.cn',   # SPEED=3.09X
+    'bp-resource-dfl.bestv.cn',   # SPEED=3.01X
+    '8.134.101.151',   # SPEED=2.71X
+    'bd-xwl.cztv.com',   # SPEED=2.06X
+    '221.7.175.154:8445',   # SPEED=1.95X
+    'liveout.xntv.tv',   # SPEED=1.77X
 ]
