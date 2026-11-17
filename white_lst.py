@@ -1,31 +1,31 @@
-#  2026-11-17 04:27:06
+#  2026-11-18 03:11:13
 
 white_lst = [
+    'ali-m-l.cztv.com',   # reserved
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'english-livetx.cgtn.com',   # SPEED=17.77X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=10.16X
-    'srs.iyb983.cn:443',   # SPEED=9.83X
-    'srs.iyb983.cn',   # SPEED=9.75X
-    'txmov2.a.kwimgs.com',   # SPEED=8.86X
-    'ali-m-l.cztv.com:80',   # SPEED=7.88X
-    'epg.pw',   # SPEED=6.78X
-    'ali-m-l.cztv.com',   # SPEED=6.54X
-    'live.zohi.tv:80',   # SPEED=6.45X
-    'live.jinchuanrmt.com:90',   # SPEED=6.03X
-    'l.cztvcloud.com',   # SPEED=6.00X
-    'p2.bdstatic.com',   # SPEED=5.94X
-    'live.zohi.tv',   # SPEED=5.79X
-    'hls-qhmh.lanzhousobey.cn',   # SPEED=4.73X
-    'tencentplaybusiness.gztv.com',   # SPEED=3.51X
-    '182.150.115.21:8030',   # SPEED=3.46X
-    'tencentplay.gztv.com',   # SPEED=3.41X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.31X
-    'play1-qk.nmtv.cn',   # SPEED=3.09X
-    'bp-resource-dfl.bestv.cn',   # SPEED=3.01X
-    '8.134.101.151',   # SPEED=2.71X
-    'bd-xwl.cztv.com',   # SPEED=2.06X
-    '221.7.175.154:8445',   # SPEED=1.95X
-    'liveout.xntv.tv',   # SPEED=1.77X
+    'ali-xwl.cztv.com',   # SPEED=17.17X
+    '0472.org',   # SPEED=15.83X
+    'ali-vl.cztv.com',   # SPEED=11.07X
+    'live.jinchuanrmt.com:90',   # SPEED=10.25X
+    'jwcdnqx.hebyun.com.cn',   # SPEED=8.04X
+    'epg.pw',   # SPEED=7.24X
+    'hls-qhmh.lanzhousobey.cn',   # SPEED=7.24X
+    'srs.iyb983.cn:443',   # SPEED=7.00X
+    'srs.iyb983.cn',   # SPEED=6.19X
+    'live.zohi.tv:80',   # SPEED=6.14X
+    'l.cztvcloud.com',   # SPEED=6.11X
+    'p2.bdstatic.com',   # SPEED=5.92X
+    'live.zohi.tv',   # SPEED=5.47X
+    'play1-qk.nmtv.cn',   # SPEED=5.45X
+    'tencentplaybusiness.gztv.com',   # SPEED=4.45X
+    '182.150.115.21:8030',   # SPEED=3.56X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.48X
+    '8.134.101.151',   # SPEED=3.39X
+    'tencentplay.gztv.com',   # SPEED=3.09X
+    'bp-resource-dfl.bestv.cn',   # SPEED=2.76X
+    '8.138.7.223',   # SPEED=2.38X
+    '221.7.175.154:8445',   # SPEED=2.11X
+    'liveout.xntv.tv',   # SPEED=1.99X
 ]
