@@ -1,29 +1,29 @@
-#  2026-11-22 01:27:57
+#  2026-11-23 01:48:40
 
 white_lst = [
     'gxlive.snrtv.com',   # reserved
     'nlive.zjkgdcs.com:8572',   # reserved
     'nlive.zjkgdcs.com:8091',   # reserved
-    'txmov2.a.kwimgs.com',   # SPEED=14.20X
-    'english-livetx.cgtn.com',   # SPEED=9.70X
-    '218.84.12.186:8001',   # SPEED=9.51X
-    'srs.iyb983.cn',   # SPEED=8.76X
-    'ali-vl.cztv.com',   # SPEED=7.70X
-    'srs.iyb983.cn:443',   # SPEED=7.66X
-    'jwcdnqx.hebyun.com.cn',   # SPEED=5.93X
-    'ali-m-l.cztv.com',   # SPEED=5.20X
-    'ali-m-l.cztv.com:80',   # SPEED=5.11X
-    '8.138.214.88:1905',   # SPEED=4.81X
-    'ali-xwl.cztv.com',   # SPEED=4.67X
-    '8.138.7.223',   # SPEED=4.50X
-    '8.134.101.151',   # SPEED=4.04X
-    'live.zohi.tv:80',   # SPEED=3.94X
-    'hlsal-ldvt.qing.mgtv.com',   # SPEED=3.67X
-    'live.zohi.tv',   # SPEED=3.57X
-    '182.150.115.21:8030',   # SPEED=3.33X
-    'tencentplay.gztv.com',   # SPEED=3.09X
-    'tencentplaybusiness.gztv.com',   # SPEED=2.95X
-    'bp-resource-dfl.bestv.cn',   # SPEED=2.34X
-    'liveout.xntv.tv',   # SPEED=1.79X
-    '221.7.175.154:8445',   # SPEED=1.72X
+    '218.84.12.186:8001',   # SPEED=12.05X
+    'ali-vl.cztv.com',   # SPEED=11.05X
+    'english-livetx.cgtn.com',   # SPEED=9.65X
+    '0472.org',   # SPEED=8.92X
+    'txmov2.a.kwimgs.com',   # SPEED=7.62X
+    'live.jinchuanrmt.com:90',   # SPEED=6.92X
+    'l.cztvcloud.com',   # SPEED=6.35X
+    'ali-xwl.cztv.com',   # SPEED=5.78X
+    'srs.iyb983.cn:443',   # SPEED=5.73X
+    'live.zohi.tv:80',   # SPEED=5.22X
+    'srs.iyb983.cn',   # SPEED=5.21X
+    'live.zohi.tv',   # SPEED=4.86X
+    '8.134.101.151',   # SPEED=4.59X
+    'ali-m-l.cztv.com:80',   # SPEED=4.18X
+    'tencentplaybusiness.gztv.com',   # SPEED=3.90X
+    'ali-m-l.cztv.com',   # SPEED=3.16X
+    'tencentplay.gztv.com',   # SPEED=3.10X
+    '182.150.115.21:8030',   # SPEED=2.85X
+    'live.metshop.top',   # SPEED=2.48X
+    'bp-resource-dfl.bestv.cn',   # SPEED=2.43X
+    '221.7.175.154:8445',   # SPEED=2.33X
+    'hlsal-ldvt.qing.mgtv.com',   # SPEED=1.51X
 ]
